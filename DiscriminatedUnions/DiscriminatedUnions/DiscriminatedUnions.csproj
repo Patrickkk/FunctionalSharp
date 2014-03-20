@@ -44,6 +44,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiscriminatedUnion.tt</DependentUpon>
     </Compile>
+    <Compile Include="DiscriminatedUnionExtensions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscriminatedUnionExtensions.tt</DependentUpon>
+    </Compile>
     <Compile Include="DiscriminatedUnionList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -55,6 +60,10 @@
     <None Include="DiscriminatedUnion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnion.cs</LastGenOutput>
+    </None>
+    <None Include="DiscriminatedUnionExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiscriminatedUnionExtensions.cs</LastGenOutput>
     </None>
     <None Include="DiscriminatedUnionList.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

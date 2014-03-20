@@ -8,7 +8,7 @@ namespace DiscriminatedUnions
 {
 	using System;
 <#
-var maxNumberOfTypeArguments = 100;
+var maxNumberOfTypeArguments = 10;
 #>
 <#
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
