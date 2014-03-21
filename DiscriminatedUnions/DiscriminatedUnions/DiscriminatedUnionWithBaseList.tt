@@ -17,14 +17,21 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 {
 #>
 
-    public class DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>> : List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>>
-    {
+    public class DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+        where Type<#= i+1 #> : BaseType 
+<#
+}
+#>
+	{
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
         public void Add(Type<#= i + 1 #> item)
         {
-            this.Add(new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(item));
+            this.Add(new DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type<#= i + 1 #>> collectionToAdd)
@@ -39,9 +46,10 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 if(numberOfArguments != maxNumberOfTypeArguments)
 {
 #>
-        public DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			<#for(var i = 0; i < numberOfArguments -1; i +=1)
 {

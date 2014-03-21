@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace DiscriminatedUnions
+﻿namespace DiscriminatedUnions
 {
 	using System;
 	using System.Linq;
@@ -12,12 +6,15 @@ namespace DiscriminatedUnions
 
 
 
-    public class DiscriminatedUnionList<Type1, Type2> : List<DiscriminatedUnion<Type1, Type2>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -30,7 +27,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -41,9 +38,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item)
@@ -76,12 +74,16 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3> : List<DiscriminatedUnion<Type1, Type2, Type3>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -94,7 +96,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -107,7 +109,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -118,9 +120,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -156,12 +159,17 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -174,7 +182,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -187,7 +195,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -200,7 +208,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -211,9 +219,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -252,12 +261,18 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -270,7 +285,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -283,7 +298,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -296,7 +311,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -309,7 +324,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -320,9 +335,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -364,12 +380,19 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+        where Type6 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -382,7 +405,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -395,7 +418,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -408,7 +431,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -421,7 +444,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -434,7 +457,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type6 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
@@ -445,9 +468,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -492,12 +516,20 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+        where Type6 : BaseType 
+        where Type7 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -510,7 +542,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -523,7 +555,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -536,7 +568,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -549,7 +581,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -562,7 +594,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type6 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
@@ -575,7 +607,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type7 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
@@ -586,9 +618,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -636,12 +669,21 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+        where Type6 : BaseType 
+        where Type7 : BaseType 
+        where Type8 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -654,7 +696,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -667,7 +709,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -680,7 +722,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -693,7 +735,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -706,7 +748,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type6 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
@@ -719,7 +761,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type7 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
@@ -732,7 +774,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type8 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
@@ -743,9 +785,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -796,12 +839,22 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+        where Type6 : BaseType 
+        where Type7 : BaseType 
+        where Type8 : BaseType 
+        where Type9 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -814,7 +867,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -827,7 +880,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -840,7 +893,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -853,7 +906,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -866,7 +919,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type6 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
@@ -879,7 +932,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type7 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
@@ -892,7 +945,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type8 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
@@ -905,7 +958,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type9 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
@@ -916,9 +969,10 @@ namespace DiscriminatedUnions
             }
         }
 
-        public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        public DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
         {
-            var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge>();
+            var result = new DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge, BaseType>();
             this.ForEach(item => item.Match(
 			                Type1Item => result.Add(Type1Item),
 				                Type2Item => result.Add(Type2Item),
@@ -972,12 +1026,23 @@ namespace DiscriminatedUnions
     }
 
 
-    public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>>
-    {
+    public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>>
+        where Type1 : BaseType 
+        where Type2 : BaseType 
+        where Type3 : BaseType 
+        where Type4 : BaseType 
+        where Type5 : BaseType 
+        where Type6 : BaseType 
+        where Type7 : BaseType 
+        where Type8 : BaseType 
+        where Type9 : BaseType 
+        where Type10 : BaseType 
+
+	{
 
         public void Add(Type1 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
@@ -990,7 +1055,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type2 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
@@ -1003,7 +1068,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type3 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
@@ -1016,7 +1081,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type4 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
@@ -1029,7 +1094,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type5 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
@@ -1042,7 +1107,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type6 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
@@ -1055,7 +1120,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type7 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
@@ -1068,7 +1133,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type8 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
@@ -1081,7 +1146,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type9 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
@@ -1094,7 +1159,7 @@ namespace DiscriminatedUnions
 
         public void Add(Type10 item)
         {
-            this.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+            this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
 		public void AddRange(IEnumerable<Type10> collectionToAdd)
