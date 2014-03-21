@@ -1,0 +1,64 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+namespace DiscriminatedUnions
+{
+	using System;
+    using System.Collections.Generic;
+<#
+var maxNumberOfTypeArguments = 10;
+#>
+    public static class DiscriminatedUnionExtensions
+    {
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2>> DiscriminatedUnion<Type1, Type2>(this IEnumerable<Type1> original, params IEnumerable<IEnumerable<Type2>> listsToMerge)
+        {
+            var result = new DiscriminatedUnionList<Type1, Type2>();
+            foreach (var item in original)
+            {
+                result.Add(item);
+            }
+
+            foreach (var listToMerge in listsToMerge)
+            {
+                foreach (var item in listToMerge)
+                {
+                    result.Add(item);
+                }
+
+            }
+            return result;
+        }
+<#
+for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
+{
+#>
+<#
+}
+#>
+    }
+
+}
+<#+
+public string TypeArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Type{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+
+public string FunctionArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+#>

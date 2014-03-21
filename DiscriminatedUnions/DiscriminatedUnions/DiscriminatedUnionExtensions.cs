@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     public static class DiscriminatedUnionExtensions
     {
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2>> DiscriminatedUnion<Type1, Type2>(this IEnumerable<Type1> original, params IEnumerable<IEnumerable<Type2>> listsToMerge)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2>> DiscriminatedUnion<Type1, Type2>(this IEnumerable<Type1> original, params IEnumerable<Type2>[] listsToMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2>();
             foreach (var item in original)
