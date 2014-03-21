@@ -7,6 +7,7 @@
 namespace DiscriminatedUnions
 {
 	using System;
+	using System.Linq;
     using System.Collections.Generic;
 <#
 var maxNumberOfTypeArguments = 10;
@@ -59,6 +60,34 @@ if(numberOfArguments != maxNumberOfTypeArguments)
 
             return result;
         }
+
+        public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
+        {
+            this.ForEach(item => item.Match(
+<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
+        {
+            return this.Select(item => item.Match(
+<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+            ));
+        }
 <#
 }
 #>
@@ -85,6 +114,16 @@ public string FunctionArgumentsFor(int numberOfArguments)
 	for(var i = 0; i < numberOfArguments; i+=1)
 	{
 		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+
+public string ActionArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
 	}
 	return result.Trim(' ').Trim(',');
 }

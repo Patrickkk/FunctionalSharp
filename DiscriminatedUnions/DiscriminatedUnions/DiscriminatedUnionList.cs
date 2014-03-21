@@ -7,8 +7,9 @@
 namespace DiscriminatedUnions
 {
 	using System;
+	using System.Linq;
     using System.Collections.Generic;
-    using System.Linq;
+
 
 
     public class DiscriminatedUnionList<Type1, Type2> : List<DiscriminatedUnion<Type1, Type2>>
@@ -19,7 +20,7 @@ namespace DiscriminatedUnions
             this.Add(new DiscriminatedUnion<Type1, Type2>(item));
         }
 
-        public void AddRange(IEnumerable<Type1> collectionToAdd)
+		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
             {
@@ -32,7 +33,7 @@ namespace DiscriminatedUnions
             this.Add(new DiscriminatedUnion<Type1, Type2>(item));
         }
 
-        public void AddRange(IEnumerable<Type2> collectionToAdd)
+		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
             {
@@ -44,11 +45,11 @@ namespace DiscriminatedUnions
         {
             var result = new DiscriminatedUnionList<Type1, Type2, TypeToMerge>();
             this.ForEach(item => item.Match(
-                            Type1Item => result.Add(Type1Item),
-                                Type2Item => result.Add(Type2Item)
+			                Type1Item => result.Add(Type1Item),
+				                Type2Item => result.Add(Type2Item)
                 ));
-
-            foreach (var item in toMerge)
+	
+            foreach(var item in toMerge)
             {
                 result.Add(item);
             }
@@ -56,14 +57,22 @@ namespace DiscriminatedUnions
             return result;
         }
 
+        public void Match(Action<Type1> Action1, Action<Type2> Action2)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item)
+            ));
+        }
 
         public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2)
         {
             return this.Select(item => item.Match(
-                item1 => Function1(item1),
-                item2 => Function2(item2)
-                ));//TODO Move to extension methods
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item)
+            ));
         }
+
     }
 
 
@@ -124,6 +133,24 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item)
+            ));
         }
 
     }
@@ -200,6 +227,26 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item)
+            ));
         }
 
     }
@@ -290,6 +337,28 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item)
+            ));
         }
 
     }
@@ -394,6 +463,30 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item)
+            ));
         }
 
     }
@@ -512,6 +605,32 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item)
+            ));
         }
 
     }
@@ -644,6 +763,34 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7, Action<Type8> Action8)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item),
+                type8Item => Action8(type8Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item),
+                type8Item => Function8(type8Item)
+            ));
         }
 
     }
@@ -790,6 +937,36 @@ namespace DiscriminatedUnions
             }
 
             return result;
+        }
+
+        public void Match(Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7, Action<Type8> Action8, Action<Type9> Action9)
+        {
+            this.ForEach(item => item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item),
+                type8Item => Action8(type8Item),
+                type9Item => Action9(type9Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8, Func<Type9, ReturnType> Function9)
+        {
+            return this.Select(item => item.Match(
+                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item),
+                type8Item => Function8(type8Item),
+                type9Item => Function9(type9Item)
+            ));
         }
 
     }

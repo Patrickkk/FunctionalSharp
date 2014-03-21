@@ -15,7 +15,7 @@ namespace DiscriminatedUnions.Test
             list.Add("string");
             list.Add(10);
 
-            list.ForEach(union => union.Match(
+            list.Match(
                 stringItem =>
                 {
                     Assert.AreEqual("string", stringItem);
@@ -25,7 +25,7 @@ namespace DiscriminatedUnions.Test
                 {
                     Assert.AreEqual(10, intItem);
                     Assert.AreEqual(typeof(int), intItem.GetType());
-                }));
+                });
         }
 
         [TestMethod]
