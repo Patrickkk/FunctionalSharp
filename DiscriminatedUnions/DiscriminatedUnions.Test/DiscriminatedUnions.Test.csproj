@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DiscriminatedUnionWithBaseTest.cs" />
     <Compile Include="DiscriminatedUnionListTest.cs" />
+    <Compile Include="DiscriminatedUnionWithBaseListTest.cs" />
+    <Compile Include="TestModelClasses\Person.cs" />
+    <Compile Include="TestModelClasses\Student.cs" />
+    <Compile Include="TestModelClasses\Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DiscriminatedUnions\DiscriminatedUnions.csproj">

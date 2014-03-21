@@ -1,0 +1,138 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+namespace DiscriminatedUnions
+{
+	using System;
+	using System.Linq;
+    using System.Collections.Generic;
+<#
+var maxNumberOfTypeArguments = 10;
+#>
+<#
+for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
+{
+#>
+
+    public class DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+        where Type<#= i+1 #> : BaseType 
+<#
+}
+#>
+	{
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+        public void Add(Type<#= i + 1 #> item)
+        {
+            this.Add(new DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>(item));
+        }
+
+		public void AddRange(IEnumerable<Type<#= i + 1 #>> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                this.Add(item);
+            }
+        }
+<#
+}
+if(numberOfArguments != maxNumberOfTypeArguments)
+{
+#>
+        public DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+			where TypeToMerge : BaseType
+        {
+            var result = new DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge, BaseType>();
+            this.ForEach(item => item.Match(
+			<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                Type<#= i + 1 #>Item => result.Add(Type<#= i + 1 #>Item),
+				<#
+}
+#>
+                Type<#= numberOfArguments #>Item => result.Add(Type<#= numberOfArguments #>Item)
+                ));
+	
+            foreach(var item in toMerge)
+            {
+                result.Add(item);
+            }
+
+            return result;
+        }
+
+        public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
+        {
+            this.ForEach(item => item.Match(
+<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+            ));
+        }
+
+        public IEnumerable<ReturnType> Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
+        {
+            return this.Select(item => item.Match(
+<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+            ));
+        }
+<#
+}
+#>
+    }
+<#
+
+}
+#>
+}
+<#+
+public string TypeArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Type{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+
+public string FunctionArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+
+public string ActionArgumentsFor(int numberOfArguments)
+{
+	var result = "";
+	for(var i = 0; i < numberOfArguments; i+=1)
+	{
+		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+#>

@@ -59,6 +59,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiscriminatedUnionWithBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="DiscriminatedUnionWithBaseList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscriminatedUnionWithBaseList.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +82,10 @@
     <None Include="DiscriminatedUnionWithBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionWithBase.cs</LastGenOutput>
+    </None>
+    <None Include="DiscriminatedUnionWithBaseList.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiscriminatedUnionWithBaseList.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
