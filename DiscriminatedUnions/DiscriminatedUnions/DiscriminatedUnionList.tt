@@ -25,11 +25,46 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
         {
             this.Add(new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(item));
         }
+
+		public void AddRange(IEnumerable<Type<#= i + 1 #>> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                this.Add(item);
+            }
+        }
+<#
+}
+if(numberOfArguments != maxNumberOfTypeArguments)
+{
+#>
+        public DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
+        {
+            var result = new DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge>();
+            this.ForEach(item => item.Match(
+			<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                Type<#= i + 1 #>Item => result.Add(Type<#= i + 1 #>Item),
+				<#
+}
+#>
+                Type<#= numberOfArguments #>Item => result.Add(Type<#= numberOfArguments #>Item)
+                ));
+	
+            foreach(var item in toMerge)
+            {
+                result.Add(item);
+            }
+
+            return result;
+        }
 <#
 }
 #>
     }
 <#
+
 }
 #>
 }
