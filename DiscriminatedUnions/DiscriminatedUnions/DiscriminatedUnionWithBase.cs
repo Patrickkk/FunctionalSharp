@@ -7,6 +7,10 @@
         where Type1 : BaseType 
         where Type2 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
 
@@ -29,6 +33,10 @@
         where Type2 : BaseType 
         where Type3 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -54,6 +62,10 @@
         where Type3 : BaseType 
         where Type4 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -82,6 +94,10 @@
         where Type4 : BaseType 
         where Type5 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -113,6 +129,10 @@
         where Type5 : BaseType 
         where Type6 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -147,6 +167,10 @@
         where Type6 : BaseType 
         where Type7 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -184,6 +208,10 @@
         where Type7 : BaseType 
         where Type8 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -224,6 +252,10 @@
         where Type8 : BaseType 
         where Type9 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }
@@ -267,6 +299,10 @@
         where Type9 : BaseType 
         where Type10 : BaseType 
     {
+		/// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        private DiscriminatedUnionWithBase() : base() { }
         public DiscriminatedUnionWithBase(Type1 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type2 item) : base(item) { }
         public DiscriminatedUnionWithBase(Type3 item) : base(item) { }

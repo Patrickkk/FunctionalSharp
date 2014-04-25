@@ -1,6 +1,8 @@
 ﻿namespace DiscriminatedUnions.Test
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.IO;
+    using System.Runtime.Serialization.Formatters.Binary;
 
     [TestClass]
     public class DiscriminatedUnionTest
@@ -27,6 +29,18 @@
                 intValue => "Not possible");
 
             Assert.AreEqual(inputvalue, result);
+        }
+
+        [TestMethod]
+        public void TestSerialization()
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                var inputvalue = "TestValue";
+                var union = new DiscriminatedUnion<string, int>(inputvalue);
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, union);
+            }
         }
     }
 }

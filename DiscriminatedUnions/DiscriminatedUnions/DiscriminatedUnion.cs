@@ -12,6 +12,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -53,6 +58,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -101,6 +111,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -156,6 +171,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -218,6 +238,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -287,6 +312,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -363,6 +393,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -446,6 +481,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 
@@ -536,6 +576,11 @@ namespace DiscriminatedUnions
     [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 

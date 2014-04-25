@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace DiscriminatedUnions.Test
 {
@@ -66,6 +68,17 @@ namespace DiscriminatedUnions.Test
             list.Add("string");
             list.Add(10);
             var result = list.Match(stringItem => null, intItem => intItem).Where(item => item != null);
+        }
+
+        [TestMethod]
+        public void TestSerialization()
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                var list = new DiscriminatedUnionList<int, string>();
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, list);
+            }
         }
     }
 }

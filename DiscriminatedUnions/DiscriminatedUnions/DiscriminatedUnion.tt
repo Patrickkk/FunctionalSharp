@@ -17,6 +17,11 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
     [Serializable]
     public class DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
     {
+	    /// <summary>
+        /// Private constructor to support serialization.
+        /// </summary>
+        protected DiscriminatedUnion() { }
+
 	    protected int tag;
 
 <#for(var i = 0; i < numberOfArguments; i +=1)
