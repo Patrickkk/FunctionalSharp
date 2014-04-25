@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace DiscriminatedUnions.Test
+﻿namespace DiscriminatedUnions.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DiscriminatedUnionWithBaseTest : DiscriminatedUnionTest
     {

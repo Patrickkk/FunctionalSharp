@@ -5,7 +5,7 @@
     using System.Collections.Generic;
 
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -73,7 +73,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -158,7 +158,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -260,7 +260,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -379,7 +379,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -515,7 +515,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -668,7 +668,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -838,7 +838,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -1025,7 +1025,7 @@
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType> : List<DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>>
         where Type1 : BaseType 
         where Type2 : BaseType 

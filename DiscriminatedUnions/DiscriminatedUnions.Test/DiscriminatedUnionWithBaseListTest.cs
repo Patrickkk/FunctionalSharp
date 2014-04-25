@@ -1,14 +1,14 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DiscriminatedUnions.Test.TestModelClasses;
-
+﻿
 namespace DiscriminatedUnions.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using DiscriminatedUnions.Test.TestModelClasses;
+
     [TestClass]
     public class DiscriminatedUnionWithBaseListTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void DiscriminatedUnionWithBaseListTest1()
         {
             var list = new DiscriminatedUnionWithBaseList<Student, Teacher, Person>();
 

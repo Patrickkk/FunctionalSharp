@@ -9,7 +9,7 @@ namespace DiscriminatedUnions
 	using System;
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2>
     {
 	    protected int tag;
@@ -50,7 +50,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3>
     {
 	    protected int tag;
@@ -98,7 +98,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4>
     {
 	    protected int tag;
@@ -153,7 +153,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>
     {
 	    protected int tag;
@@ -215,7 +215,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>
     {
 	    protected int tag;
@@ -284,7 +284,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>
     {
 	    protected int tag;
@@ -360,7 +360,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>
     {
 	    protected int tag;
@@ -443,7 +443,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>
     {
 	    protected int tag;
@@ -533,7 +533,7 @@ namespace DiscriminatedUnions
     }
 
 
-
+    [Serializable]
     public class DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>
     {
 	    protected int tag;

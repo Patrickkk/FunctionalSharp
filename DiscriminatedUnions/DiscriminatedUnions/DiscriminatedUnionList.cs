@@ -11,7 +11,7 @@ namespace DiscriminatedUnions
     using System.Collections.Generic;
 
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2> : List<DiscriminatedUnion<Type1, Type2>>
     {
 
@@ -75,7 +75,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3> : List<DiscriminatedUnion<Type1, Type2, Type3>>
     {
 
@@ -155,7 +155,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4>>
     {
 
@@ -251,7 +251,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>>
     {
 
@@ -363,7 +363,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>>
     {
 
@@ -491,7 +491,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>>
     {
 
@@ -635,7 +635,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>>
     {
 
@@ -795,7 +795,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>>
     {
 
@@ -971,7 +971,7 @@ namespace DiscriminatedUnions
 
     }
 
-
+    [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>>
     {
 

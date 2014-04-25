@@ -2,7 +2,7 @@
 {
 	using System;
 
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, BaseType> : DiscriminatedUnion<Type1, Type2>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -23,7 +23,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType> : DiscriminatedUnion<Type1, Type2, Type3>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -47,7 +47,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -74,7 +74,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -104,7 +104,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -137,7 +137,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -173,7 +173,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -212,7 +212,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>
         where Type1 : BaseType 
         where Type2 : BaseType 
@@ -254,7 +254,7 @@
             }
         }
     }
-
+    [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType> : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>
         where Type1 : BaseType 
         where Type2 : BaseType 

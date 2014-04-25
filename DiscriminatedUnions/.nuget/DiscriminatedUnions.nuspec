@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DiscriminatedUnions</id>
+        <version>0.5.1</version>
+        <title>.Net Discriminated Unions</title>
+        <authors>Patrick van Lohuizen</authors>
+        <owners>Patrick van Lohuizen</owners>
+        <licenseUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
+        <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
+        <releaseNotes>- assembly version in sync with package version.
+        - made everything serializable</releaseNotes>
+        <copyright>Patrick van Lohuizen</copyright>
+        <language>en-US</language>
+        <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>
+    </metadata>
+    <files>
+        <file src="..\DiscriminatedUnions\bin\Release35\DiscriminatedUnions.dll" target="lib\net35\DiscriminatedUnions.dll" />
+        <file src="..\DiscriminatedUnions\bin\Release40\DiscriminatedUnions.dll" target="lib\net40\DiscriminatedUnions.dll" />
+        <file src="..\DiscriminatedUnions\bin\Release45\DiscriminatedUnions.dll" target="lib\net45\DiscriminatedUnions.dll" />
+        <file src="..\DiscriminatedUnions\bin\Release451\DiscriminatedUnions.dll" target="lib\net451\DiscriminatedUnions.dll" />
+    </files>
+</package>

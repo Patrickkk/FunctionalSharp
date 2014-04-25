@@ -16,7 +16,7 @@ var maxNumberOfTypeArguments = 10;
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
-
+    [Serializable]
     public class DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
