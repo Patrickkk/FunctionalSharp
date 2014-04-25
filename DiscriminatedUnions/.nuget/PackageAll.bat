@@ -4,6 +4,8 @@ nuget.exe update -self
 
 CALL Build.bat
 
-NuGet Pack DiscriminatedUnions.nuspec
+mkdir Publish
+NuGet Pack DiscriminatedUnions.nuspec -OutputDirectory Publish
 Nuget push DiscriminatedUnions*.nupkg
+rmdir Publish /s /q
 pause

@@ -12,7 +12,7 @@
         <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
         <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
         <releaseNotes>- assembly version in sync with package version.
-        - made everything serializable</releaseNotes>
+        - made everything serializable.</releaseNotes>
         <copyright>Patrick van Lohuizen</copyright>
         <language>en-US</language>
         <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>
