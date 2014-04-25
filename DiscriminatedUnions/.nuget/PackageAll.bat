@@ -6,6 +6,6 @@ CALL Build.bat
 
 mkdir Publish
 NuGet Pack DiscriminatedUnions.nuspec -OutputDirectory Publish
-Nuget push DiscriminatedUnions*.nupkg
+Nuget push "\Publish\DiscriminatedUnions*.nupkg"
 rmdir Publish /s /q
 pause
