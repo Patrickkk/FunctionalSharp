@@ -60,34 +60,6 @@ if(numberOfArguments != maxNumberOfTypeArguments)
 
             return result;
         }
-
-        public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
-        {
-            this.ForEach(item => item.Match(
-<#for(var i = 0; i < numberOfArguments -1; i +=1)
-{
-#>
-                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
-<#
-}
-#>
-                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
-
-        public IEnumerable<ReturnType> Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
-        {
-            return this.Select(item => item.Match(
-<#for(var i = 0; i < numberOfArguments -1; i +=1)
-{
-#>
-                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
-<#
-}
-#>
-                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
 <#
 }
 #>
