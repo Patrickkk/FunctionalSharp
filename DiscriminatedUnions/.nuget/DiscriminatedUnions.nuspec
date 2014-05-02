@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DiscriminatedUnions</id>
-        <version>0.5.2</version>
+        <version>0.5.3</version>
         <title>.Net Discriminated Unions</title>
         <authors>Patrick van Lohuizen</authors>
         <owners>Patrick van Lohuizen</owners>
