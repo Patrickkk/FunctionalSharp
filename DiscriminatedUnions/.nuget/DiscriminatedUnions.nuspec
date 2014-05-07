@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
         <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
-        <releaseNotes>- added parameterless constructors to allow for serialization.</releaseNotes>
+        <releaseNotes>- changed match methods to extension methods to allow for usage on list of discriminated unions as well.</releaseNotes>
         <copyright>Patrick van Lohuizen</copyright>
         <language>en-US</language>
         <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>
