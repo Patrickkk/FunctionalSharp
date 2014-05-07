@@ -7,6 +7,7 @@
 namespace DiscriminatedUnions
 {
 	using System;
+	using System.ComponentModel;
 <#
 var maxNumberOfTypeArguments = 10;
 #>
@@ -48,7 +49,7 @@ for(var i = 0; i < numberOfArguments; i +=1)
 					case <#= i#>: return Item<#= i+1 #>;<#
 }#>
 
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }

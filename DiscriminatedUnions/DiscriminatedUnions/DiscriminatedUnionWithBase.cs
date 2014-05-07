@@ -1,6 +1,7 @@
 ﻿namespace DiscriminatedUnions
 {
 	using System;
+	using System.ComponentModel;
 
     [Serializable]
     public class DiscriminatedUnionWithBase<Type1, Type2, BaseType> : DiscriminatedUnion<Type1, Type2>
@@ -22,7 +23,7 @@
                 {
 					case 0: return Item1;
 					case 1: return Item2;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -50,7 +51,7 @@
 					case 0: return Item1;
 					case 1: return Item2;
 					case 2: return Item3;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -81,7 +82,7 @@
 					case 1: return Item2;
 					case 2: return Item3;
 					case 3: return Item4;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -115,7 +116,7 @@
 					case 2: return Item3;
 					case 3: return Item4;
 					case 4: return Item5;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -152,7 +153,7 @@
 					case 3: return Item4;
 					case 4: return Item5;
 					case 5: return Item6;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -192,7 +193,7 @@
 					case 4: return Item5;
 					case 5: return Item6;
 					case 6: return Item7;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -235,7 +236,7 @@
 					case 5: return Item6;
 					case 6: return Item7;
 					case 7: return Item8;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -281,7 +282,7 @@
 					case 6: return Item7;
 					case 7: return Item8;
 					case 8: return Item9;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }
@@ -330,7 +331,7 @@
 					case 7: return Item8;
 					case 8: return Item9;
 					case 9: return Item10;
-                    default: throw new Exception("Unrecognized tag value: " + tag);
+                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
                 }
             }
         }

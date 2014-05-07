@@ -7,6 +7,7 @@
 namespace DiscriminatedUnions
 {
 	using System;
+	using System.ComponentModel;
 <#
 var maxNumberOfTypeArguments = 10;
 #>
@@ -14,7 +15,16 @@ var maxNumberOfTypeArguments = 10;
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
-    [Serializable]
+    /// <summary>
+    /// A Discriminated union for <#= numberOfArguments #> types.
+    /// </summary>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+    /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
+<#
+}
+#>    [Serializable]
     public class DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
     {
 	    /// <summary>
@@ -27,39 +37,60 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        protected readonly Type<#= i + 1 #> Item<#= i + 1 #>;
+		/// <summary>
+        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// </summary>
+        /// <param name="item"></param>
         public DiscriminatedUnion(Type<#= i + 1 #> item) { Item<#= i + 1 #> = item; tag = <#= i #>; }
+		protected readonly Type<#= i + 1 #> Item<#= i + 1 #>;
 <#
 }
 #>
 
+        /// <summary>
+        /// Transforms the union into a new type using the given functions for the transformation.
+        /// </summary>
+        /// <typeparam name="ReturnType"></typeparam>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+        /// <param name="Function<#= i + 1 #>">Function to run for <typeparamref name="Type<#= i + 1 #>"/></param>
+<#
+}#>        /// <returns></returns>
         public ReturnType Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
         {
             switch (tag)
             {
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
-#>
-                case <#= i#>: return Function<#= i+1 #>(Item<#= i + 1 #>);
+#>                case <#= i#>: return Function<#= i+1 #>(Item<#= i + 1 #>);
 <#
 }
 #>
-                default: throw new Exception("Unrecognized tag value: " + tag);
+                default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
             }
         }
 
-		        public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
+		/// <summary>
+        /// Runs Actions for the matched types.
+        /// </summary>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+        /// <param name="Action<#= i+1 #>">Action to run for <typeparamref name="Type<#= i+1 #>"/></param>
+<#
+}
+#>		public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
         {
             switch (tag)
             {
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
-#>
-                case <#= i#>: Action<#= i+1 #>(Item<#= i + 1 #>); break;
+#>                case <#= i#>: Action<#= i+1 #>(Item<#= i + 1 #>); break;
 <#
 }
 #>
-                default: throw new Exception("Unrecognized tag value: " + tag);
+                default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
             }
         }
     }
