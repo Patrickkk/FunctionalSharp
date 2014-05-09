@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DiscriminatedUnions</id>
-        <version>0.5.4</version>
+        <version>0.5.5</version>
         <title>.Net Discriminated Unions</title>
         <authors>Patrick van Lohuizen</authors>
         <owners>Patrick van Lohuizen</owners>
@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
         <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
-        <releaseNotes>- changed match methods to extension methods to allow for usage on list of discriminated unions as well.</releaseNotes>
+        <releaseNotes>- Added extension methods for List of Discriminated union so the add, addrange can be used for these lists.</releaseNotes>
         <copyright>Patrick van Lohuizen</copyright>
         <language>en-US</language>
         <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>

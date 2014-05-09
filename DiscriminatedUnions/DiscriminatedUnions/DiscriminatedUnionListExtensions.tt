@@ -90,6 +90,38 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 <#
 }
 #>
+<#
+////////////////
+for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
+{
+#>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values ,Type<#= i + 1 #> item)
+        {
+            values.Add(new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values ,IEnumerable<Type<#= i + 1 #>> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+<#
+}
+}
+#>
+/////////////////////////
 	}
 }
 <#+

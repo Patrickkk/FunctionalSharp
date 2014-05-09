@@ -80,5 +80,13 @@ namespace DiscriminatedUnions.Test
                 binaryFormatter.Serialize(memoryStream, list);
             }
         }
+
+        [TestMethod]
+        public void TestAddMethodsOnListOfDiscriminatedUnions()
+        {
+            var list = new List<DiscriminatedUnion<string, int>>();
+            list.Add("");
+            list.AddRange(new int[] { 1, 1, 1 });
+        }
     }
 }

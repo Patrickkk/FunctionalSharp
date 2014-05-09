@@ -553,5 +553,1096 @@ namespace DiscriminatedUnions
             ));
         }
 
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2>(this List<DiscriminatedUnion<Type1, Type2>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2>(this List<DiscriminatedUnion<Type1, Type2>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2>(this List<DiscriminatedUnion<Type1, Type2>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2>(this List<DiscriminatedUnion<Type1, Type2>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,Type6 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values ,IEnumerable<Type6> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type6 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type6> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,Type7 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values ,IEnumerable<Type7> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type6 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type6> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type7 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type7> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,Type8 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values ,IEnumerable<Type8> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type6 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type6> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type7 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type7> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type8 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type8> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,Type9 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values ,IEnumerable<Type9> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type1 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type1> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type2 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type2> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type3 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type3> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type4 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type4> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type5 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type5> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type6 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type6> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type7 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type7> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type8 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type8> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type9 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type9> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+        /// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Add<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,Type10 item)
+        {
+            values.Add(new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(item));
+        }
+
+		/// <summary>
+        /// Adds the object to the end of the DiscriminatedUnionList
+        /// </summary>
+        /// <param name="item"></param>
+		public static void AddRange<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> values ,IEnumerable<Type10> collectionToAdd)
+        {
+            foreach (var item in collectionToAdd)
+            {
+                values.Add(item);
+            }
+        }
+
+/////////////////////////
 	}
 }
