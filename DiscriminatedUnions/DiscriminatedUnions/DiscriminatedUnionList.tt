@@ -40,7 +40,7 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type<#= i + 1 #>> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -53,6 +53,12 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 if(numberOfArguments != maxNumberOfTypeArguments)
 {
 #>
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge>();

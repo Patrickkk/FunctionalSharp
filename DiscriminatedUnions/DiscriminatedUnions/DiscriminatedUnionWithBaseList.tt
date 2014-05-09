@@ -34,6 +34,10 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
             this.Add(new DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type<#= i + 1 #>> collectionToAdd)
         {
             foreach (var item in collectionToAdd)

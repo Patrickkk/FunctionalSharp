@@ -17,6 +17,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -30,6 +34,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -70,6 +78,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -83,6 +95,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -96,6 +112,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -138,6 +158,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -151,6 +175,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -164,6 +192,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -177,6 +209,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -221,6 +257,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -234,6 +274,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -247,6 +291,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -260,6 +308,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -273,6 +325,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -319,6 +375,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -332,6 +392,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -345,6 +409,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -358,6 +426,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -371,6 +443,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -384,6 +460,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -432,6 +512,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -445,6 +529,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -458,6 +546,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -471,6 +563,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -484,6 +580,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -497,6 +597,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -510,6 +614,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -560,6 +668,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -573,6 +685,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -586,6 +702,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -599,6 +719,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -612,6 +736,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -625,6 +753,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -638,6 +770,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -651,6 +787,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -703,6 +843,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -716,6 +860,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -729,6 +877,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -742,6 +894,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -755,6 +911,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -768,6 +928,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -781,6 +945,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -794,6 +962,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -807,6 +979,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -861,6 +1037,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -874,6 +1054,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -887,6 +1071,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -900,6 +1088,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -913,6 +1105,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -926,6 +1122,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -939,6 +1139,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -952,6 +1156,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -965,6 +1173,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -978,6 +1190,10 @@
             this.Add(new DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>(item));
         }
 
+		/// <summary>
+        /// Adds a Enumerable of items to the list.
+        /// </summary>
+        /// <param name="collectionToAdd">The items to add.</param>
 		public void AddRange(IEnumerable<Type10> collectionToAdd)
         {
             foreach (var item in collectionToAdd)

@@ -25,7 +25,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -45,7 +45,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -54,6 +54,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, TypeToMerge>();
@@ -93,7 +99,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -113,7 +119,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -133,7 +139,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -142,6 +148,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, TypeToMerge>();
@@ -183,7 +195,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -203,7 +215,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -223,7 +235,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -243,7 +255,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -252,6 +264,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, TypeToMerge>();
@@ -295,7 +313,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -315,7 +333,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -335,7 +353,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -355,7 +373,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -375,7 +393,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -384,6 +402,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, TypeToMerge>();
@@ -429,7 +453,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -449,7 +473,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -469,7 +493,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -489,7 +513,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -509,7 +533,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -529,7 +553,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -538,6 +562,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, TypeToMerge>();
@@ -585,7 +615,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -605,7 +635,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -625,7 +655,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -645,7 +675,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -665,7 +695,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -685,7 +715,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -705,7 +735,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -714,6 +744,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, TypeToMerge>();
@@ -763,7 +799,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -783,7 +819,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -803,7 +839,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -823,7 +859,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -843,7 +879,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -863,7 +899,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -883,7 +919,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -903,7 +939,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -912,6 +948,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, TypeToMerge>();
@@ -963,7 +1005,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -983,7 +1025,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1003,7 +1045,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1023,7 +1065,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1043,7 +1085,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1063,7 +1105,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1083,7 +1125,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1103,7 +1145,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1123,7 +1165,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1132,6 +1174,12 @@ namespace DiscriminatedUnions
             }
         }
 
+        /// <summary>
+        /// Merges a type into the existing discriminated union list. 
+        /// </summary>
+        /// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+        /// <param name="toMerge">The Items to merge.</param>
+        /// <returns></returns>
         public DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
         {
             var result = new DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, TypeToMerge>();
@@ -1185,7 +1233,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type1> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1205,7 +1253,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type2> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1225,7 +1273,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type3> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1245,7 +1293,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type4> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1265,7 +1313,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type5> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1285,7 +1333,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type6> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1305,7 +1353,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type7> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1325,7 +1373,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type8> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1345,7 +1393,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type9> collectionToAdd)
         {
             foreach (var item in collectionToAdd)
@@ -1365,7 +1413,7 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Adds the object to the end of the DiscriminatedUnionList
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="collectionToAdd"></param>
 		public void AddRange(IEnumerable<Type10> collectionToAdd)
         {
             foreach (var item in collectionToAdd)

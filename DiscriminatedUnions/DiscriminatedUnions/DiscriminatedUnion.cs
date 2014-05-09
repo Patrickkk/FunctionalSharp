@@ -23,6 +23,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -31,13 +34,21 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 
@@ -91,6 +102,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -99,20 +113,32 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 
@@ -171,6 +197,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -179,27 +208,43 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 
@@ -263,6 +308,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -271,34 +319,54 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 
@@ -367,6 +435,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -375,41 +446,65 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type6"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type6 item) { Item6 = item; tag = 5; }
+		
+		/// <summary>
+        /// The storage for type6.
+        /// </summary>
 		protected readonly Type6 Item6;
 
 
@@ -483,6 +578,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -491,48 +589,76 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type6"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type6 item) { Item6 = item; tag = 5; }
+		
+		/// <summary>
+        /// The storage for type6.
+        /// </summary>
 		protected readonly Type6 Item6;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type7"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type7 item) { Item7 = item; tag = 6; }
+		
+		/// <summary>
+        /// The storage for type7.
+        /// </summary>
 		protected readonly Type7 Item7;
 
 
@@ -611,6 +737,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -619,55 +748,87 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type6"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type6 item) { Item6 = item; tag = 5; }
+		
+		/// <summary>
+        /// The storage for type6.
+        /// </summary>
 		protected readonly Type6 Item6;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type7"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type7 item) { Item7 = item; tag = 6; }
+		
+		/// <summary>
+        /// The storage for type7.
+        /// </summary>
 		protected readonly Type7 Item7;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type8"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type8 item) { Item8 = item; tag = 7; }
+		
+		/// <summary>
+        /// The storage for type8.
+        /// </summary>
 		protected readonly Type8 Item8;
 
 
@@ -751,6 +912,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -759,62 +923,98 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type6"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type6 item) { Item6 = item; tag = 5; }
+		
+		/// <summary>
+        /// The storage for type6.
+        /// </summary>
 		protected readonly Type6 Item6;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type7"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type7 item) { Item7 = item; tag = 6; }
+		
+		/// <summary>
+        /// The storage for type7.
+        /// </summary>
 		protected readonly Type7 Item7;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type8"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type8 item) { Item8 = item; tag = 7; }
+		
+		/// <summary>
+        /// The storage for type8.
+        /// </summary>
 		protected readonly Type8 Item8;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type9"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type9 item) { Item9 = item; tag = 8; }
+		
+		/// <summary>
+        /// The storage for type9.
+        /// </summary>
 		protected readonly Type9 Item9;
 
 
@@ -903,6 +1103,9 @@ namespace DiscriminatedUnions
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 
@@ -911,69 +1114,109 @@ namespace DiscriminatedUnions
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type1 item) { Item1 = item; tag = 0; }
+		
+		/// <summary>
+        /// The storage for type1.
+        /// </summary>
 		protected readonly Type1 Item1;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type2"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type2 item) { Item2 = item; tag = 1; }
+		
+		/// <summary>
+        /// The storage for type2.
+        /// </summary>
 		protected readonly Type2 Item2;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type3"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type3 item) { Item3 = item; tag = 2; }
+		
+		/// <summary>
+        /// The storage for type3.
+        /// </summary>
 		protected readonly Type3 Item3;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type4"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type4 item) { Item4 = item; tag = 3; }
+		
+		/// <summary>
+        /// The storage for type4.
+        /// </summary>
 		protected readonly Type4 Item4;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type5"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type5 item) { Item5 = item; tag = 4; }
+		
+		/// <summary>
+        /// The storage for type5.
+        /// </summary>
 		protected readonly Type5 Item5;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type6"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type6 item) { Item6 = item; tag = 5; }
+		
+		/// <summary>
+        /// The storage for type6.
+        /// </summary>
 		protected readonly Type6 Item6;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type7"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type7 item) { Item7 = item; tag = 6; }
+		
+		/// <summary>
+        /// The storage for type7.
+        /// </summary>
 		protected readonly Type7 Item7;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type8"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type8 item) { Item8 = item; tag = 7; }
+		
+		/// <summary>
+        /// The storage for type8.
+        /// </summary>
 		protected readonly Type8 Item8;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type9"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type9 item) { Item9 = item; tag = 8; }
+		
+		/// <summary>
+        /// The storage for type9.
+        /// </summary>
 		protected readonly Type9 Item9;
 
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type10"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type10 item) { Item10 = item; tag = 9; }
+		
+		/// <summary>
+        /// The storage for type10.
+        /// </summary>
 		protected readonly Type10 Item10;
 
 

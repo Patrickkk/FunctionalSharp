@@ -19,15 +19,15 @@ namespace DiscriminatedUnions.Test
 
             list.Match(
                 stringItem =>
-                {
-                    Assert.AreEqual("string", stringItem);
-                    Assert.AreEqual(typeof(string), stringItem.GetType());
-                },
+            {
+                Assert.AreEqual("string", stringItem);
+                Assert.AreEqual(typeof(string), stringItem.GetType());
+            },
                 intItem =>
-                {
-                    Assert.AreEqual(10, intItem);
-                    Assert.AreEqual(typeof(int), intItem.GetType());
-                });
+            {
+                Assert.AreEqual(10, intItem);
+                Assert.AreEqual(typeof(int), intItem.GetType());
+            });
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace DiscriminatedUnions.Test
             list.Add("string");
             list.Add(10);
             var merged = list.Merge(floatList);
-            list.Select( uinion => uinion.Match(
+            list.Select(uinion => uinion.Match(
                 item => item,
                 item => null
                 ));

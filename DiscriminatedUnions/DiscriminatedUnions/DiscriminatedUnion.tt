@@ -32,16 +32,23 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
         /// </summary>
         protected DiscriminatedUnion() { }
 
+	    /// <summary>
+        /// The tag indicating what item is actually stored.
+        /// </summary>
 	    protected int tag;
 
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type1"/>
+        /// Creates a new Discriminated union of with <typeparamref name="Type<#= i + 1 #>"/>
         /// </summary>
         /// <param name="item"></param>
         public DiscriminatedUnion(Type<#= i + 1 #> item) { Item<#= i + 1 #> = item; tag = <#= i #>; }
+		
+		/// <summary>
+        /// The storage for type<#= i + 1 #>.
+        /// </summary>
 		protected readonly Type<#= i + 1 #> Item<#= i + 1 #>;
 <#
 }
