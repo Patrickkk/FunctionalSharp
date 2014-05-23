@@ -21,34 +21,6 @@ var maxNumberOfTypeArguments = 10;
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
-		public static void Match<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,  <#= ActionArgumentsFor(numberOfArguments) #>)
-        {
-            values.ForEach(item => item.Match(
-<#for(var i = 0; i < numberOfArguments -1; i +=1)
-{
-#>
-                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
-<#
-}
-#>
-                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
-
-        public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, ReturnType>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
-        {
-            return values.Select(item => item.Match(
-<#for(var i = 0; i < numberOfArguments -1; i +=1)
-{
-#>
-                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
-<#
-}
-#>
-                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
-
 		/// <summary>
         /// Runs actions for the specific matching types.
         /// </summary>

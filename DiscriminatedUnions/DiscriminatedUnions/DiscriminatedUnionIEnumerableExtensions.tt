@@ -50,6 +50,40 @@ for(var i = 0; i < numberOfArguments; i +=1)
 }
 #>
         }
+
+		public static void Match<<#= TypeArgumentsFor(numberOfArguments) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,  <#= ActionArgumentsFor(numberOfArguments) #>)
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item));
+			}
+        }
+
+        public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, ReturnType>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
+        {
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				<#for(var i = 0; i < numberOfArguments -1; i +=1)
+{
+#>
+                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
+<#
+}
+#>
+                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item));
+            }
+	    }
+
+
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
         /// </summary>
