@@ -168,38 +168,7 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 <#
 }
 }
-
-for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments -1; numberOfArguments +=1)
-{
 #>
-        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>> Merge<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values, Type<#= numberOfArguments + 1 #> newType)
-        {
-			return values.Merge((IEnumerable<Type<#= numberOfArguments + 1#>>)new List<Type<#= numberOfArguments + 1#>>{ newType });
-		}
-
-        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>> Merge<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values, IEnumerable<Type<#= numberOfArguments + 1 #>> newTypes)
-        {
-            foreach (var item in values)
-            {
-			     yield return item.Match(
-<#for(var i = 0; i < numberOfArguments -1; i +=1)
-{
-#>
-                     type<#= i + 1 #>Item => new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(type<#= i + 1 #>Item),
-<#
-}
-#>
-                     type<#= numberOfArguments #>Item => new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(type<#= numberOfArguments #>Item));
-            }
-            foreach (var item in newTypes)
-            {
-                yield return new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(item);
-            }
-        }
-<#
-}
-#>
-
 	}
 }
 <#+
