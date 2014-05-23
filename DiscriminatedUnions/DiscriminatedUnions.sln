@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscriminatedUnions", "Disc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{529DF31D-C05E-4054-92B0-8DF47039D863}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generation", "Generation", "{396F283A-D7B2-4958-BD1A-29A38B2034D3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscriminatedUnions.Test", "DiscriminatedUnions.Test\DiscriminatedUnions.Test.csproj", "{20BA97A5-A664-4919-89D7-47ACB026F372}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{647BDD27-DDF5-4489-8C05-00388948A929}"
