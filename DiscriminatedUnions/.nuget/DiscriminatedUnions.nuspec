@@ -11,7 +11,11 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
         <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
-        <releaseNotes>- Added extension methods for List of Discriminated union so the add, addrange can be used for these lists.</releaseNotes>
+        <releaseNotes>
+          - Added merge to IEnumerable of discriminated union.
+          - Added comments for all public memebers.
+          - moved match methods into the IEnumerable extensions since it can work on every IEnumerable.
+        </releaseNotes>
         <copyright>Patrick van Lohuizen</copyright>
         <language>en-US</language>
         <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>
