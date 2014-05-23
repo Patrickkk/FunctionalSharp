@@ -96,7 +96,7 @@ for(var i = 0; i < numberOfArguments; i +=1)
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>> Merge<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values, Type<#= numberOfArguments + 1 #> item)
+        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>> MergeItem<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values, Type<#= numberOfArguments + 1 #> item)
         {
 			return values.Merge((IEnumerable<Type<#= numberOfArguments + 1#>>)new List<Type<#= numberOfArguments + 1#>>{ item });
 		}

@@ -64,7 +64,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3>> Merge<Type1, Type2, Type3>(this IEnumerable<DiscriminatedUnion<Type1, Type2>> values, Type3 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3>> MergeItem<Type1, Type2, Type3>(this IEnumerable<DiscriminatedUnion<Type1, Type2>> values, Type3 item)
         {
 			return values.Merge((IEnumerable<Type3>)new List<Type3>{ item });
 		}
@@ -148,7 +148,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4>> Merge<Type1, Type2, Type3, Type4>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3>> values, Type4 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4>> MergeItem<Type1, Type2, Type3, Type4>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3>> values, Type4 item)
         {
 			return values.Merge((IEnumerable<Type4>)new List<Type4>{ item });
 		}
@@ -243,7 +243,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> Merge<Type1, Type2, Type3, Type4, Type5>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values, Type5 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> MergeItem<Type1, Type2, Type3, Type4, Type5>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values, Type5 item)
         {
 			return values.Merge((IEnumerable<Type5>)new List<Type5>{ item });
 		}
@@ -349,7 +349,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> Merge<Type1, Type2, Type3, Type4, Type5, Type6>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values, Type6 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> MergeItem<Type1, Type2, Type3, Type4, Type5, Type6>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values, Type6 item)
         {
 			return values.Merge((IEnumerable<Type6>)new List<Type6>{ item });
 		}
@@ -466,7 +466,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> Merge<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values, Type7 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> MergeItem<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values, Type7 item)
         {
 			return values.Merge((IEnumerable<Type7>)new List<Type7>{ item });
 		}
@@ -594,7 +594,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> Merge<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values, Type8 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> MergeItem<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values, Type8 item)
         {
 			return values.Merge((IEnumerable<Type8>)new List<Type8>{ item });
 		}
@@ -733,7 +733,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> Merge<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values, Type9 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> MergeItem<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values, Type9 item)
         {
 			return values.Merge((IEnumerable<Type9>)new List<Type9>{ item });
 		}
@@ -883,7 +883,7 @@ namespace DiscriminatedUnions
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> Merge<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values, Type10 item)
+        public static IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>> MergeItem<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values, Type10 item)
         {
 			return values.Merge((IEnumerable<Type10>)new List<Type10>{ item });
 		}
