@@ -1,0 +1,43 @@
+﻿<#+
+public string TypeArgumentsFor(int numberOfArguments)
+{
+	return ArgumentsFor("Type{0}, ", numberOfArguments);
+}
+
+public string FunctionArgumentsFor(int numberOfArguments)
+{
+	return ArgumentsFor("Func<Type{0}, ReturnType> Function{0}, ", numberOfArguments);
+}
+
+public string ActionArgumentsFor(int numberOfArguments)
+{
+	return ArgumentsFor("Action<Type{0}> Action{0}, ", numberOfArguments);
+}
+
+public string ArgumentsFor(string format, int numberOfArguments, int start = 0)
+{
+	var result = "";
+	for(var i = start; i < numberOfArguments; i+=1)
+	{
+		result += String.Format(format,i + 1);
+	}
+	return result.Trim(' ').Trim(',');
+}
+
+public string TypeParamsFor(int numberOfArguments, int start = 0)
+{
+    return CommentsFor("        /// <typeparam name=\"Type{0}\">Type{0}</typeparam>", numberOfArguments, start);
+}
+
+public string CommentsFor(string format, int numberOfArguments, int start = 0)
+{
+    var result = "";
+    for (var i = start; i < numberOfArguments -1; i += 1)
+    {
+        result += String.Format(format, i + 1);
+		result += Environment.NewLine;
+    }
+	result += String.Format(format, numberOfArguments);
+	return result;
+}
+#>

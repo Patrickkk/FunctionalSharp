@@ -24,12 +24,8 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 		/// <summary>
         /// Runs actions for the specific matching types.
         /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}
-#>        /// <typeparam name="BaseType"></typeparam>
+<#= TypeParamsFor(numberOfArguments) #>
+        /// <typeparam name="BaseType"></typeparam>
         /// <param name="values"></param>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
@@ -62,12 +58,8 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 		/// <summary>
         /// Transforms the list matching the specific types and extecuting a function for them.
         /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}
-#>        /// <typeparam name="BaseType"></typeparam>
+<#= TypeParamsFor(numberOfArguments) #>
+        /// <typeparam name="BaseType"></typeparam>
         /// <typeparam name="ReturnType"></typeparam>
         /// <param name="values"></param>
 <#for(var i = 0; i < numberOfArguments; i +=1)
@@ -143,34 +135,5 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 #>
 	}
 }
-<#+
-public string TypeArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Type{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
 
-public string FunctionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-
-public string ActionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-#>
+<#@ include file="GenerationHelpers.txt" #>

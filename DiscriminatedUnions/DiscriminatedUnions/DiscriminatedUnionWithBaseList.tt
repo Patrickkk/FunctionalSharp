@@ -81,34 +81,5 @@ if(numberOfArguments != maxNumberOfTypeArguments)
 }
 #>
 }
-<#+
-public string TypeArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Type{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
 
-public string FunctionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-
-public string ActionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-#>
+<#@ include file="GenerationHelpers.txt" #>

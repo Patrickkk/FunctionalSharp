@@ -18,12 +18,8 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-{
-#>
-    /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}#>    [Serializable]
+<#= TypeParamsFor(numberOfArguments) #>
+    [Serializable]
     public class DiscriminatedUnionList<<#= TypeArgumentsFor(numberOfArguments) #>> : List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>>
     {
 <#for(var i = 0; i < numberOfArguments; i +=1)
@@ -89,34 +85,5 @@ if(numberOfArguments != maxNumberOfTypeArguments)
 }
 #>
 }
-<#+
-public string TypeArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Type{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
 
-public string FunctionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-
-public string ActionArgumentsFor(int numberOfArguments)
-{
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
-}
-#>
+<#@ include file="GenerationHelpers.txt" #>

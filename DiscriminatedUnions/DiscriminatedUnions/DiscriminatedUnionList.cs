@@ -8,8 +8,8 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2> : List<DiscriminatedUnion<Type1, Type2>>
     {
@@ -81,9 +81,9 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3> : List<DiscriminatedUnion<Type1, Type2, Type3>>
     {
@@ -176,10 +176,10 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4>>
     {
@@ -293,11 +293,11 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>>
     {
@@ -432,12 +432,12 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
-    /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>>
     {
@@ -593,13 +593,13 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
-    /// <typeparam name="Type6">Type6</typeparam>
-    /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>>
     {
@@ -776,14 +776,14 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
-    /// <typeparam name="Type6">Type6</typeparam>
-    /// <typeparam name="Type7">Type7</typeparam>
-    /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>>
     {
@@ -981,15 +981,15 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
-    /// <typeparam name="Type6">Type6</typeparam>
-    /// <typeparam name="Type7">Type7</typeparam>
-    /// <typeparam name="Type8">Type8</typeparam>
-    /// <typeparam name="Type9">Type9</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="Type9">Type9</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>>
     {
@@ -1208,16 +1208,16 @@ namespace DiscriminatedUnions
     /// <summary>
     /// Represents a list of Discriminated unions. Using this list you can add items without having to specify the union type.
     /// </summary>
-    /// <typeparam name="Type1">Type1</typeparam>
-    /// <typeparam name="Type2">Type2</typeparam>
-    /// <typeparam name="Type3">Type3</typeparam>
-    /// <typeparam name="Type4">Type4</typeparam>
-    /// <typeparam name="Type5">Type5</typeparam>
-    /// <typeparam name="Type6">Type6</typeparam>
-    /// <typeparam name="Type7">Type7</typeparam>
-    /// <typeparam name="Type8">Type8</typeparam>
-    /// <typeparam name="Type9">Type9</typeparam>
-    /// <typeparam name="Type10">Type10</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="Type9">Type9</typeparam>
+        /// <typeparam name="Type10">Type10</typeparam>
     [Serializable]
     public class DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10> : List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>>
     {
@@ -1425,3 +1425,4 @@ namespace DiscriminatedUnions
     }
 
 }
+
