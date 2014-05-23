@@ -1,12 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using DiscriminatedUnions;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace DiscriminatedUnions.Test
+﻿namespace DiscriminatedUnions.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Linq;
+
     [TestClass]
     public class DiscriminatedUnionIEnumerableTest
     {
@@ -40,7 +36,6 @@ namespace DiscriminatedUnions.Test
         public void IEnumerableMatchActionTest()
         {
             var enumerableUnion = new string[] { "string1" }.Merge(new int[] { 10 });
-
             enumerableUnion.Match(
                 stringItem =>
             {
