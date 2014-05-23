@@ -96,6 +96,7 @@
     <Compile Include="TestModelClasses\Person.cs" />
     <Compile Include="TestModelClasses\Student.cs" />
     <Compile Include="TestModelClasses\Teacher.cs" />
+    <Compile Include="DiscriminatedUnionIEnumerableTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DiscriminatedUnions\DiscriminatedUnions.csproj">

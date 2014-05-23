@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DiscriminatedUnions.Test
 {
-    class NamedUnion : DiscriminatedUnion<string, int>
+    public class NamedUnion : DiscriminatedUnion<string, int>
     {
         public NamedUnion(int value) : base(value) { }
         public NamedUnion(string value) : base(value) { }
