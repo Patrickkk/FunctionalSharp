@@ -67,7 +67,7 @@ for(var i = 0; i < numberOfArguments; i +=1)
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, ReturnType>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
+        public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, ReturnType>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
         {
 			foreach(var item in values)
 			{

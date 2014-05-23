@@ -45,7 +45,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, ReturnType>(this List<DiscriminatedUnion<Type1, Type2>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2)
         {
 			foreach(var item in values)
 			{
@@ -127,7 +127,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3)
         {
 			foreach(var item in values)
 			{
@@ -220,7 +220,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4)
         {
 			foreach(var item in values)
 			{
@@ -324,7 +324,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5)
         {
 			foreach(var item in values)
 			{
@@ -439,7 +439,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6)
         {
 			foreach(var item in values)
 			{
@@ -565,7 +565,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7)
         {
 			foreach(var item in values)
 			{
@@ -702,7 +702,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8)
         {
 			foreach(var item in values)
 			{
@@ -850,7 +850,7 @@ namespace DiscriminatedUnions
 			}
         }
 
-        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, ReturnType>(this List<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8, Func<Type9, ReturnType> Function9)
+        public static IEnumerable<ReturnType> Match<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, ReturnType>(this IEnumerable<DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8, Func<Type9, ReturnType> Function9)
         {
 			foreach(var item in values)
 			{
