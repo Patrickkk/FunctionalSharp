@@ -20,37 +20,13 @@ var maxNumberOfTypeArguments = 10;
 <#	    
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments -1; numberOfArguments +=1)
 {
-#>        /// <summary>
-        /// Merges to given collections into a discriminated union collection.
+#>
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
         /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}
-#>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <param name="type<#= i + 1 #>Values">a collection to merge</param>
-<#
-}
-#>
-        /// <returns>Discriminated unions of all types.</returns>
-        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> Merge<<#= TypeArgumentsFor(numberOfArguments) #>>(this IEnumerable<Type1> type1Values, <#= ArgumentsFor("IEnumerable<Type{0}> type{0}Values, ", numberOfArguments, 1)#>)
-        {
-<#
-for(var i = 0; i < numberOfArguments; i +=1)
-{
-#>
-            foreach (var type<#= i + 1 #>Value in type<#= i + 1 #>Values)
-            {
-                yield return new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(type<#= i + 1 #>Value);
-            }
-<#
-}
-#>
-        }
-
+<#= TypeParamsFor(numberOfArguments) #>
+<#= CommentsFor("        /// <param name=\"Action{0}\">Action to run for Type{0}</param>",numberOfArguments) #>
+        /// <param name="values">existing Discriminated unions</param>
 		public static void Match<<#= TypeArgumentsFor(numberOfArguments) #>>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,  <#= ActionArgumentsFor(numberOfArguments) #>)
         {
 			foreach(var item in values)
@@ -67,6 +43,13 @@ for(var i = 0; i < numberOfArguments; i +=1)
 			}
         }
 
+		/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+<#= TypeParamsFor(numberOfArguments) #>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+<#= CommentsFor("        /// <param name=\"Function{0}\">Function to run for Type{0}</param>",numberOfArguments) #>
+        /// <param name="values">existing Discriminated unions</param>
         public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, ReturnType>(this IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
         {
 			foreach(var item in values)
@@ -87,12 +70,7 @@ for(var i = 0; i < numberOfArguments; i +=1)
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
         /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}
-#>
+<#= TypeParamsFor(numberOfArguments + 1) #>
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -104,12 +82,7 @@ for(var i = 0; i < numberOfArguments; i +=1)
 		/// <summary>
         /// Merges the item intos the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the items as a new option.
         /// </summary>
-<#for(var i = 0; i < numberOfArguments; i +=1)
-		{
-#>        /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
-<#
-}
-#>
+<#= TypeParamsFor(numberOfArguments + 1) #>
         /// <param name="values">existing Discriminated unions</param>
         /// <param name="items"></param>
         /// <returns></returns>
@@ -132,6 +105,32 @@ for(var i = 0; i < numberOfArguments; i +=1)
                 yield return new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments + 1) #>>(item);
             }
         }
+
+		        /// <summary>
+        /// Merges to given collections into a discriminated union collection.
+        /// </summary>
+<#= TypeParamsFor(numberOfArguments) #>
+<#for(var i = 0; i < numberOfArguments; i +=1)
+		{
+#>        /// <param name="type<#= i + 1 #>Values">a collection to merge</param>
+<#
+}
+#>
+        /// <returns>Discriminated unions of all types.</returns>
+        public static IEnumerable<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> Merge<<#= TypeArgumentsFor(numberOfArguments) #>>(this IEnumerable<Type1> type1Values, <#= ArgumentsFor("IEnumerable<Type{0}> type{0}Values, ", numberOfArguments, 1)#>)
+        {
+<#
+for(var i = 0; i < numberOfArguments; i +=1)
+{
+#>
+            foreach (var type<#= i + 1 #>Value in type<#= i + 1 #>Values)
+            {
+                yield return new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(type<#= i + 1 #>Value);
+            }
+<#
+}
+#>
+        }
 <#
 }
 #>
@@ -141,32 +140,17 @@ for(var i = 0; i < numberOfArguments; i +=1)
 <#+
 public string TypeArgumentsFor(int numberOfArguments)
 {
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Type{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
+	return ArgumentsFor("Type{0}, ", numberOfArguments);
 }
 
 public string FunctionArgumentsFor(int numberOfArguments)
 {
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Func<Type{0}, ReturnType> Function{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
+	return ArgumentsFor("Func<Type{0}, ReturnType> Function{0}, ", numberOfArguments);
 }
 
 public string ActionArgumentsFor(int numberOfArguments)
 {
-	var result = "";
-	for(var i = 0; i < numberOfArguments; i+=1)
-	{
-		result += String.Format("Action<Type{0}> Action{0}, ",i + 1);
-	}
-	return result.Trim(' ').Trim(',');
+	return ArgumentsFor("Action<Type{0}> Action{0}, ", numberOfArguments);
 }
 
 public string ArgumentsFor(string format, int numberOfArguments, int start = 0)
@@ -177,5 +161,22 @@ public string ArgumentsFor(string format, int numberOfArguments, int start = 0)
 		result += String.Format(format,i + 1);
 	}
 	return result.Trim(' ').Trim(',');
+}
+
+public string TypeParamsFor(int numberOfArguments, int start = 0)
+{
+    return CommentsFor("        /// <typeparam name=\"Type{0}\">Type{0}</typeparam>", numberOfArguments, start);
+}
+
+public string CommentsFor(string format, int numberOfArguments, int start = 0)
+{
+    var result = "";
+    for (var i = start; i < numberOfArguments -1; i += 1)
+    {
+        result += String.Format(format, i + 1);
+		result += Environment.NewLine;
+    }
+	result += String.Format(format, numberOfArguments);
+	return result;
 }
 #>
