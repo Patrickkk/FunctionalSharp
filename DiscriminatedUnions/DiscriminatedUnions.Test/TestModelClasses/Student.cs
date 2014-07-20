@@ -1,6 +1,6 @@
 ﻿namespace DiscriminatedUnions.Test.TestModelClasses
 {
-    class Student : Person
+    public class Student : Person
     {
     }
 }

@@ -1,0 +1,90 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+var @namespace = "DiscriminatedUnions.Test";
+var unionName = "GeneratedNamedUnion";
+var unionListName = unionName + "List";
+var unionTypes = new string[] {"Teacher", "Student"};
+var usings = new string[] 
+{
+"using DiscriminatedUnions.Test.TestModelClasses;"
+};
+#>
+
+namespace <#= @namespace #>
+{
+	using System;
+	using System.Collections.Generic;<#=String.Join(Environment.NewLine + "	using ", usings)#>
+
+	[Serializable]
+	public class <#=unionName #> : DiscriminatedUnion<<#= String.Join(",",unionTypes) #>>
+	{
+<#
+foreach(var type in unionTypes)
+{
+#>
+		/// <summary>
+		/// Creates a new <#= unionName#> representing a <#= type#>.
+		/// </summary>
+		/// <param name="<#= LowerFirst(type)#>"></param>
+		public <#=unionName #>(<#= type#> <#= LowerFirst(type)#>) : base(<#= LowerFirst(type)#>) { }
+<#
+}
+#>
+	}
+
+
+    /// <summary>
+    /// Represents a list of generic type arguments. 
+    /// </summary>
+    [Serializable]
+    public class TypescriptGenericTypeArguments : List<<#= unionName#>>
+    {
+	<#
+foreach(var type in unionTypes)
+{
+#>
+        /// <summary>
+        /// Creates and adds a new <#= unionName#> using the given <#= type#>.
+        /// </summary>
+        /// <param name="primitive">The primitive to add.</param>
+        public void Add(<#= type#> <#= LowerFirst(type)#>)
+        {
+            Add(new <#= unionName#>(<#= LowerFirst(type)#>));
+        }
+		<#
+}
+#>
+    }
+
+
+	public static class <#=unionName #>Extensions
+	{
+<#
+foreach(var type in unionTypes)
+{
+#>
+		/// <summary>
+		/// Turns the <#= type#> into a <#= unionName#>.
+		/// </summary>
+		/// <param name="<#= LowerFirst(type)#>"></param>
+		public static <#=unionName #> To<#=unionName #>(this <#= type#> <#= LowerFirst(type)#>)
+		{
+			return new <#=unionName #>(<#= LowerFirst(type)#>);
+		}
+<#
+}
+#>
+	}
+}
+
+<#+
+public string LowerFirst(string value)
+{
+	return char.ToLowerInvariant(value[0]) + value.Substring(1);
+}
+#>
