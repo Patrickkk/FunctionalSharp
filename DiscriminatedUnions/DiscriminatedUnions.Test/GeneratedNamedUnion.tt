@@ -5,20 +5,19 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 <#
-var @namespace = "DiscriminatedUnions.Test";
-var unionName = "GeneratedNamedUnion";
+var @namespace = "TypescriptGeneration.Model";
+var unionName = "TestNamedUnionGeneration";
 var unionListName = unionName + "List";
-var unionTypes = new string[] {"Teacher", "Student"};
-var usings = new string[] 
-{
-"using DiscriminatedUnions.Test.TestModelClasses;"
-};
+var unionTypes = new string[] {"Person", "Teacher"};
+var usings = new string[] { "DiscriminatedUnions.Test.TestModelClasses"};
 #>
 
 namespace <#= @namespace #>
 {
 	using System;
-	using System.Collections.Generic;<#=String.Join(Environment.NewLine + "	using ", usings)#>
+	using DiscriminatedUnions;
+	using System.Collections.Generic;
+	using <#=String.Join(";" + Environment.NewLine + "	using ", usings)#>;
 
 	[Serializable]
 	public class <#=unionName #> : DiscriminatedUnion<<#= String.Join(",",unionTypes) #>>
@@ -42,7 +41,7 @@ foreach(var type in unionTypes)
     /// Represents a list of generic type arguments. 
     /// </summary>
     [Serializable]
-    public class TypescriptGenericTypeArguments : List<<#= unionName#>>
+    public class <#=unionListName #> : List<<#= unionName#>>
     {
 	<#
 foreach(var type in unionTypes)
@@ -58,8 +57,7 @@ foreach(var type in unionTypes)
         }
 		<#
 }
-#>
-    }
+#>    }
 
 
 	public static class <#=unionName #>Extensions

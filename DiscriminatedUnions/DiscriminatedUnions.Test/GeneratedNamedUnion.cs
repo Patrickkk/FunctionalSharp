@@ -1,22 +1,24 @@
 ﻿
-namespace DiscriminatedUnions.Test
+namespace TypescriptGeneration.Model
 {
 	using System;
-	using System.Collections.Generic;using DiscriminatedUnions.Test.TestModelClasses;
+	using DiscriminatedUnions;
+	using System.Collections.Generic;
+	using DiscriminatedUnions.Test.TestModelClasses;
 
 	[Serializable]
-	public class GeneratedNamedUnion : DiscriminatedUnion<Teacher,Student>
+	public class TestNamedUnionGeneration : DiscriminatedUnion<Person,Teacher>
 	{
 		/// <summary>
-		/// Creates a new GeneratedNamedUnion representing a Teacher.
+		/// Creates a new TestNamedUnionGeneration representing a Person.
+		/// </summary>
+		/// <param name="person"></param>
+		public TestNamedUnionGeneration(Person person) : base(person) { }
+		/// <summary>
+		/// Creates a new TestNamedUnionGeneration representing a Teacher.
 		/// </summary>
 		/// <param name="teacher"></param>
-		public GeneratedNamedUnion(Teacher teacher) : base(teacher) { }
-		/// <summary>
-		/// Creates a new GeneratedNamedUnion representing a Student.
-		/// </summary>
-		/// <param name="student"></param>
-		public GeneratedNamedUnion(Student student) : base(student) { }
+		public TestNamedUnionGeneration(Teacher teacher) : base(teacher) { }
 	}
 
 
@@ -24,44 +26,44 @@ namespace DiscriminatedUnions.Test
     /// Represents a list of generic type arguments. 
     /// </summary>
     [Serializable]
-    public class TypescriptGenericTypeArguments : List<GeneratedNamedUnion>
+    public class TestNamedUnionGenerationList : List<TestNamedUnionGeneration>
     {
 	        /// <summary>
-        /// Creates and adds a new GeneratedNamedUnion using the given Teacher.
+        /// Creates and adds a new TestNamedUnionGeneration using the given Person.
+        /// </summary>
+        /// <param name="primitive">The primitive to add.</param>
+        public void Add(Person person)
+        {
+            Add(new TestNamedUnionGeneration(person));
+        }
+		        /// <summary>
+        /// Creates and adds a new TestNamedUnionGeneration using the given Teacher.
         /// </summary>
         /// <param name="primitive">The primitive to add.</param>
         public void Add(Teacher teacher)
         {
-            Add(new GeneratedNamedUnion(teacher));
-        }
-		        /// <summary>
-        /// Creates and adds a new GeneratedNamedUnion using the given Student.
-        /// </summary>
-        /// <param name="primitive">The primitive to add.</param>
-        public void Add(Student student)
-        {
-            Add(new GeneratedNamedUnion(student));
+            Add(new TestNamedUnionGeneration(teacher));
         }
 		    }
 
 
-	public static class GeneratedNamedUnionExtensions
+	public static class TestNamedUnionGenerationExtensions
 	{
 		/// <summary>
-		/// Turns the Teacher into a GeneratedNamedUnion.
+		/// Turns the Person into a TestNamedUnionGeneration.
 		/// </summary>
-		/// <param name="teacher"></param>
-		public static GeneratedNamedUnion ToGeneratedNamedUnion(this Teacher teacher)
+		/// <param name="person"></param>
+		public static TestNamedUnionGeneration ToTestNamedUnionGeneration(this Person person)
 		{
-			return new GeneratedNamedUnion(teacher);
+			return new TestNamedUnionGeneration(person);
 		}
 		/// <summary>
-		/// Turns the Student into a GeneratedNamedUnion.
+		/// Turns the Teacher into a TestNamedUnionGeneration.
 		/// </summary>
-		/// <param name="student"></param>
-		public static GeneratedNamedUnion ToGeneratedNamedUnion(this Student student)
+		/// <param name="teacher"></param>
+		public static TestNamedUnionGeneration ToTestNamedUnionGeneration(this Teacher teacher)
 		{
-			return new GeneratedNamedUnion(student);
+			return new TestNamedUnionGeneration(teacher);
 		}
 	}
 }
