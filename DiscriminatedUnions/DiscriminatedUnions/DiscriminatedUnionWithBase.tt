@@ -15,63 +15,63 @@ var maxNumberOfTypeArguments = 10;
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
-    /// <summary>
-    /// A Discriminated union for <#= numberOfArguments #> types.
-    /// </summary>
+	/// <summary>
+	/// A Discriminated union for <#= numberOfArguments #> types.
+	/// </summary>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-    /// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
+	/// <typeparam name="Type<#= i + 1 #>">Type<#= i + 1 #></typeparam>
 <#
 }
 #>    /// <typeparam name="BaseType"></typeparam>
-    [Serializable]
-    public class DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
+	[Serializable]
+	public class DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        where Type<#= i+1 #> : BaseType 
+		where Type<#= i+1 #> : BaseType 
 <#
 }
 #>
-    {
+	{
 		/// <summary>
-        /// Private constructor to support serialization.
-        /// </summary>
-        private DiscriminatedUnionWithBase() : base() { }
+		/// Private constructor to support serialization.
+		/// </summary>
+		private DiscriminatedUnionWithBase() : base() { }
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type<#= i + 1 #>"/>
-        /// </summary>
-        /// <param name="item"></param>
-        public DiscriminatedUnionWithBase(Type<#= i+1 #> item) : base(item) { }
+		/// Creates a new Discriminated union of with <typeparamref name="Type<#= i + 1 #>"/>
+		/// </summary>
+		/// <param name="item"></param>
+		public DiscriminatedUnionWithBase(Type<#= i+1 #> item) : base(item) { }
 <#
 }
 #>
 
-        /// <summary>
-        /// Gets any type by returning the basetype.
-        /// </summary>
-        /// <returns>Any type as the BaseType</returns>
-        public BaseType AnyType
-        {
-            get
-            {
-                switch (tag)
-                {<#
+		/// <summary>
+		/// Gets any type by returning the basetype.
+		/// </summary>
+		/// <returns>Any type as the BaseType</returns>
+		public BaseType AnyType
+		{
+			get
+			{
+				switch (tag)
+				{<#
 for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
 					case <#= i#>: return Item<#= i+1 #>;<#
 }#>
 
-                    default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
-                }
-            }
-        }
-    }
+					default: throw new System.NotSupportedException("Unrecognized tag value: " + tag);
+				}
+			}
+		}
+	}
 <#
 }
 #>

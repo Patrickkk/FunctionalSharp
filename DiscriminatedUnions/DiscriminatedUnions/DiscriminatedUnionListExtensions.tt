@@ -8,13 +8,13 @@ namespace DiscriminatedUnions
 {
 	using System;
 	using System.Linq;
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 <#
 var maxNumberOfTypeArguments = 10;
 #>
-    /// <summary>
-    /// Provides extension methods to Match, Add, Add a range to lists of discriminated unions.
-    /// </summary>
+	/// <summary>
+	/// Provides extension methods to Match, Add, Add a range to lists of discriminated unions.
+	/// </summary>
 	public static class DiscriminatedUnionListExtensions
 	{
 <#
@@ -22,74 +22,74 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 {
 #>
 		/// <summary>
-        /// Runs actions for the specific matching types.
-        /// </summary>
+		/// Runs actions for the specific matching types.
+		/// </summary>
 <#= TypeParamsFor(numberOfArguments) #>
-        /// <typeparam name="BaseType"></typeparam>
-        /// <param name="values"></param>
+		/// <typeparam name="BaseType"></typeparam>
+		/// <param name="values"></param>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        /// <param name="Action<#= i + 1 #>">The action to run for <typeparamref name="Type<#= i + 1 #>"></typeparamref></param>
+		/// <param name="Action<#= i + 1 #>">The action to run for <typeparamref name="Type<#= i + 1 #>"></typeparamref></param>
 <#
 }
 #>
 		public static void Match<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>(this List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>> values,<#= ActionArgumentsFor(numberOfArguments) #>)
-        <#for(var i = 0; i < numberOfArguments; i +=1)
+		<#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        where Type<#= i+1 #> : BaseType 
+		where Type<#= i+1 #> : BaseType 
 <#
 }
 #>
 		{
-            values.ForEach(item => item.Match(
+			values.ForEach(item => item.Match(
 <#for(var i = 0; i < numberOfArguments -1; i +=1)
 {
 #>
-                type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
+				type<#= i + 1 #>Item => Action<#= i + 1 #>(type<#= i + 1 #>Item),
 <#
 }
 #>
-                type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
+				type<#= numberOfArguments #>Item => Action<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+			));
+		}
 
 		/// <summary>
-        /// Transforms the list matching the specific types and extecuting a function for them.
-        /// </summary>
+		/// Transforms the list matching the specific types and extecuting a function for them.
+		/// </summary>
 <#= TypeParamsFor(numberOfArguments) #>
-        /// <typeparam name="BaseType"></typeparam>
-        /// <typeparam name="ReturnType"></typeparam>
-        /// <param name="values"></param>
+		/// <typeparam name="BaseType"></typeparam>
+		/// <typeparam name="ReturnType"></typeparam>
+		/// <param name="values"></param>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        /// <param name="Function<#= i + 1 #>">The function to execute for <typeparamref name="Type<#= i + 1 #>"></typeparamref></param>
+		/// <param name="Function<#= i + 1 #>">The function to execute for <typeparamref name="Type<#= i + 1 #>"></typeparamref></param>
 <#
 }
 #>
-        /// <returns><typeparamref name="ReturnType"></typeparamref></returns>
-        public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType, ReturnType>(this List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
-        <#for(var i = 0; i < numberOfArguments; i +=1)
+		/// <returns><typeparamref name="ReturnType"></typeparamref></returns>
+		public static IEnumerable<ReturnType> Match<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType, ReturnType>(this List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>> values,<#= FunctionArgumentsFor(numberOfArguments) #>)
+		<#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        where Type<#= i+1 #> : BaseType 
+		where Type<#= i+1 #> : BaseType 
 <#
 }
 #>
 		{
-            return values.Select(item => item.Match(
+			return values.Select(item => item.Match(
 <#for(var i = 0; i < numberOfArguments -1; i +=1)
 {
 #>
-                type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
+				type<#= i + 1 #>Item => Function<#= i + 1 #>(type<#= i + 1 #>Item),
 <#
 }
 #>
-                type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
-            ));
-        }
+				type<#= numberOfArguments #>Item => Function<#= numberOfArguments #>(type<#= numberOfArguments #>Item)
+			));
+		}
 <#
 }
 #>
@@ -101,34 +101,34 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>        /// <summary>
-        /// Adds the object to the end of the DiscriminatedUnionList
-        /// </summary>
+		/// Adds the object to the end of the DiscriminatedUnionList
+		/// </summary>
 		/// <param name="values">the List to add the items to.</param>
-        /// <param name="item"></param>
-        public static void Add<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values ,Type<#= i + 1 #> item)
-        {
-            values.Add(new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(item));
-        }
+		/// <param name="item"></param>
+		public static void Add<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values ,Type<#= i + 1 #> item)
+		{
+			values.Add(new DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>(item));
+		}
 
-        /// <summary>
-        /// Adds a Enumerable of items to the list.
-        /// </summary>
+		/// <summary>
+		/// Adds a Enumerable of items to the list.
+		/// </summary>
 <#for(var ii = 0; ii < numberOfArguments; ii +=1)
 {
 #>
-        /// <typeparam name="Type<#= ii + 1 #>"></typeparam>
+		/// <typeparam name="Type<#= ii + 1 #>"></typeparam>
 <#
 }
 #>
-        /// <param name="values">the List to add the items to.</param>
-        /// <param name="collectionToAdd">The items to add.</param>
+		/// <param name="values">the List to add the items to.</param>
+		/// <param name="collectionToAdd">The items to add.</param>
 		public static void AddRange<<#= TypeArgumentsFor(numberOfArguments) #>>(this List<DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>> values ,IEnumerable<Type<#= i + 1 #>> collectionToAdd)
-        {
-            foreach (var item in collectionToAdd)
-            {
-                values.Add(item);
-            }
-        }
+		{
+			foreach (var item in collectionToAdd)
+			{
+				values.Add(item);
+			}
+		}
 <#
 }
 }

@@ -11,94 +11,91 @@ namespace DiscriminatedUnions
 	using System.ComponentModel;
 <#
 var maxNumberOfTypeArguments = 10;
-#>
-<#
+#><#
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
-    /// <summary>
-    /// A Discriminated union for <#= numberOfArguments #> types.
-    /// </summary>
+	/// <summary>
+	/// A Discriminated union for <#= numberOfArguments #> types.
+	/// </summary>
 <#= TypeParamsFor(numberOfArguments) #>
-    [Serializable]
-    public class DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
-    {
-	    /// <summary>
-        /// Private constructor to support serialization.
-        /// </summary>
-        protected DiscriminatedUnion() { }
+	[Serializable]
+	public class DiscriminatedUnion<<#= TypeArgumentsFor(numberOfArguments) #>>
+	{
+		/// <summary>
+		/// Private constructor to support serialization.
+		/// </summary>
+		protected DiscriminatedUnion() { }
 
-	    /// <summary>
-        /// The tag indicating what item is actually stored.
-        /// </summary>
-	    protected int tag;
+		/// <summary>
+		/// The tag indicating what item is actually stored.
+		/// </summary>
+		protected int tag;
 
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
 		/// <summary>
-        /// Creates a new Discriminated union of with <typeparamref name="Type<#= i + 1 #>"/>
-        /// </summary>
-        /// <param name="item"></param>
-        public DiscriminatedUnion(Type<#= i + 1 #> item) { Item<#= i + 1 #> = item; tag = <#= i #>; }
+		/// Creates a new Discriminated union of with <typeparamref name="Type<#= i + 1 #>"/>
+		/// </summary>
+		/// <param name="item"></param>
+		public DiscriminatedUnion(Type<#= i + 1 #> item) { Item<#= i + 1 #> = item; tag = <#= i #>; }
 		
 		/// <summary>
-        /// The storage for type<#= i + 1 #>.
-        /// </summary>
+		/// The storage for type<#= i + 1 #>.
+		/// </summary>
 		protected readonly Type<#= i + 1 #> Item<#= i + 1 #>;
 <#
 }
 #>
 
-        /// <summary>
-        /// Transforms the union into a new type using the given functions for the transformation.
-        /// </summary>
-        /// <typeparam name="ReturnType"></typeparam>
+		/// <summary>
+		/// Transforms the union into a new type using the given functions for the transformation.
+		/// </summary>
+		/// <typeparam name="ReturnType"></typeparam>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        /// <param name="Function<#= i + 1 #>">Function to run for <typeparamref name="Type<#= i + 1 #>"/></param>
+		/// <param name="Function<#= i + 1 #>">Function to run for <typeparamref name="Type<#= i + 1 #>"/></param>
 <#
-}#>        /// <returns></returns>
-        public ReturnType Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
-        {
-            switch (tag)
-            {
+}#>		/// <returns></returns>
+		public ReturnType Match<ReturnType>(<#= FunctionArgumentsFor(numberOfArguments) #>)
+		{
+			switch (tag)
+			{
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
-#>                case <#= i#>: return Function<#= i+1 #>(Item<#= i + 1 #>);
+#>				case <#= i#>: return Function<#= i+1 #>(Item<#= i + 1 #>);
 <#
 }
 #>
-                default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
-            }
-        }
+				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 		/// <summary>
-        /// Runs Actions for the matched types.
-        /// </summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
 #>
-        /// <param name="Action<#= i+1 #>">Action to run for <typeparamref name="Type<#= i+1 #>"/></param>
+		/// <param name="Action<#= i+1 #>">Action to run for <typeparamref name="Type<#= i+1 #>"/></param>
 <#
 }
 #>		public void Match(<#= ActionArgumentsFor(numberOfArguments) #>)
-        {
-            switch (tag)
-            {
+		{
+			switch (tag)
+			{
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
-#>                case <#= i#>: Action<#= i+1 #>(Item<#= i + 1 #>); break;
+#>				case <#= i#>: Action<#= i+1 #>(Item<#= i + 1 #>); break;
 <#
 }
 #>
-                default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
-            }
-        }
-    }
-
-<#
+				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
+	}<#
 }
 #>
 }
