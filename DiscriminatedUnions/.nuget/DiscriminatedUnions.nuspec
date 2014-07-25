@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DiscriminatedUnions</id>
-        <version>0.6.0</version>
+        <version>0.7.0</version>
         <title>.Net Discriminated Unions</title>
         <authors>Patrick van Lohuizen</authors>
         <owners>Patrick van Lohuizen</owners>
@@ -12,9 +12,8 @@
         <description>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</description>
         <summary>This package provides Discriminated Unions for C#. It provides a DiscriminatedUnion, DiscriminatedUnionWithBase, DiscriminatedUnionList. Their usage is explained on the project site.</summary>
         <releaseNotes>
-          - Added merge to IEnumerable of discriminated union.
-          - Added comments for all public memebers.
-          - moved match methods into the IEnumerable extensions since it can work on every IEnumerable.
+          - Added methods to allow types inherriting from DiscriminatedUnion to als use Match.
+          - improved the T4 template with generated code.
         </releaseNotes>
         <copyright>Patrick van Lohuizen</copyright>
         <language>en-US</language>
