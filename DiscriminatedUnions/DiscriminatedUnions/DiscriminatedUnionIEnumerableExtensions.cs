@@ -18,6 +18,47 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2)
+		where TUnion : DiscriminatedUnion<Type1, Type2>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2)
+			where TUnion : DiscriminatedUnion<Type1, Type2>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <param name="Action1">Action to run for Type1</param>
@@ -51,7 +92,6 @@ namespace DiscriminatedUnions
                 type2Item => Function2(type2Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -112,6 +152,53 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -151,7 +238,6 @@ namespace DiscriminatedUnions
                 type3Item => Function3(type3Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -221,6 +307,59 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -266,7 +405,6 @@ namespace DiscriminatedUnions
                 type4Item => Function4(type4Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -345,6 +483,65 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="Action5">Action to run for Type5</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4, Type5>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="Function5">Function to run for Type5</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, Type5, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -396,7 +593,6 @@ namespace DiscriminatedUnions
                 type5Item => Function5(type5Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -484,6 +680,71 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="Action5">Action to run for Type5</param>
+        /// <param name="Action6">Action to run for Type6</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="Function5">Function to run for Type5</param>
+        /// <param name="Function6">Function to run for Type6</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -541,7 +802,6 @@ namespace DiscriminatedUnions
                 type6Item => Function6(type6Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -638,6 +898,77 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="Action5">Action to run for Type5</param>
+        /// <param name="Action6">Action to run for Type6</param>
+        /// <param name="Action7">Action to run for Type7</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="Function5">Function to run for Type5</param>
+        /// <param name="Function6">Function to run for Type6</param>
+        /// <param name="Function7">Function to run for Type7</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -701,7 +1032,6 @@ namespace DiscriminatedUnions
                 type7Item => Function7(type7Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -807,6 +1137,83 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="Action5">Action to run for Type5</param>
+        /// <param name="Action6">Action to run for Type6</param>
+        /// <param name="Action7">Action to run for Type7</param>
+        /// <param name="Action8">Action to run for Type8</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7, Action<Type8> Action8)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item),
+                type8Item => Action8(type8Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="Function5">Function to run for Type5</param>
+        /// <param name="Function6">Function to run for Type6</param>
+        /// <param name="Function7">Function to run for Type7</param>
+        /// <param name="Function8">Function to run for Type8</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item),
+                type8Item => Function8(type8Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -876,7 +1283,6 @@ namespace DiscriminatedUnions
                 type8Item => Function8(type8Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.
@@ -991,6 +1397,89 @@ namespace DiscriminatedUnions
 		/// <summary>
         /// Matches the specific types and executes the given action for them.
         /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="Type9">Type9</typeparam>
+        /// <param name="Action1">Action to run for Type1</param>
+        /// <param name="Action2">Action to run for Type2</param>
+        /// <param name="Action3">Action to run for Type3</param>
+        /// <param name="Action4">Action to run for Type4</param>
+        /// <param name="Action5">Action to run for Type5</param>
+        /// <param name="Action6">Action to run for Type6</param>
+        /// <param name="Action7">Action to run for Type7</param>
+        /// <param name="Action8">Action to run for Type8</param>
+        /// <param name="Action9">Action to run for Type9</param>
+        /// <param name="values">existing Discriminated unions</param>
+		public static void Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(this IEnumerable<TUnion> values,  Action<Type1> Action1, Action<Type2> Action2, Action<Type3> Action3, Action<Type4> Action4, Action<Type5> Action5, Action<Type6> Action6, Action<Type7> Action7, Action<Type8> Action8, Action<Type9> Action9)
+		where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>
+        {
+			foreach(var item in values)
+			{
+			    item.Match(
+                type1Item => Action1(type1Item),
+                type2Item => Action2(type2Item),
+                type3Item => Action3(type3Item),
+                type4Item => Action4(type4Item),
+                type5Item => Action5(type5Item),
+                type6Item => Action6(type6Item),
+                type7Item => Action7(type7Item),
+                type8Item => Action8(type8Item),
+                type9Item => Action9(type9Item));
+			}
+        }
+
+				/// <summary>
+        /// Matches the specific types and uses the given functions to tranform into s ingle returntype.
+        /// </summary>
+		/// <typeparam name="TUnion">TUnion</typeparam>
+        /// <typeparam name="Type1">Type1</typeparam>
+        /// <typeparam name="Type2">Type2</typeparam>
+        /// <typeparam name="Type3">Type3</typeparam>
+        /// <typeparam name="Type4">Type4</typeparam>
+        /// <typeparam name="Type5">Type5</typeparam>
+        /// <typeparam name="Type6">Type6</typeparam>
+        /// <typeparam name="Type7">Type7</typeparam>
+        /// <typeparam name="Type8">Type8</typeparam>
+        /// <typeparam name="Type9">Type9</typeparam>
+        /// <typeparam name="ReturnType">the returntype for all functions</typeparam>
+        /// <param name="Function1">Function to run for Type1</param>
+        /// <param name="Function2">Function to run for Type2</param>
+        /// <param name="Function3">Function to run for Type3</param>
+        /// <param name="Function4">Function to run for Type4</param>
+        /// <param name="Function5">Function to run for Type5</param>
+        /// <param name="Function6">Function to run for Type6</param>
+        /// <param name="Function7">Function to run for Type7</param>
+        /// <param name="Function8">Function to run for Type8</param>
+        /// <param name="Function9">Function to run for Type9</param>
+        /// <param name="values">existing Discriminated unions</param>
+        public static IEnumerable<ReturnType> Match<TUnion,Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, ReturnType>(this IEnumerable<TUnion> values,Func<Type1, ReturnType> Function1, Func<Type2, ReturnType> Function2, Func<Type3, ReturnType> Function3, Func<Type4, ReturnType> Function4, Func<Type5, ReturnType> Function5, Func<Type6, ReturnType> Function6, Func<Type7, ReturnType> Function7, Func<Type8, ReturnType> Function8, Func<Type9, ReturnType> Function9)
+			where TUnion : DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>
+		{
+			foreach(var item in values)
+			{
+				yield return item.Match(
+				                type1Item => Function1(type1Item),
+                type2Item => Function2(type2Item),
+                type3Item => Function3(type3Item),
+                type4Item => Function4(type4Item),
+                type5Item => Function5(type5Item),
+                type6Item => Function6(type6Item),
+                type7Item => Function7(type7Item),
+                type8Item => Function8(type8Item),
+                type9Item => Function9(type9Item));
+            }
+	    }
+
+		/// <summary>
+        /// Matches the specific types and executes the given action for them.
+        /// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
         /// <typeparam name="Type2">Type2</typeparam>
         /// <typeparam name="Type3">Type3</typeparam>
@@ -1066,7 +1555,6 @@ namespace DiscriminatedUnions
                 type9Item => Function9(type9Item));
             }
 	    }
-
 
         /// <summary>
         /// Merges the item into the existing discriminatedunions resulting in a new enumerable of discriminated unions with the type of the item as a new option.

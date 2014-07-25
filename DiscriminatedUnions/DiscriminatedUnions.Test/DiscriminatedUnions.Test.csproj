@@ -73,6 +73,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -101,6 +102,7 @@
     <Compile Include="TestModelClasses\Student.cs" />
     <Compile Include="TestModelClasses\Teacher.cs" />
     <Compile Include="DiscriminatedUnionIEnumerableTest.cs" />
+    <Compile Include="GeneratedUnionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DiscriminatedUnions\DiscriminatedUnions.csproj">

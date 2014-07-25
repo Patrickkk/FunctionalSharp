@@ -6,19 +6,23 @@
 <#@ output extension=".cs" #>
 <#
 var @namespace = "TypescriptGeneration.Model";
-var unionName = "TestNamedUnionGeneration";
+var unionName = "GeneratedUnion";
 var unionListName = unionName + "List";
-var unionTypes = new string[] {"Person", "Teacher"};
-var usings = new string[] { "DiscriminatedUnions.Test.TestModelClasses"};
+var unionTypes = new string[] {"Student", "Teacher"};
+var usings = new string[] { "using DiscriminatedUnions.Test.TestModelClasses;"};
 #>
 
 namespace <#= @namespace #>
 {
 	using System;
+	using System.Linq;
 	using DiscriminatedUnions;
 	using System.Collections.Generic;
-	using <#=String.Join(";" + Environment.NewLine + "	using ", usings)#>;
+	<#=String.Join(Environment.NewLine + "	using ", usings)#>
 
+    /// <summary>
+    /// Represents a discriminated union of the following types:<#= String.Join(",",unionTypes) #>. 
+    /// </summary>
 	[Serializable]
 	public class <#=unionName #> : DiscriminatedUnion<<#= String.Join(",",unionTypes) #>>
 	{
@@ -38,28 +42,47 @@ foreach(var type in unionTypes)
 
 
     /// <summary>
-    /// Represents a list of generic type arguments. 
+    /// Represents a list of <#= unionName#>. 
     /// </summary>
     [Serializable]
     public class <#=unionListName #> : List<<#= unionName#>>
     {
-	<#
+		/// <summary>
+		/// creates a new <#=unionListName #> without contents.
+		/// </summary>
+		public <#=unionListName #>() : base() { }
+
+		/// <summary>
+		/// creates a new <#=unionListName #> with the starting values as its contents.
+		/// <param name="values">startingValues</param>
+		/// </summary>
+		public <#=unionListName #>(IEnumerable<<#= unionName#>> values) : base(values) { }
+
+<#
 foreach(var type in unionTypes)
 {
-#>
+#>		/// <summary>
+		/// creates a new <#=unionListName #> with the starting values as its contents.
+		/// <param name="<#= LowerFirst(type)#>">startingValues</param>
+		/// </summary>
+		public <#=unionListName #>(IEnumerable<<#= type#>> <#= LowerFirst(type)#>) : base(<#= LowerFirst(type)#>.Select(x => x.To<#=unionName #>())) { }
+
         /// <summary>
         /// Creates and adds a new <#= unionName#> using the given <#= type#>.
         /// </summary>
-        /// <param name="primitive">The primitive to add.</param>
+        /// <param name="<#= LowerFirst(type)#>">The <#= LowerFirst(type)#> to add.</param>
         public void Add(<#= type#> <#= LowerFirst(type)#>)
         {
             Add(new <#= unionName#>(<#= LowerFirst(type)#>));
         }
-		<#
+
+<#
 }
 #>    }
 
-
+    /// <summary>
+    /// provides extensionmethods for <#= unionName#>. 
+    /// </summary>
 	public static class <#=unionName #>Extensions
 	{
 <#
@@ -77,6 +100,17 @@ foreach(var type in unionTypes)
 <#
 }
 #>
+
+
+        public static void Match(this IEnumerable<<#= unionName#>> values, <#= joinedFormat(",","Action<{0}> actionFor{0}",unionTypes) #>)
+        {
+            values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>>(actionForStudent, actionForTeacher);
+        }
+
+        public static IEnumerable<TreturnType> Match<TreturnType>(this IEnumerable<<#= unionName#>> values, <#= joinedFormat(",","Func<{0}, TreturnType> functionFor{0}",unionTypes) #>)
+        {
+            return values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>, TreturnType>(functionForStudent, functionForTeacher);
+        }
 	}
 }
 
@@ -84,5 +118,15 @@ foreach(var type in unionTypes)
 public string LowerFirst(string value)
 {
 	return char.ToLowerInvariant(value[0]) + value.Substring(1);
+}
+
+public string joinedFormat(string separator, string format, params string[] values)
+{
+    var formattedValues = new string[values.Length];
+    for (int i = 0; i < values.Length; i++)
+    {
+        formattedValues[i] = string.Format(format, values[i]);
+    }
+    return string.Join(separator, formattedValues);
 }
 #>
