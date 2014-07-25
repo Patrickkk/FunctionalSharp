@@ -104,12 +104,12 @@ foreach(var type in unionTypes)
 
         public static void Match(this IEnumerable<<#= unionName#>> values, <#= joinedFormat(",","Action<{0}> actionFor{0}",unionTypes) #>)
         {
-            values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>>(actionForStudent, actionForTeacher);
+            values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>>(<#= joinedFormat(",","actionFor{0}",unionTypes) #>);
         }
 
         public static IEnumerable<TreturnType> Match<TreturnType>(this IEnumerable<<#= unionName#>> values, <#= joinedFormat(",","Func<{0}, TreturnType> functionFor{0}",unionTypes) #>)
         {
-            return values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>, TreturnType>(functionForStudent, functionForTeacher);
+            return values.Match<<#= unionName#>, <#=string.Join(",", unionTypes) #>, TreturnType>(<#= joinedFormat(",","functionFor{0}",unionTypes) #>);
         }
 	}
 }

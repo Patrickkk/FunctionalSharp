@@ -107,12 +107,12 @@ namespace TypescriptGeneration.Model
 
         public static void Match(this IEnumerable<GeneratedUnion> values, Action<Student> actionForStudent,Action<Teacher> actionForTeacher)
         {
-            values.Match<GeneratedUnion, Student,Teacher>(actionForStudent, actionForTeacher);
+            values.Match<GeneratedUnion, Student,Teacher>(actionForStudent,actionForTeacher);
         }
 
         public static IEnumerable<TreturnType> Match<TreturnType>(this IEnumerable<GeneratedUnion> values, Func<Student, TreturnType> functionForStudent,Func<Teacher, TreturnType> functionForTeacher)
         {
-            return values.Match<GeneratedUnion, Student,Teacher, TreturnType>(functionForStudent, functionForTeacher);
+            return values.Match<GeneratedUnion, Student,Teacher, TreturnType>(functionForStudent,functionForTeacher);
         }
 	}
 }
