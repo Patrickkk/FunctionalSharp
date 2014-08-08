@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FunctionalSharp.DiscriminatedUnions</id>
+    <version>0.7.2</version>
+    <title>FunctionalSharp DiscriminatedUnions</title>
+    <authors>Patrick van Lohuizen</authors>
+    <owners>Patrick van Lohuizen</owners>
+    <licenseUrl>https://github.com/Patrickkk/FunctionalSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Patrickkk/FunctionalSharp/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
+    <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
+    <releaseNotes>
+      - Changed id from DiscriminatedUnions to FunctionalSharp.DiscriminatedUnions.
+      - Changed dll name and namespace.
+    </releaseNotes>
+    <copyright>Patrick van Lohuizen</copyright>
+    <language>en-US</language>
+    <tags>Unions, Discriminated Discriminated, Linq, lambda, Functional</tags>
+  </metadata>
+  <files>
+    <file src="..\FunctionalSharp.DiscriminatedUnions\bin\Release35\FunctionalSharp.DiscriminatedUnions.dll" target="lib\net35\FunctionalSharp.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.DiscriminatedUnions\bin\Release40\FunctionalSharp.DiscriminatedUnions.dll" target="lib\net40\FunctionalSharp.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.DiscriminatedUnions\bin\Release45\FunctionalSharp.DiscriminatedUnions.dll" target="lib\net45\FunctionalSharp.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.DiscriminatedUnions\bin\Release451\FunctionalSharp.DiscriminatedUnions.dll" target="lib\net451\FunctionalSharp.DiscriminatedUnions.dll" />
+  </files>
+</package>

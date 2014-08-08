@@ -6,8 +6,8 @@
     <ProjectGuid>{20BA97A5-A664-4919-89D7-47ACB026F372}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DiscriminatedUnions.Test</RootNamespace>
-    <AssemblyName>DiscriminatedUnions.Test</AssemblyName>
+    <RootNamespace>FunctionalSharp.DiscriminatedUnions.Test</RootNamespace>
+    <AssemblyName>FunctionalSharp.DiscriminatedUnions.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -113,11 +113,11 @@
   <ItemGroup>
     <ProjectReference Include="..\FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj">
       <Project>{78dd888d-2681-4d5a-ae06-f2a07bc30737}</Project>
-      <Name>DiscriminatedUnions</Name>
+      <Name>FunctionalSharp.DiscriminatedUnions</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunctionalSharp.OptionTypes\FunctionalSharp.OptionTypes.csproj">
       <Project>{b6c04404-4181-4c33-b22a-c1bda21a8bc5}</Project>
-      <Name>OptionTypes</Name>
+      <Name>FunctionalSharp.OptionTypes</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{78DD888D-2681-4D5A-AE06-F2A07BC30737}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DiscriminatedUnions</RootNamespace>
-    <AssemblyName>DiscriminatedUnions</AssemblyName>
+    <RootNamespace>FunctionalSharp.DiscriminatedUnions</RootNamespace>
+    <AssemblyName>FunctionalSharp.DiscriminatedUnions</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -22,7 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <DocumentationFile>bin\Debug\DiscriminatedUnions.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\FunctionalSharp.DiscriminatedUnions.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
