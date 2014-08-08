@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>DiscriminatedUnions</id>
-        <version>0.7.1</version>
-        <title>.Net Discriminated Unions</title>
-        <authors>Patrick van Lohuizen</authors>
-        <owners>Patrick van Lohuizen</owners>
-        <licenseUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
-        <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
-        <releaseNotes>
-          - Added methods to allow types inherriting from DiscriminatedUnion to als use Match.
-          - improved the T4 template with generated code.
-        </releaseNotes>
-        <copyright>Patrick van Lohuizen</copyright>
-        <language>en-US</language>
-    </metadata>
-  <dependencies>
-    <dependency id="FunctionalSharp.DiscriminatedUnions" />
-  </dependencies>
+  <metadata>
+    <id>DiscriminatedUnions</id>
+    <version>0.7.2</version>
+    <title>.Net Discriminated Unions</title>
+    <authors>Patrick van Lohuizen</authors>
+    <owners>Patrick van Lohuizen</owners>
+    <licenseUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Patrickkk/SharpDiscriminatedUnions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
+    <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
+    <releaseNotes>
+      - Added methods to allow types inherriting from DiscriminatedUnion to als use Match.
+      - improved the T4 template with generated code.
+    </releaseNotes>
+    <copyright>Patrick van Lohuizen</copyright>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="FunctionalSharp.DiscriminatedUnions" />
+    </dependencies>
+  </metadata>
 </package>
