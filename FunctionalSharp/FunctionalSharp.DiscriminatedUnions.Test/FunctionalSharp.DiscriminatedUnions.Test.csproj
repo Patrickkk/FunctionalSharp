@@ -109,7 +109,6 @@
     <Compile Include="TestModelClasses\Teacher.cs" />
     <Compile Include="DiscriminatedUnionIEnumerableTest.cs" />
     <Compile Include="GeneratedUnionTest.cs" />
-    <Compile Include="OptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj">

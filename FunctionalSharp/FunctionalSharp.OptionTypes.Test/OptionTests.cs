@@ -1,7 +1,6 @@
-﻿using FunctionalSharp.OptionTypes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FunctionalSharp.DiscriminatedUnions.Test
+namespace FunctionalSharp.OptionTypes.Test
 {
     [TestClass]
     public class OptionTests

@@ -51,6 +51,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OptionTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionalSharp.OptionTypes\FunctionalSharp.OptionTypes.csproj">
+      <Project>{b6c04404-4181-4c33-b22a-c1bda21a8bc5}</Project>
+      <Name>FunctionalSharp.OptionTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
