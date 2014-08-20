@@ -107,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiscriminatedUnionWithBaseList.tt</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\EmptySequenceException.cs" />
+    <Compile Include="LinqExtensions.cs" />
+    <Compile Include="Exceptions\MultipleResultsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
