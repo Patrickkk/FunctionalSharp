@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="PatterMatchStringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IEnumerablePatternMatchingTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FunctionalSharp.PatternMatching\FunctionalSharp.PatternMatching.csproj">

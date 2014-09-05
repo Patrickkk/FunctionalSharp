@@ -75,7 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pattern.cs" />
+    <Compile Include="PatternMatchExtensions.cs" />
+    <Compile Include="PatternMatch.cs" />
+    <Compile Include="PatternMatchCase.cs" />
+    <Compile Include="PatternMatchContext.cs" />
+    <Compile Include="PatternMatchSingleContext.cs" />
+    <Compile Include="PatternMatchSingle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
