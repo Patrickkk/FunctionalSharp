@@ -55,5 +55,15 @@ namespace FunctionalSharp.PatternMatching
         {
             return Else(_ => result);
         }
+
+        public TResult ElseException()
+        {
+            return ElseException(new Exception("No Pattern matched"));
+        }
+
+        public TResult ElseException(Exception exception)
+        {
+            return Else(_ => { throw exception; });
+        }
     }
 }

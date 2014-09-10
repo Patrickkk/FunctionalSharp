@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace FunctionalSharp.PatternMatching.Test
 {
@@ -45,6 +46,16 @@ namespace FunctionalSharp.PatternMatching.Test
                 .Else("C");
 
             Assert.AreEqual("C", result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestMatchingElseException()
+        {
+            var result = "XXX".Match()
+                .With(s => s.Contains("B"), "B")
+                .With(s => s.Contains("A"), "A")
+                .ElseException();
         }
     }
 }
