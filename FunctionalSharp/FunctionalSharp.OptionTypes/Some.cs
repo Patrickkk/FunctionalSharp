@@ -9,6 +9,10 @@ namespace FunctionalSharp.OptionTypes
 
         internal Some(T value)
         {
+            if (default(T) != null)
+            {
+                throw new Exception("Option type used for non nullable type " + typeof(T).Name);
+            }
             this.value = value;
         }
 
@@ -30,6 +34,11 @@ namespace FunctionalSharp.OptionTypes
         public TResult Match<TResult>(Func<T, TResult> withValue, Func<TResult> withoutValue)
         {
             return withValue(value);
+        }
+
+        public T ToNullable()
+        {
+            return value;
         }
 
         public override string ToString()
