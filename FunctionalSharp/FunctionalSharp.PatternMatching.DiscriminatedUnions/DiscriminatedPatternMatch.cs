@@ -1,10 +1,4 @@
 ﻿
-
-
-
-
-
-
 namespace FunctionalSharp.PatternMatching
 {
     using FunctionalSharp.DiscriminatedUnions;
@@ -12,14 +6,12 @@ namespace FunctionalSharp.PatternMatching
 	using System.Linq;
     using System.Collections.Generic;
 
-
     public class DiscriminatedPatternMatch<T, TResult1>
     {
         protected Func<int> numberOfElements;
         internal List<DiscriminatedPatternMatchCase<T, TResult1>> result1Patterns = new List<DiscriminatedPatternMatchCase<T, TResult1>>();
         protected IEnumerable<T> values;
-		
-		public DiscriminatedPatternMatch(IEnumerable<T> values, Func<T, bool> pattern, Func<T, TResult1> resultFunction)
+				public DiscriminatedPatternMatch(IEnumerable<T> values, Func<T, bool> pattern, Func<T, TResult1> resultFunction)
         {
             this.values = values;
             this.result1Patterns.Add(new DiscriminatedPatternMatchCase<T, TResult1>
@@ -35,7 +27,6 @@ namespace FunctionalSharp.PatternMatching
 			return result1Patterns.Count;
 		}
 
-		
         public DiscriminatedPatternMatch<T, TResult1> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -63,25 +54,14 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2>(result1);
                     }
-                    else
-                    {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -94,7 +74,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -104,17 +84,7 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2>> ElseException()
-        {
-            return ElseException(new Exception("No Pattern matched"));
-        }
-
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2>> ElseException(Exception exception)
-        {
-            return Else(_ => { throw exception; });
-        }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2> With<TResult2>(Func<T, bool> pattern, TResult2 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2> With<TResult2>(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -128,16 +98,18 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2>
     {
         protected Func<int> numberOfElements;
         internal List<DiscriminatedPatternMatchCase<T, TResult1>> result1Patterns = new List<DiscriminatedPatternMatchCase<T, TResult1>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult2>> result2Patterns = new List<DiscriminatedPatternMatchCase<T, TResult2>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -158,8 +130,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -186,25 +157,18 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3>(result2);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -217,7 +181,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -227,17 +191,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With<TResult3>(Func<T, bool> pattern, TResult3 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With<TResult3>(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -251,9 +214,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3>
     {
         protected Func<int> numberOfElements;
@@ -261,7 +222,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult2>> result2Patterns = new List<DiscriminatedPatternMatchCase<T, TResult2>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult3>> result3Patterns = new List<DiscriminatedPatternMatchCase<T, TResult3>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -282,8 +247,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -303,8 +267,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -331,25 +294,22 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result3);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -362,7 +322,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -372,17 +332,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With<TResult4>(Func<T, bool> pattern, TResult4 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With<TResult4>(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -396,9 +355,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4>
     {
         protected Func<int> numberOfElements;
@@ -407,7 +364,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult3>> result3Patterns = new List<DiscriminatedPatternMatchCase<T, TResult3>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult4>> result4Patterns = new List<DiscriminatedPatternMatchCase<T, TResult4>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -428,8 +389,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -449,8 +409,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -470,8 +429,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -498,25 +456,26 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result4);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -529,7 +488,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -539,17 +498,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With<TResult5>(Func<T, bool> pattern, TResult5 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With<TResult5>(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -563,9 +521,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5>
     {
         protected Func<int> numberOfElements;
@@ -575,7 +531,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult4>> result4Patterns = new List<DiscriminatedPatternMatchCase<T, TResult4>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult5>> result5Patterns = new List<DiscriminatedPatternMatchCase<T, TResult5>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count + result5Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -596,8 +556,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -617,8 +576,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -638,8 +596,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -659,8 +616,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult5 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5> With(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -687,25 +643,30 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result4);
+                    }
+                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result5);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -718,7 +679,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -728,17 +689,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With<TResult6>(Func<T, bool> pattern, TResult6 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With<TResult6>(Func<T, bool> pattern, TResult6 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -752,9 +712,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>
     {
         protected Func<int> numberOfElements;
@@ -765,7 +723,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult5>> result5Patterns = new List<DiscriminatedPatternMatchCase<T, TResult5>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult6>> result6Patterns = new List<DiscriminatedPatternMatchCase<T, TResult6>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count + result5Patterns.Count + result6Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -786,8 +748,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -807,8 +768,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -828,8 +788,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -849,8 +808,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult5 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -870,8 +828,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult6 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6> With(Func<T, bool> pattern, TResult6 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -898,25 +855,34 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result4);
+                    }
+                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result5);
+                    }
+                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result6);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -929,7 +895,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -939,17 +905,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With<TResult7>(Func<T, bool> pattern, TResult7 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With<TResult7>(Func<T, bool> pattern, TResult7 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -963,9 +928,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>
     {
         protected Func<int> numberOfElements;
@@ -977,7 +940,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult6>> result6Patterns = new List<DiscriminatedPatternMatchCase<T, TResult6>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult7>> result7Patterns = new List<DiscriminatedPatternMatchCase<T, TResult7>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count + result5Patterns.Count + result6Patterns.Count + result7Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -998,8 +965,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1019,8 +985,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1040,8 +1005,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1061,8 +1025,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult5 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1082,8 +1045,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult6 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult6 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1103,8 +1065,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult7 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7> With(Func<T, bool> pattern, TResult7 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1131,25 +1092,38 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result4);
+                    }
+                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result5);
+                    }
+                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result6);
+                    }
+                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result7);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -1162,7 +1136,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -1172,17 +1146,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With<TResult8>(Func<T, bool> pattern, TResult8 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With<TResult8>(Func<T, bool> pattern, TResult8 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1196,9 +1169,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>
     {
         protected Func<int> numberOfElements;
@@ -1211,7 +1182,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult7>> result7Patterns = new List<DiscriminatedPatternMatchCase<T, TResult7>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult8>> result8Patterns = new List<DiscriminatedPatternMatchCase<T, TResult8>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count + result5Patterns.Count + result6Patterns.Count + result7Patterns.Count + result8Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -1232,8 +1207,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1253,8 +1227,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1274,8 +1247,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1295,8 +1267,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult5 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1316,8 +1287,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult6 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult6 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1337,8 +1307,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult7 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult7 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1358,8 +1327,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult8 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8> With(Func<T, bool> pattern, TResult8 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1386,25 +1354,42 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result4);
+                    }
+                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result5);
+                    }
+                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result6);
+                    }
+                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result7);
+                    }
+                    else if(FindMatchForNumber(result8Patterns, i, value, out TResult8 result8 = default(TResult8)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result8);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -1417,7 +1402,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -1427,17 +1412,16 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With<TResult9>(Func<T, bool> pattern, TResult9 resultValue)
+        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With<TResult9>(Func<T, bool> pattern, TResult9 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1451,9 +1435,7 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
-		
-	}
-
+			}
     public class DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>
     {
         protected Func<int> numberOfElements;
@@ -1467,7 +1449,11 @@ namespace FunctionalSharp.PatternMatching
         internal List<DiscriminatedPatternMatchCase<T, TResult8>> result8Patterns = new List<DiscriminatedPatternMatchCase<T, TResult8>>();
         internal List<DiscriminatedPatternMatchCase<T, TResult9>> result9Patterns = new List<DiscriminatedPatternMatchCase<T, TResult9>>();
         protected IEnumerable<T> values;
-		
+				private int CountAllResultPatterns()
+		{
+			return result1Patterns.Count + result2Patterns.Count + result3Patterns.Count + result4Patterns.Count + result5Patterns.Count + result6Patterns.Count + result7Patterns.Count + result8Patterns.Count + result9Patterns.Count;
+		}
+
         public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult1 resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -1488,8 +1474,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult2 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult2 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1509,8 +1494,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult3 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult3 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1530,8 +1514,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult4 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult4 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1551,8 +1534,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult5 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult5 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1572,8 +1554,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult6 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult6 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1593,8 +1574,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult7 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult7 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1614,8 +1594,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult8 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult8 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1635,8 +1614,7 @@ namespace FunctionalSharp.PatternMatching
             });
             return this;
         }
-		
-        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult9 resultValue)
+		        public DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9> With(Func<T, bool> pattern, TResult9 resultValue)
         {
             return With(pattern, _ => resultValue);
         }
@@ -1663,25 +1641,46 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result1);
                     }
-                    else
+                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result2);
+                    }
+                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result3);
+                    }
+                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result4);
+                    }
+                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result5);
+                    }
+                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result6);
+                    }
+                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result7);
+                    }
+                    else if(FindMatchForNumber(result8Patterns, i, value, out TResult8 result8 = default(TResult8)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result8);
+                    }
+                    else if(FindMatchForNumber(result9Patterns, i, value, out TResult9 result9 = default(TResult9)))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result9);
+                    }
+                    else                     {
+                        yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -1694,7 +1693,7 @@ namespace FunctionalSharp.PatternMatching
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -1704,18 +1703,15 @@ namespace FunctionalSharp.PatternMatching
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>> ElseException()
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		
 	}
-
 }
 

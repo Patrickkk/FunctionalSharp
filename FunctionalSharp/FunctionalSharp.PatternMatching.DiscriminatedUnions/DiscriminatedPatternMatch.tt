@@ -39,14 +39,14 @@ for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; nu
             });
         }
 
+<# } #>
 		private int CountAllResultPatterns()
 		{
 			return <#=FormatJoinedFor("result{0}Patterns.Count + ",'+', numberOfArguments )#>;
 		}
 
-		<# }
-		for(var i = 1; i <= numberOfArguments; i+=1)
-		{ #>
+<#
+		for(var i = 1; i <= numberOfArguments; i+=1)		{ #>
         public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>> With(Func<T, bool> pattern, TResult<#= i #> resultValue)
         {
             return With(pattern, _ => resultValue);
@@ -75,25 +75,16 @@ for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; nu
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+					<#for(var i = 1; i <= numberOfArguments; i+=1)
+					{ #>if(FindMatchForNumber(result<#= i #>Patterns, i, value, out TResult<#= i #> result<#= i #> = default(TResult<#= i #>)))
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                        yield return new DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>(result<#= i #>);
                     }
-                    else
+                    else <# } #>
                     {
-                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                        yield return new DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>(elseResult(value));
                     }
                 }
-
-                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
-                //if (match != null)
-                //{
-                //    yield return match.Value(value);
-                //}
-                //else
-                //{
-                //    yield return result(value);
-                //}
             }
         }
 
@@ -106,7 +97,7 @@ for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; nu
 			}
 			else
             {
-                resultValue = default(T);
+                resultValue = default(TResult);
             }
 			return discriminatedPatternMatchCase != null;
 		}
@@ -116,17 +107,18 @@ for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; nu
             return Else(_ => result);
         }
 
-        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> ElseException()
+<# if(numberOfArguments > 1){#>
+        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>>> ElseException()
         {
             return ElseException(new Exception("No Pattern matched"));
         }
 
-        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> ElseException(Exception exception)
+        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>>> ElseException(Exception exception)
         {
             return Else(_ => { throw exception; });
         }
-
-		<# if(numberOfArguments < maxNumberOfTypeArguments){#>
+<# }
+if(numberOfArguments < maxNumberOfTypeArguments){#>
         public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>> With<TResult<#= numberOfArguments + 1#>>(Func<T, bool> pattern, TResult<#= numberOfArguments + 1#> resultValue)
         {
             return With(pattern, _ => resultValue);
