@@ -24,6 +24,16 @@ public string ArgumentsFor(string format, int numberOfArguments, int start = 0)
 	return result.Trim(' ').Trim(',');
 }
 
+public string FormatJoinedFor(string format, char seperator, int numberOfArguments, int start = 0)
+{
+	var result = "";
+	for(var i = start; i < numberOfArguments; i+=1)
+	{
+		result += String.Format(format,i + 1);
+	}
+	return result.Trim(' ').Trim(seperator).Trim();
+}
+
 public string TypeParamsFor(int numberOfArguments, int start = 0)
 {
     return CommentsFor("        /// <typeparam name=\"Type{0}\">Type{0}</typeparam>", numberOfArguments, start);

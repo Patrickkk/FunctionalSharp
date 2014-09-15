@@ -1,0 +1,151 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+namespace FunctionalSharp.PatternMatching
+{
+    using FunctionalSharp.DiscriminatedUnions;
+    using System;
+	using System.Linq;
+    using System.Collections.Generic;
+
+<#
+var maxNumberOfTypeArguments = 9;
+#><#
+for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
+{
+#>
+    public class DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>>
+    {
+        protected Func<int> numberOfElements;
+<# 
+		for(var i = 1; i <= numberOfArguments; i+=1)
+		{ #>
+        internal List<DiscriminatedPatternMatchCase<T, TResult<#= i #>>> result<#= i#>Patterns = new List<DiscriminatedPatternMatchCase<T, TResult<#= i #>>>();
+<#}#>
+        protected IEnumerable<T> values;
+		<# if(numberOfArguments == 1){#>
+		public DiscriminatedPatternMatch(IEnumerable<T> values, Func<T, bool> pattern, Func<T, TResult1> resultFunction)
+        {
+            this.values = values;
+            this.result1Patterns.Add(new DiscriminatedPatternMatchCase<T, TResult1>
+            {
+                Condition = pattern,
+                Order = CountAllResultPatterns(),
+                Value = resultFunction
+            });
+        }
+
+		private int CountAllResultPatterns()
+		{
+			return <#=FormatJoinedFor("result{0}Patterns.Count + ",'+', numberOfArguments )#>;
+		}
+
+		<# }
+		for(var i = 1; i <= numberOfArguments; i+=1)
+		{ #>
+        public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>> With(Func<T, bool> pattern, TResult<#= i #> resultValue)
+        {
+            return With(pattern, _ => resultValue);
+        }
+
+		public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>> With(T equalObject, TResult<#= i #> resultValue)
+        {
+            return With(value => value.Equals(equalObject), _ => resultValue);
+        }
+
+        public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments)#>> With(Func<T, bool> pattern, Func<T, TResult<#= i #>> resultFunction)
+        {
+            this.result<#= i #>Patterns.Add(new DiscriminatedPatternMatchCase<T, TResult<#= i #>>
+            {
+                Condition = pattern,
+                Order = CountAllResultPatterns(),
+                Value = resultFunction
+            });
+            return this;
+        }
+		<# }#>
+
+		public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> Else<TResult<#= numberOfArguments + 1#>>(Func<T, TResult<#= numberOfArguments + 1#>> elseResult)
+        {
+            foreach (var value in values)
+            {
+			    for (int i = 0; i < CountAllResultPatterns(); i++)
+                {
+                    if(FindMatchForNumber(result1Patterns, i, value, var match))
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2>(match.Value(value));
+                    }
+                    else
+                    {
+                        yield return new DiscriminatedUnion<TResult1, TResult2>(result(elseResult));
+                    }
+                }
+
+                //var match = matches.FirstOrDefault(matchItem => matchItem.Condition(value));
+                //if (match != null)
+                //{
+                //    yield return match.Value(value);
+                //}
+                //else
+                //{
+                //    yield return result(value);
+                //}
+            }
+        }
+
+		private bool FindMatchForNumber<TResult>(List<DiscriminatedPatternMatchCase<T, TResult>> list, int number, T value, out TResult resultValue)
+		{
+			var discriminatedPatternMatchCase = list.Where(pattern => pattern.Order == number && pattern.Condition(value)).SingleOrDefault();
+			if(discriminatedPatternMatchCase != null)
+			{
+				resultValue = discriminatedPatternMatchCase.Value(value);
+			}
+			else
+            {
+                resultValue = default(T);
+            }
+			return discriminatedPatternMatchCase != null;
+		}
+
+        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> Else<TResult<#= numberOfArguments + 1 #>>(TResult<#= numberOfArguments + 1 #> result)
+        {
+            return Else(_ => result);
+        }
+
+        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> ElseException()
+        {
+            return ElseException(new Exception("No Pattern matched"));
+        }
+
+        public IEnumerable<DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>> ElseException(Exception exception)
+        {
+            return Else(_ => { throw exception; });
+        }
+
+		<# if(numberOfArguments < maxNumberOfTypeArguments){#>
+        public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>> With<TResult<#= numberOfArguments + 1#>>(Func<T, bool> pattern, TResult<#= numberOfArguments + 1#> resultValue)
+        {
+            return With(pattern, _ => resultValue);
+        }
+
+        public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>> With<TResult<#= numberOfArguments + 1#>>(Func<T, bool> pattern, Func<T, TResult<#= numberOfArguments + 1#>> resultFunction)
+        {
+            return new DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>();
+        }
+
+        public DiscriminatedPatternMatch<T, <#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>> With<TResult<#= numberOfArguments + 1#>>(T equalObject, TResult<#= numberOfArguments + 1#> resultValue)
+        {
+            return With(value => value.Equals(equalObject), _ => resultValue);
+        }
+		<# }#>
+	}
+<#
+}
+#>
+}
+
+<#@ include file="..\FunctionalSharp.DiscriminatedUnions\GenerationHelpers.txt" #>

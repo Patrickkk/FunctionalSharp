@@ -50,11 +50,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
     <Compile Include="PatterMatchStringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IEnumerablePatternMatchingTest.cs" />
+    <Compile Include="DiscriminatedPatternMatchTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj">
+      <Project>{78dd888d-2681-4d5a-ae06-f2a07bc30737}</Project>
+      <Name>FunctionalSharp.DiscriminatedUnions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\FunctionalSharp.PatternMatching.DiscriminatedUnions.csproj">
+      <Project>{039d9cd7-605d-4fe2-8d44-10c27555cd10}</Project>
+      <Name>FunctionalSharp.PatternMatching.DiscriminatedUnions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FunctionalSharp.PatternMatching\FunctionalSharp.PatternMatching.csproj">
       <Project>{0f7173f8-cd80-478c-b5e0-bd11a02c1d53}</Project>
       <Name>FunctionalSharp.PatternMatching</Name>

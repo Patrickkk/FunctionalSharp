@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FunctionalSharp.OptionTypes.Test
 {
@@ -78,11 +80,23 @@ namespace FunctionalSharp.OptionTypes.Test
         [TestMethod]
         public void TestTostringValue()
         {
-            var value = 123;
+            var value = "123";
             var option = value.ToOption();
             var result = option.ToString();
 
             Assert.AreEqual("123", result);
+        }
+
+
+        [TestMethod]
+        public void TestExtensionMethods()
+        {
+            var values = new List<IOption<string>> { "".ToOption(), "".ToOption(), new None<string>(), "".ToOption(), new None<string>() };
+            var nonNullCount = values.WithValue().Count();
+            var nullsCount = values.WithoutValue().Count();
+
+            Assert.AreEqual(nonNullCount, 3);
+            Assert.AreEqual(nullsCount, 2);
         }
     }
 }

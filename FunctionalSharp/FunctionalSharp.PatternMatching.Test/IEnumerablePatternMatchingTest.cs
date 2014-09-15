@@ -40,7 +40,20 @@ namespace FunctionalSharp.PatternMatching.Test
             var results = list.Match()
                 .With(s => s.Contains("B"), "B")
                 .With(s => s.Contains("A"), "A")
-                .ElseException();
+                .ElseException()
+                .ToList();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestMatchingElseExceptionWithSpecificException()
+        {
+            IEnumerable<string> list = new string[] { "1", "2", "3", "4", "5" };
+            var results = list.Match()
+                .With(s => s.Contains("B"), "B")
+                .With(s => s.Contains("A"), "A")
+                .ElseException(new ArgumentException("No good"))
+                .ToList();
         }
     }
 }
