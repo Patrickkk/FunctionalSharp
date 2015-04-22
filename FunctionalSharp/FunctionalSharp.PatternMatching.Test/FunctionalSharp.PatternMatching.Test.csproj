@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="PatternMatchActionSingleTests.cs" />
     <Compile Include="PatterMatchStringTests.cs" />
+    <Compile Include="PatternMatchActionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IEnumerablePatternMatchingTest.cs" />
     <Compile Include="DiscriminatedPatternMatchTest.cs" />
