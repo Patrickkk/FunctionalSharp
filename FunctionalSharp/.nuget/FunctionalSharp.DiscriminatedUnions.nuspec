@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FunctionalSharp.DiscriminatedUnions</id>
-    <version>0.7.3</version>
+    <version>0.9.0</version>
     <title>FunctionalSharp DiscriminatedUnions</title>
     <authors>Patrick van Lohuizen</authors>
     <owners>Patrick van Lohuizen</owners>
@@ -12,8 +12,10 @@
     <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
     <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
     <releaseNotes>
-      - Changed id from DiscriminatedUnions to FunctionalSharp.DiscriminatedUnions.
-      - Changed dll name and namespace.
+      - Added fody nullguard to ensure no nulls are returned unless specified.
+      - Added patternmatching for IEnumerables.
+      - Added several extensionmethods.
+      - Synchronized versionnumbering with other Functionalsharp packages.
     </releaseNotes>
     <copyright>Patrick van Lohuizen</copyright>
     <language>en-US</language>

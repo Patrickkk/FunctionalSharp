@@ -8,4 +8,5 @@ mkdir Publish
 NuGet Pack FunctionalSharp.DiscriminatedUnions.nuspec -OutputDirectory "D:\Nuget"
 NuGet Pack FunctionalSharp.OptionTypes.nuspec -OutputDirectory "D:\Nuget"
 NuGet Pack FunctionalSharp.PatternMatching.nuspec -OutputDirectory "D:\Nuget"
+NuGet Pack FunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec -OutputDirectory "D:\Nuget"
 pause
