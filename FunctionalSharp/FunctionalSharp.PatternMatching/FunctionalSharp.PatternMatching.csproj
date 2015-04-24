@@ -83,10 +83,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PatternMatchActionCase.cs" />
+    <Compile Include="PatternMatchAction.cs" />
     <Compile Include="PatternMatchExtensions.cs" />
     <Compile Include="PatternMatch.cs" />
     <Compile Include="PatternMatchCase.cs" />
     <Compile Include="PatternMatchContext.cs" />
+    <Compile Include="PatternMatchSingleAction.cs" />
     <Compile Include="PatternMatchSingleContext.cs" />
     <Compile Include="PatternMatchSingle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

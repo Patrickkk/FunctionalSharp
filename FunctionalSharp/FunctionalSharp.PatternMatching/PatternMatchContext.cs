@@ -26,5 +26,25 @@ namespace FunctionalSharp.PatternMatching
         {
             return With(value => value.Equals(equalObject), _ => resultValue);
         }
+
+        public PatternMatchAction<T> With(Func<T, bool> pattern, Action<T> callback)
+        {
+            return new PatternMatchAction<T>(this.values, pattern, callback);
+        }
+
+        public PatternMatchAction<T> With(Func<T, bool> pattern, Action callback)
+        {
+            return With(pattern, value => callback());
+        }
+
+        public PatternMatchAction<T> With(T equalObject, Action callback)
+        {
+            return With(value => value.Equals(equalObject), value => callback());
+        }
+
+        public PatternMatchAction<T> With(T equalObject, Action<T> callback)
+        {
+            return With(value => value.Equals(equalObject), value => callback(value));
+        }
     }
 }
