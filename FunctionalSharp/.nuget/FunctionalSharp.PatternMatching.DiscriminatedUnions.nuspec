@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FunctionalSharp.PatternMatching.DiscriminatedUnions</id>
+    <version>0.9.0</version>
+    <title>FunctionalSharp PatternMatching Discriminated unions</title>
+    <authors>Patrick van Lohuizen</authors>
+    <owners>Patrick van Lohuizen</owners>
+    <licenseUrl>https://github.com/Patrickkk/FunctionalSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Patrickkk/FunctionalSharp/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Provides additional types and methods allowing patternamtching to return discriminatedunions. You can now return different types with patternamtching, and return a discriminated union of these types.
+    </description>
+    <summary>Provides pattern matching for C# using a fuent syntax.</summary>
+    <releaseNotes>
+      - Initial release.
+    </releaseNotes>
+    <copyright>Patrick van Lohuizen</copyright>
+    <language>en-US</language>
+    <tags>pattern, patternmatch, match, functional,</tags>
+    <dependencies>
+      <dependency id="FunctionalSharp.DiscriminatedUnions" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\bin\Release35\FunctionalSharp.PatternMatching.DiscriminatedUnions.PatternMatching.dll" target="lib\net35\FunctionalSharp.PatternMatching.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\bin\Release40\FunctionalSharp.PatternMatching.DiscriminatedUnions.PatternMatching.dll" target="lib\net40\FunctionalSharp.PatternMatching.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\bin\Release45\FunctionalSharp.PatternMatching.DiscriminatedUnions.PatternMatching.dll" target="lib\net45\FunctionalSharp.PatternMatching.DiscriminatedUnions.dll" />
+    <file src="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\bin\Release451\FunctionalSharp.PatternMatching.DiscriminatedUnions.PatternMatching.dll" target="lib\net451\FunctionalSharp.PatternMatching.DiscriminatedUnions.dll" />
+  </files>
+</package>

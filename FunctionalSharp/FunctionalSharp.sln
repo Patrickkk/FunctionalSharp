@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{F56C2B
 		.nuget\DiscriminatedUnions.nuspec = .nuget\DiscriminatedUnions.nuspec
 		.nuget\FunctionalSharp.DiscriminatedUnions.nuspec = .nuget\FunctionalSharp.DiscriminatedUnions.nuspec
 		.nuget\FunctionalSharp.OptionTypes.nuspec = .nuget\FunctionalSharp.OptionTypes.nuspec
+		.nuget\FunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec = .nuget\FunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec
 		.nuget\FunctionalSharp.PatternMatching.nuspec = .nuget\FunctionalSharp.PatternMatching.nuspec
 	EndProjectSection
 EndProject
@@ -43,6 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildAndPublish", "BuildAnd
 		.nuget\PackageFunctionalSharp.DiscriminatedUnions.bat = .nuget\PackageFunctionalSharp.DiscriminatedUnions.bat
 		.nuget\PackageFunctionalSharp.OptionTypes.bat = .nuget\PackageFunctionalSharp.OptionTypes.bat
 		.nuget\PackageFunctionalSharp.PatternMatching.bat = .nuget\PackageFunctionalSharp.PatternMatching.bat
+		.nuget\PackageFunctionalSharp.PatternMatching.DiscriminatedUnions.bat = .nuget\PackageFunctionalSharp.PatternMatching.DiscriminatedUnions.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.LinqExtensions", "FunctionalSharp.LinqExtensions\FunctionalSharp.LinqExtensions.csproj", "{FECBEDE6-6243-4FA0-98F2-52721E7B8443}"

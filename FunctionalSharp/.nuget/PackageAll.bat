@@ -5,3 +5,4 @@ nuget.exe update -self
 CALL PackageFunctionalSharp.DiscriminatedUnions
 CALL PackageFunctionalSharp.OptionTypes
 CALL PackageFunctionalSharp.PatternMatching
+CALL PackageFunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FunctionalSharp.OptionTypes</id>
-    <version>0.1.0</version>
+    <version>0.9.0</version>
     <title>FunctionalSharp OptionTypes</title>
     <authors>Patrick van Lohuizen</authors>
     <owners>Patrick van Lohuizen</owners>
@@ -12,7 +12,7 @@
     <description>Provides a simple option type for C# allowing you to never return null and communicate to your consumers that something might or might not have a value.</description>
     <summary>Provides a simple option type for C# allowing you to never return null and communicate to your consumers that something might or might not have a value.</summary>
     <releaseNotes>
-      - Initial version, provides a simple Option type.
+      - Added xml comments for public methods and types.
     </releaseNotes>
     <copyright>Patrick van Lohuizen</copyright>
     <language>en-US</language>

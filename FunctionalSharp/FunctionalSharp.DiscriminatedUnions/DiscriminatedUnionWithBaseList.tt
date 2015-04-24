@@ -16,6 +16,9 @@ var maxNumberOfTypeArguments = 10;
 for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; numberOfArguments +=1)
 {
 #>
+	/// <summary>
+	/// Represents a list of Discriminated unions with a common baseclass. Using this list you can add items without having to specify the union type.
+	/// </summary>
 	[Serializable]
 	public class DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType> : List<DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>>
 <#for(var i = 0; i < numberOfArguments; i +=1)
@@ -28,7 +31,10 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 	{
 <#for(var i = 0; i < numberOfArguments; i +=1)
 {
-#>
+#>        
+		/// <summary>
+		/// Adds the object to the end of the DiscriminatedUnionList
+		/// </summary>
 		public void Add(Type<#= i + 1 #> item)
 		{
 			this.Add(new DiscriminatedUnionWithBase<<#= TypeArgumentsFor(numberOfArguments) #>, BaseType>(item));
@@ -50,6 +56,12 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 if(numberOfArguments != maxNumberOfTypeArguments)
 {
 #>
+		/// <summary>
+		/// Merges a type into the existing discriminated union list. 
+		/// </summary>
+		/// <typeparam name="TypeToMerge">The type of the items to merge.</typeparam>
+		/// <param name="toMerge">The Items to merge.</param>
+		/// <returns></returns>
 		public DiscriminatedUnionWithBaseList<<#= TypeArgumentsFor(numberOfArguments) #>, TypeToMerge, BaseType> Merge<TypeToMerge>(IEnumerable<TypeToMerge> toMerge)
 			where TypeToMerge : BaseType
 		{
