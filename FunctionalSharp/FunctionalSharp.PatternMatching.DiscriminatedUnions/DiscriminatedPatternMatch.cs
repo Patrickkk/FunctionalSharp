@@ -55,7 +55,8 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2>(result1);
 						break;
@@ -174,12 +175,14 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3>(result2);
 						break;
@@ -330,17 +333,20 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4>(result3);
 						break;
@@ -513,22 +519,26 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5>(result4);
 						break;
@@ -723,27 +733,32 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					TResult5 result5 = default(TResult5);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result4);
 						break;
                     }
-                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    else 					if(FindMatchForNumber(result5Patterns, i, value, out result5))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>(result5);
 						break;
@@ -960,32 +975,38 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					TResult5 result5 = default(TResult5);
+					TResult6 result6 = default(TResult6);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result4);
 						break;
                     }
-                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    else 					if(FindMatchForNumber(result5Patterns, i, value, out result5))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result5);
 						break;
                     }
-                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    else 					if(FindMatchForNumber(result6Patterns, i, value, out result6))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>(result6);
 						break;
@@ -1224,37 +1245,44 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					TResult5 result5 = default(TResult5);
+					TResult6 result6 = default(TResult6);
+					TResult7 result7 = default(TResult7);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result4);
 						break;
                     }
-                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    else 					if(FindMatchForNumber(result5Patterns, i, value, out result5))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result5);
 						break;
                     }
-                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    else 					if(FindMatchForNumber(result6Patterns, i, value, out result6))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result6);
 						break;
                     }
-                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    else 					if(FindMatchForNumber(result7Patterns, i, value, out result7))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>(result7);
 						break;
@@ -1515,42 +1543,50 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					TResult5 result5 = default(TResult5);
+					TResult6 result6 = default(TResult6);
+					TResult7 result7 = default(TResult7);
+					TResult8 result8 = default(TResult8);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result4);
 						break;
                     }
-                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    else 					if(FindMatchForNumber(result5Patterns, i, value, out result5))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result5);
 						break;
                     }
-                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    else 					if(FindMatchForNumber(result6Patterns, i, value, out result6))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result6);
 						break;
                     }
-                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    else 					if(FindMatchForNumber(result7Patterns, i, value, out result7))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result7);
 						break;
                     }
-                    else if(FindMatchForNumber(result8Patterns, i, value, out TResult8 result8 = default(TResult8)))
+                    else 					if(FindMatchForNumber(result8Patterns, i, value, out result8))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>(result8);
 						break;
@@ -1833,47 +1869,56 @@ namespace FunctionalSharp.PatternMatching
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					if(FindMatchForNumber(result1Patterns, i, value, out TResult1 result1 = default(TResult1)))
+					TResult1 result1 = default(TResult1);
+					TResult2 result2 = default(TResult2);
+					TResult3 result3 = default(TResult3);
+					TResult4 result4 = default(TResult4);
+					TResult5 result5 = default(TResult5);
+					TResult6 result6 = default(TResult6);
+					TResult7 result7 = default(TResult7);
+					TResult8 result8 = default(TResult8);
+					TResult9 result9 = default(TResult9);
+					if(FindMatchForNumber(result1Patterns, i, value, out result1))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result1);
 						break;
                     }
-                    else if(FindMatchForNumber(result2Patterns, i, value, out TResult2 result2 = default(TResult2)))
+                    else 					if(FindMatchForNumber(result2Patterns, i, value, out result2))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result2);
 						break;
                     }
-                    else if(FindMatchForNumber(result3Patterns, i, value, out TResult3 result3 = default(TResult3)))
+                    else 					if(FindMatchForNumber(result3Patterns, i, value, out result3))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result3);
 						break;
                     }
-                    else if(FindMatchForNumber(result4Patterns, i, value, out TResult4 result4 = default(TResult4)))
+                    else 					if(FindMatchForNumber(result4Patterns, i, value, out result4))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result4);
 						break;
                     }
-                    else if(FindMatchForNumber(result5Patterns, i, value, out TResult5 result5 = default(TResult5)))
+                    else 					if(FindMatchForNumber(result5Patterns, i, value, out result5))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result5);
 						break;
                     }
-                    else if(FindMatchForNumber(result6Patterns, i, value, out TResult6 result6 = default(TResult6)))
+                    else 					if(FindMatchForNumber(result6Patterns, i, value, out result6))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result6);
 						break;
                     }
-                    else if(FindMatchForNumber(result7Patterns, i, value, out TResult7 result7 = default(TResult7)))
+                    else 					if(FindMatchForNumber(result7Patterns, i, value, out result7))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result7);
 						break;
                     }
-                    else if(FindMatchForNumber(result8Patterns, i, value, out TResult8 result8 = default(TResult8)))
+                    else 					if(FindMatchForNumber(result8Patterns, i, value, out result8))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result8);
 						break;
                     }
-                    else if(FindMatchForNumber(result9Patterns, i, value, out TResult9 result9 = default(TResult9)))
+                    else 					if(FindMatchForNumber(result9Patterns, i, value, out result9))
                     {
                         yield return new DiscriminatedUnion<TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9, TResult10>(result9);
 						break;

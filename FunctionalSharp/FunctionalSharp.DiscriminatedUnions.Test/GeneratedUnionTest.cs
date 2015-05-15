@@ -17,8 +17,6 @@ namespace FunctionalSharp.DiscriminatedUnions.Test
             var strings = union4.Match(
                 student => student.ToString(),
                 teacher => "Teacher");
-
-            var d = 1;
         }
 
         [TestMethod]

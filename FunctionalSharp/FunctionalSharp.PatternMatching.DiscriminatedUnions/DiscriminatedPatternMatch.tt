@@ -92,8 +92,14 @@ for(var numberOfArguments = 1; numberOfArguments <= maxNumberOfTypeArguments; nu
             {
 			    for (int i = 0; i < CountAllResultPatterns(); i++)
                 {
-					<#for(var i = 1; i <= numberOfArguments; i+=1)
-					{ #>if(FindMatchForNumber(result<#= i #>Patterns, i, value, out TResult<#= i #> result<#= i #> = default(TResult<#= i #>)))
+<#
+				    for(var i = 1; i <= numberOfArguments; i+=1)
+					{#>
+					TResult<#= i #> result<#= i #> = default(TResult<#= i #>);
+<#
+					}for(var i = 1; i <= numberOfArguments; i+=1)
+					{ #>
+					if(FindMatchForNumber(result<#= i #>Patterns, i, value, out result<#= i #>))
                     {
                         yield return new DiscriminatedUnion<<#=ArgumentsFor("TResult{0}, ", numberOfArguments + 1)#>>(result<#= i #>);
 						break;
