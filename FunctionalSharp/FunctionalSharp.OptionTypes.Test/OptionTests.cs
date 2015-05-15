@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -97,6 +98,15 @@ namespace FunctionalSharp.OptionTypes.Test
 
             Assert.AreEqual(nonNullCount, 3);
             Assert.AreEqual(nullsCount, 2);
+        }
+
+        [TestMethod]
+        public void TestStructureTypes()
+        {
+            var year = 1;
+            var optionalYear = year == 0 ? new None<DateTime>() : (new DateTime(year, 1, 1)).ToOption();
+            var unpackedYear = optionalYear.Match(y => y.Year, DateTime.MinValue.Year);
+            Assert.AreEqual(1, unpackedYear);
         }
     }
 }
