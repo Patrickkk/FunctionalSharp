@@ -17,10 +17,6 @@ namespace FunctionalSharp.OptionTypes
         /// <param name="value"></param>
         internal Some(T value)
         {
-            if (default(T) != null)
-            {
-                throw new Exception("Option type used for non nullable type " + typeof(T).Name);
-            }
             this.value = value;
         }
 

@@ -69,6 +69,10 @@
       <Project>{78dd888d-2681-4d5a-ae06-f2a07bc30737}</Project>
       <Name>FunctionalSharp.DiscriminatedUnions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FunctionalSharp.OptionTypes\FunctionalSharp.OptionTypes.csproj">
+      <Project>{b6c04404-4181-4c33-b22a-c1bda21a8bc5}</Project>
+      <Name>FunctionalSharp.OptionTypes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\FunctionalSharp.PatternMatching.DiscriminatedUnions.csproj">
       <Project>{039d9cd7-605d-4fe2-8d44-10c27555cd10}</Project>
       <Name>FunctionalSharp.PatternMatching.DiscriminatedUnions</Name>

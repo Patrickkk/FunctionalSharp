@@ -15,10 +15,7 @@ namespace FunctionalSharp.OptionTypes
         /// </summary>
         public None()
         {
-            if (default(T) != null)
-            {
-                throw new ArgumentOutOfRangeException("Option type used for non nullable type " + typeof(T).Name);
-            }
+
         }
 
         /// <summary>
