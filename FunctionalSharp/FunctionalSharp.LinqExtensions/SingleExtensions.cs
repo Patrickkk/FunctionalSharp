@@ -8,23 +8,38 @@ namespace FunctionalSharp.LinqExtensions
     {
         public static T Single<T>(this IEnumerable<T> collection, Func<T, bool> predicate, string additionalExceptionInformation)
         {
-            if (collection.Count() > 1)
-            {
-                throw new Exception("The sequence containes more than one element. " + additionalExceptionInformation);
-            }
+            return collection.Single(predicate,
+                noResultsException: new Exception("The sequence does not contain any elements. " + additionalExceptionInformation),
+                moreThanOneResultException: new Exception("The sequence containes more than one element. " + additionalExceptionInformation)
+                );
+        }
 
-            var value = collection.Single();
-            if (value == null)
-            {
-                throw new Exception("The sequence does not contain any elements. " + additionalExceptionInformation);
-            }
-
-            return value;
+        public static T Single<T>(this IEnumerable<T> collection, Func<T, bool> predicate, Exception exceptionToThrow)
+        {
+            return collection.Single(predicate, exceptionToThrow, exceptionToThrow);
         }
 
         public static T Single<T>(this IEnumerable<T> collection, string additionalExceptionInformation)
         {
-            return collection.Single(additionalExceptionInformation);
+            return collection.Single(_ => { return true; }, additionalExceptionInformation);
+        }
+
+        public static T Single<T>(this IEnumerable<T> collection, Func<T, bool> predicate, Exception noResultsException, Exception moreThanOneResultException)
+        {
+            // take 2 elements to prevent iterating the entire collection.
+            IEnumerable<T> firstItems = collection.Take(2);
+            if (firstItems.Count() == 0)
+            {
+                throw noResultsException;
+            }
+            else if (firstItems.Count() > 1)
+            {
+                throw moreThanOneResultException;
+            }
+            else
+            {
+                return firstItems.First();
+            }
         }
     }
 }
