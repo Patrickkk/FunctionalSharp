@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NullGuard;
+using System;
 
 namespace FunctionalSharp.PatternMatching
 {
@@ -6,7 +7,7 @@ namespace FunctionalSharp.PatternMatching
     {
         private readonly T value;
 
-        internal PatternMatchSingleContext(T value)
+        internal PatternMatchSingleContext([AllowNull]T value)
         {
             this.value = value;
         }

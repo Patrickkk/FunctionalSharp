@@ -56,7 +56,7 @@ namespace FunctionalSharp.OptionTypes
         /// Turns the type T into an option type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
+        /// <param name="value">value to create an option type for. Can be null</param>
         /// <returns></returns>
         public static IOption<T> ToOption<T>([AllowNull] this T value)
         {
