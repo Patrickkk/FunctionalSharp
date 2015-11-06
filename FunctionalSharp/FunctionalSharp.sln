@@ -21,7 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.PatternMatc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{F56C2B46-7DEC-4FC9-B077-09D2AD4376F9}"
 	ProjectSection(SolutionItems) = preProject
-		.nuget\DiscriminatedUnions.nuspec = .nuget\DiscriminatedUnions.nuspec
 		.nuget\FunctionalSharp.DiscriminatedUnions.nuspec = .nuget\FunctionalSharp.DiscriminatedUnions.nuspec
 		.nuget\FunctionalSharp.OptionTypes.nuspec = .nuget\FunctionalSharp.OptionTypes.nuspec
 		.nuget\FunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec = .nuget\FunctionalSharp.PatternMatching.DiscriminatedUnions.nuspec
