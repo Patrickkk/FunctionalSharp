@@ -27,6 +27,27 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// </summary>
 		protected int tag;
 
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
+
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -102,6 +123,32 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -194,6 +241,37 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -302,6 +380,42 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -426,6 +540,47 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
+				tag = 5; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -566,6 +721,52 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
+				tag = 5; 
+			}
+			else if(value.GetType() == typeof(Type6))
+			{
+				Item6 = (Type6)value; 
+				tag = 6; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -722,6 +923,57 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
+				tag = 5; 
+			}
+			else if(value.GetType() == typeof(Type6))
+			{
+				Item6 = (Type6)value; 
+				tag = 6; 
+			}
+			else if(value.GetType() == typeof(Type7))
+			{
+				Item7 = (Type7)value; 
+				tag = 7; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -894,6 +1146,62 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
+				tag = 5; 
+			}
+			else if(value.GetType() == typeof(Type6))
+			{
+				Item6 = (Type6)value; 
+				tag = 6; 
+			}
+			else if(value.GetType() == typeof(Type7))
+			{
+				Item7 = (Type7)value; 
+				tag = 7; 
+			}
+			else if(value.GetType() == typeof(Type8))
+			{
+				Item8 = (Type8)value; 
+				tag = 8; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
@@ -1082,6 +1390,67 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The tag indicating what item is actually stored.
 		/// </summary>
 		protected int tag;
+
+		/// <summary>
+		/// Runs Actions for the matched types.
+		/// </summary>
+		public DiscriminatedUnion(object value)
+		{
+			if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type1))
+			{
+				Item1 = (Type1)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type2))
+			{
+				Item2 = (Type2)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
+				tag = 5; 
+			}
+			else if(value.GetType() == typeof(Type6))
+			{
+				Item6 = (Type6)value; 
+				tag = 6; 
+			}
+			else if(value.GetType() == typeof(Type7))
+			{
+				Item7 = (Type7)value; 
+				tag = 7; 
+			}
+			else if(value.GetType() == typeof(Type8))
+			{
+				Item8 = (Type8)value; 
+				tag = 8; 
+			}
+			else if(value.GetType() == typeof(Type9))
+			{
+				Item9 = (Type9)value; 
+				tag = 9; 
+			}
+			else
+			{
+				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
+			}
+		}
 
 
 		/// <summary>
