@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.DiscriminatedUnions", "FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj", "{78DD888D-2681-4D5A-AE06-F2A07BC30737}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{529DF31D-C05E-4054-92B0-8DF47039D863}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.DiscriminatedUnions.Test", "FunctionalSharp.DiscriminatedUnions.Test\FunctionalSharp.DiscriminatedUnions.Test.csproj", "{20BA97A5-A664-4919-89D7-47ACB026F372}"
 EndProject
@@ -175,12 +173,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{20BA97A5-A664-4919-89D7-47ACB026F372} = {529DF31D-C05E-4054-92B0-8DF47039D863}
-		{F4A89497-59E6-46EF-AE86-06170E2A329B} = {529DF31D-C05E-4054-92B0-8DF47039D863}
-		{6FB70979-EB01-43EB-947F-2D920BF24E12} = {529DF31D-C05E-4054-92B0-8DF47039D863}
 		{F56C2B46-7DEC-4FC9-B077-09D2AD4376F9} = {647BDD27-DDF5-4489-8C05-00388948A929}
 		{5C4E7124-B73B-43A2-97AA-0056296607B7} = {647BDD27-DDF5-4489-8C05-00388948A929}
 		{F2413002-3662-4FF0-BF27-D8D429BF8B7A} = {647BDD27-DDF5-4489-8C05-00388948A929}
-		{1DBFC76B-E57A-4B45-9E8E-3736FCED1BB2} = {529DF31D-C05E-4054-92B0-8DF47039D863}
 	EndGlobalSection
 EndGlobal
