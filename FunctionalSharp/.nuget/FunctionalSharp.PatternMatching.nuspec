@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FunctionalSharp.PatternMatching</id>
-    <version>0.9.2</version>
+    <version>0.9.3</version>
     <title>FunctionalSharp PatternMatching</title>
     <authors>Patrick van Lohuizen</authors>
     <owners>Patrick van Lohuizen</owners>
@@ -12,7 +12,7 @@
     <description>Provides pattern matching for C# using a fuent syntax. It will allow you to use a more functional approach to complex if/else and switch statements.</description>
     <summary>Provides pattern matching for C# using a fuent syntax.</summary>
     <releaseNotes>
-      - Allow pattermatchingsingle to be used for null values.
+      - Added overload to have function on pattermatch single for the return value.
     </releaseNotes>
     <copyright>Patrick van Lohuizen</copyright>
     <language>en-US</language>
