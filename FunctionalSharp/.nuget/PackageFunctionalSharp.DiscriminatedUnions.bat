@@ -6,6 +6,6 @@ CALL Build.bat
 
 mkdir Publish
 NuGet Pack FunctionalSharp.DiscriminatedUnions.nuspec -OutputDirectory Publish
-Nuget push "\Publish\FunctionalSharp.DiscriminatedUnions*.nupkg"
+Nuget push "\Publish\FunctionalSharp.DiscriminatedUnions*.nupkg" -Source https://www.nuget.org/api/v2/package
 rmdir Publish /s /q
 pause
