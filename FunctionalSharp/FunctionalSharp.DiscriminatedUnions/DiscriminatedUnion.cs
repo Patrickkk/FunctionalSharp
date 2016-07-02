@@ -37,7 +37,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
+			else if(value.GetType() == typeof(Type2))
 			{
 				Item1 = (Type1)value; 
 				tag = 1; 
