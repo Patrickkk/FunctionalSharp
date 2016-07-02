@@ -1,10 +1,4 @@
 ﻿
-
-
-
-
-
-
 namespace FunctionalSharp.DiscriminatedUnions
 {
 	using System;
@@ -39,7 +33,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
-				Item1 = (Type1)value; 
+				Item2 = (Type2)value; 
 				tag = 1; 
 			}
 			else
@@ -47,7 +41,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -59,7 +52,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -70,7 +62,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -85,7 +76,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				case 0: return Function1(Item1);
 				case 1: return Function2(Item2);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -101,7 +91,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				case 0: Action1(Item1); break;
 				case 1: Action2(Item2); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -134,14 +123,14 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
+				tag = 1; 
+			}
+			else if(value.GetType() == typeof(Type3))
+			{
+				Item3 = (Type3)value; 
 				tag = 2; 
 			}
 			else
@@ -149,7 +138,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -161,7 +149,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -172,7 +159,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -183,7 +169,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -200,7 +185,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 0: return Function1(Item1);
 				case 1: return Function2(Item2);
 				case 2: return Function3(Item3);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -218,7 +202,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 0: Action1(Item1); break;
 				case 1: Action2(Item2); break;
 				case 2: Action3(Item3); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -252,19 +235,19 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
+				tag = 2; 
+			}
+			else if(value.GetType() == typeof(Type4))
+			{
+				Item4 = (Type4)value; 
 				tag = 3; 
 			}
 			else
@@ -272,7 +255,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -284,7 +266,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -295,7 +276,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -306,7 +286,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -317,7 +296,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -336,7 +314,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 1: return Function2(Item2);
 				case 2: return Function3(Item3);
 				case 3: return Function4(Item4);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -356,7 +333,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 1: Action2(Item2); break;
 				case 2: Action3(Item3); break;
 				case 3: Action4(Item4); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -391,24 +367,24 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
+				tag = 3; 
+			}
+			else if(value.GetType() == typeof(Type5))
+			{
+				Item5 = (Type5)value; 
 				tag = 4; 
 			}
 			else
@@ -416,7 +392,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -428,7 +403,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -439,7 +413,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -450,7 +423,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -461,7 +433,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -472,7 +443,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -493,7 +463,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 2: return Function3(Item3);
 				case 3: return Function4(Item4);
 				case 4: return Function5(Item5);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -515,7 +484,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 2: Action3(Item3); break;
 				case 3: Action4(Item4); break;
 				case 4: Action5(Item5); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -551,29 +519,29 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
-				tag = 4; 
+				tag = 3; 
 			}
 			else if(value.GetType() == typeof(Type5))
 			{
 				Item5 = (Type5)value; 
+				tag = 4; 
+			}
+			else if(value.GetType() == typeof(Type6))
+			{
+				Item6 = (Type6)value; 
 				tag = 5; 
 			}
 			else
@@ -581,7 +549,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -593,7 +560,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -604,7 +570,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -615,7 +580,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -626,7 +590,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -637,7 +600,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type6"/>
 		/// </summary>
@@ -648,7 +610,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -671,7 +632,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 3: return Function4(Item4);
 				case 4: return Function5(Item5);
 				case 5: return Function6(Item6);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -695,7 +655,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 3: Action4(Item4); break;
 				case 4: Action5(Item5); break;
 				case 5: Action6(Item6); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -732,34 +691,34 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
-				tag = 4; 
+				tag = 3; 
 			}
 			else if(value.GetType() == typeof(Type5))
 			{
 				Item5 = (Type5)value; 
-				tag = 5; 
+				tag = 4; 
 			}
 			else if(value.GetType() == typeof(Type6))
 			{
 				Item6 = (Type6)value; 
+				tag = 5; 
+			}
+			else if(value.GetType() == typeof(Type7))
+			{
+				Item7 = (Type7)value; 
 				tag = 6; 
 			}
 			else
@@ -767,7 +726,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -779,7 +737,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -790,7 +747,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -801,7 +757,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -812,7 +767,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -823,7 +777,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type6"/>
 		/// </summary>
@@ -834,7 +787,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type7"/>
 		/// </summary>
@@ -845,7 +797,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type7.
 		/// </summary>
 		protected readonly Type7 Item7;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -870,7 +821,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 4: return Function5(Item5);
 				case 5: return Function6(Item6);
 				case 6: return Function7(Item7);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -896,7 +846,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 4: Action5(Item5); break;
 				case 5: Action6(Item6); break;
 				case 6: Action7(Item7); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -934,39 +883,39 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
-				tag = 4; 
+				tag = 3; 
 			}
 			else if(value.GetType() == typeof(Type5))
 			{
 				Item5 = (Type5)value; 
-				tag = 5; 
+				tag = 4; 
 			}
 			else if(value.GetType() == typeof(Type6))
 			{
 				Item6 = (Type6)value; 
-				tag = 6; 
+				tag = 5; 
 			}
 			else if(value.GetType() == typeof(Type7))
 			{
 				Item7 = (Type7)value; 
+				tag = 6; 
+			}
+			else if(value.GetType() == typeof(Type8))
+			{
+				Item8 = (Type8)value; 
 				tag = 7; 
 			}
 			else
@@ -974,7 +923,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -986,7 +934,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -997,7 +944,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -1008,7 +954,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -1019,7 +964,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -1030,7 +974,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type6"/>
 		/// </summary>
@@ -1041,7 +984,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type7"/>
 		/// </summary>
@@ -1052,7 +994,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type7.
 		/// </summary>
 		protected readonly Type7 Item7;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type8"/>
 		/// </summary>
@@ -1063,7 +1004,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type8.
 		/// </summary>
 		protected readonly Type8 Item8;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1090,7 +1030,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 5: return Function6(Item6);
 				case 6: return Function7(Item7);
 				case 7: return Function8(Item8);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -1118,7 +1057,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 5: Action6(Item6); break;
 				case 6: Action7(Item7); break;
 				case 7: Action8(Item8); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -1157,44 +1095,44 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
-				tag = 4; 
+				tag = 3; 
 			}
 			else if(value.GetType() == typeof(Type5))
 			{
 				Item5 = (Type5)value; 
-				tag = 5; 
+				tag = 4; 
 			}
 			else if(value.GetType() == typeof(Type6))
 			{
 				Item6 = (Type6)value; 
-				tag = 6; 
+				tag = 5; 
 			}
 			else if(value.GetType() == typeof(Type7))
 			{
 				Item7 = (Type7)value; 
-				tag = 7; 
+				tag = 6; 
 			}
 			else if(value.GetType() == typeof(Type8))
 			{
 				Item8 = (Type8)value; 
+				tag = 7; 
+			}
+			else if(value.GetType() == typeof(Type9))
+			{
+				Item9 = (Type9)value; 
 				tag = 8; 
 			}
 			else
@@ -1202,7 +1140,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -1214,7 +1151,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -1225,7 +1161,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -1236,7 +1171,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -1247,7 +1181,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -1258,7 +1191,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type6"/>
 		/// </summary>
@@ -1269,7 +1201,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type7"/>
 		/// </summary>
@@ -1280,7 +1211,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type7.
 		/// </summary>
 		protected readonly Type7 Item7;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type8"/>
 		/// </summary>
@@ -1291,7 +1221,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type8.
 		/// </summary>
 		protected readonly Type8 Item8;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type9"/>
 		/// </summary>
@@ -1302,7 +1231,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type9.
 		/// </summary>
 		protected readonly Type9 Item9;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1331,7 +1259,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 6: return Function7(Item7);
 				case 7: return Function8(Item8);
 				case 8: return Function9(Item9);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -1361,7 +1288,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 6: Action7(Item7); break;
 				case 7: Action8(Item8); break;
 				case 8: Action9(Item9); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -1401,49 +1327,49 @@ namespace FunctionalSharp.DiscriminatedUnions
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-			else if(value.GetType() == typeof(Type1))
-			{
-				Item1 = (Type1)value; 
-				tag = 1; 
-			}
 			else if(value.GetType() == typeof(Type2))
 			{
 				Item2 = (Type2)value; 
-				tag = 2; 
+				tag = 1; 
 			}
 			else if(value.GetType() == typeof(Type3))
 			{
 				Item3 = (Type3)value; 
-				tag = 3; 
+				tag = 2; 
 			}
 			else if(value.GetType() == typeof(Type4))
 			{
 				Item4 = (Type4)value; 
-				tag = 4; 
+				tag = 3; 
 			}
 			else if(value.GetType() == typeof(Type5))
 			{
 				Item5 = (Type5)value; 
-				tag = 5; 
+				tag = 4; 
 			}
 			else if(value.GetType() == typeof(Type6))
 			{
 				Item6 = (Type6)value; 
-				tag = 6; 
+				tag = 5; 
 			}
 			else if(value.GetType() == typeof(Type7))
 			{
 				Item7 = (Type7)value; 
-				tag = 7; 
+				tag = 6; 
 			}
 			else if(value.GetType() == typeof(Type8))
 			{
 				Item8 = (Type8)value; 
-				tag = 8; 
+				tag = 7; 
 			}
 			else if(value.GetType() == typeof(Type9))
 			{
 				Item9 = (Type9)value; 
+				tag = 8; 
+			}
+			else if(value.GetType() == typeof(Type10))
+			{
+				Item10 = (Type10)value; 
 				tag = 9; 
 			}
 			else
@@ -1451,7 +1377,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-
 
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type1"/>
@@ -1463,7 +1388,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type1.
 		/// </summary>
 		protected readonly Type1 Item1;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type2"/>
 		/// </summary>
@@ -1474,7 +1398,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type3"/>
 		/// </summary>
@@ -1485,7 +1408,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type4"/>
 		/// </summary>
@@ -1496,7 +1418,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type5"/>
 		/// </summary>
@@ -1507,7 +1428,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type6"/>
 		/// </summary>
@@ -1518,7 +1438,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type7"/>
 		/// </summary>
@@ -1529,7 +1448,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type7.
 		/// </summary>
 		protected readonly Type7 Item7;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type8"/>
 		/// </summary>
@@ -1540,7 +1458,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type8.
 		/// </summary>
 		protected readonly Type8 Item8;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type9"/>
 		/// </summary>
@@ -1551,7 +1468,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type9.
 		/// </summary>
 		protected readonly Type9 Item9;
-
 		/// <summary>
 		/// Creates a new Discriminated union of with <typeparamref name="Type10"/>
 		/// </summary>
@@ -1562,7 +1478,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type10.
 		/// </summary>
 		protected readonly Type10 Item10;
-
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1593,7 +1508,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 7: return Function8(Item8);
 				case 8: return Function9(Item9);
 				case 9: return Function10(Item10);
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
@@ -1625,10 +1539,8 @@ namespace FunctionalSharp.DiscriminatedUnions
 				case 7: Action8(Item8); break;
 				case 8: Action9(Item9); break;
 				case 9: Action10(Item10); break;
-
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-	}
-}
+	}}
 

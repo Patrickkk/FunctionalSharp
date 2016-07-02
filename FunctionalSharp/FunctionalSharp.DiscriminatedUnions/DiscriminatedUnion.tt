@@ -42,12 +42,12 @@ for(var numberOfArguments = 2; numberOfArguments <= maxNumberOfTypeArguments; nu
 				Item1 = (Type1)value; 
 				tag = 1; 
 			}
-<#for(var i = 1; i < numberOfArguments; i +=1)
+<#for(var i = 1 +1; i <= numberOfArguments; i +=1)
 {
 #>			else if(value.GetType() == typeof(Type<#= i#>))
 			{
 				Item<#= i #> = (Type<#= i#>)value; 
-				tag = <#= i #>; 
+				tag = <#= i - 1 #>; 
 			}
 <#
 }
