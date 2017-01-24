@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FunctionalSharp.DiscriminatedUnions</id>
-    <version>0.9.2</version>
+    <version>0.9.3</version>
     <title>FunctionalSharp DiscriminatedUnions</title>
     <authors>Patrick van Lohuizen</authors>
     <owners>Patrick van Lohuizen</owners>
@@ -12,7 +12,7 @@
     <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
     <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
     <releaseNotes>
-      - Added a constructor that takes an object to allow for dynamic creation.
+      - Fixed bug in constructor of discriminated union that takes and object parameter.
     </releaseNotes>
     <copyright>Patrick van Lohuizen</copyright>
     <language>en-US</language>

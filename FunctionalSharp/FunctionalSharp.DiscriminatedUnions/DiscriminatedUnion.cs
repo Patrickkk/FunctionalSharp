@@ -29,7 +29,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -121,7 +121,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -233,7 +233,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -365,7 +365,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -517,7 +517,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -689,7 +689,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -881,7 +881,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -1093,7 +1093,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{
@@ -1325,7 +1325,7 @@ namespace FunctionalSharp.DiscriminatedUnions
 			if(value.GetType() == typeof(Type1))
 			{
 				Item1 = (Type1)value; 
-				tag = 1; 
+				tag = 0; 
 			}
 			else if(value.GetType() == typeof(Type2))
 			{

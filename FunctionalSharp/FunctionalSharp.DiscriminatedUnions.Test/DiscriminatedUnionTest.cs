@@ -9,6 +9,30 @@
     public class DiscriminatedUnionTest
     {
         [TestMethod]
+        public void TestCorrectValueAsObject1()
+        {
+            var inputvalue = 10;
+            var union = new DiscriminatedUnion<string, int>((object)inputvalue);
+            var result = union.Match(
+                stringValue => -1,
+                intValue => intValue);
+
+            Assert.AreEqual(inputvalue, result);
+        }
+
+        [TestMethod]
+        public void TestCorrectValueAsObject2()
+        {
+            var inputvalue = "TestValue";
+            var union = new DiscriminatedUnion<string, int>((object)inputvalue);
+            var result = union.Match(
+                stringValue => stringValue,
+                intValue => "Not possible");
+
+            Assert.AreEqual(inputvalue, result);
+        }
+
+        [TestMethod]
         public void TestCorrectValue1()
         {
             var inputvalue = 10;
@@ -58,7 +82,6 @@
         [ExpectedException(typeof(InvalidEnumArgumentException))]
         public void TestObjectConstructorShouldThrowForInvlidType()
         {
-
             var union = new DiscriminatedUnion<string, int>((object)1.0);
         }
     }
