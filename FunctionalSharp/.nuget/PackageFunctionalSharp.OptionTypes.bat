@@ -6,6 +6,6 @@ CALL Build.bat
 
 mkdir Publish
 NuGet Pack FunctionalSharp.OptionTypes.nuspec -OutputDirectory Publish
-Nuget push "\Publish\FunctionalSharp.OptionTypes*.nupkg"
+Nuget push "Publish\FunctionalSharp.OptionTypes*.nupkg"
 rmdir Publish /s /q
 pause
