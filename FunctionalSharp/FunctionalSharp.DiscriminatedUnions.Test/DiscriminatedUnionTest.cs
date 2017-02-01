@@ -9,6 +9,30 @@
     public class DiscriminatedUnionTest
     {
         [TestMethod]
+        public void TestImplicitConversionType1()
+        {
+            var inputvalue = 10;
+            DiscriminatedUnion<string, int> union = inputvalue;
+            var result = union.Match(
+                stringValue => -1,
+                intValue => intValue);
+
+            Assert.AreEqual(inputvalue, result);
+        }
+
+        [TestMethod]
+        public void TestImplicitConversionType2()
+        {
+            var inputvalue = "TestString";
+            DiscriminatedUnion<string, int> union = inputvalue;
+            var result = union.Match(
+                stringValue => stringValue,
+                intValue => intValue.ToString());
+
+            Assert.AreEqual(inputvalue, result);
+        }
+
+        [TestMethod]
         public void TestCorrectValueAsObject1()
         {
             var inputvalue = 10;

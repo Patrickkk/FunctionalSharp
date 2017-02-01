@@ -50,6 +50,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.LinqExtensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.PatternMatching.DiscriminatedUnions", "FunctionalSharp.PatternMatching.DiscriminatedUnions\FunctionalSharp.PatternMatching.DiscriminatedUnions.csproj", "{039D9CD7-605D-4FE2-8D44-10C27555CD10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{269467B5-15A5-4FFA-BE8B-BC16F64599E6}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
