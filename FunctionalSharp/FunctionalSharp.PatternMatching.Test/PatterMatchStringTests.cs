@@ -57,5 +57,45 @@ namespace FunctionalSharp.PatternMatching.Test
                 .With(s => s.Contains("A"), "A")
                 .ElseException();
         }
+
+        [TestMethod]
+        public void MatchingUsingFunctionReturningValuesShouldReturnCorrectResult()
+        {
+            var result = "XXX".Match()
+                .With(ReturnTrue, "True")
+                .With(ReturnFalse, "False")
+                .ElseException();
+            Assert.AreEqual("True", result);
+        }
+
+        [TestMethod]
+        public void MatchingUsingFunctionReturningFunctionShouldReturnCorrectResult()
+        {
+            var result = "XXX".Match()
+                .With(ReturnTrue, ReturnTrue)
+                .With(ReturnFalse, ReturnFalse)
+                .ElseException();
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void MatchingUsingValueReturningFunctionShouldReturnCorrectResult()
+        {
+            var result = "XXX".Match()
+                .With("XXX", ReturnTrue)
+                .With("Other", ReturnFalse)
+                .ElseException();
+            Assert.AreEqual(true, result);
+        }
+
+        private static bool ReturnTrue(string arg)
+        {
+            return true;
+        }
+
+        private static bool ReturnFalse(string arg)
+        {
+            return false;
+        }
     }
 }

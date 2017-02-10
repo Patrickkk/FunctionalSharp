@@ -27,7 +27,12 @@ namespace FunctionalSharp.PatternMatching
             return With(this.value, value => value.Equals(valueToMatch), _ => resultValue);
         }
 
-        private PatternMatchSingle<T, TResult> With<TResult>(T value, Func<T, bool> pattern, Func<T, TResult> result)
+        public PatternMatchSingle<T, TResult> With<TResult>(T valueToMatch, Func<T, TResult> result)
+        {
+            return With(this.value, value => value.Equals(valueToMatch), result);
+        }
+
+        private PatternMatchSingle<T, TResult> With<TResult>(T valueToMatch, Func<T, bool> pattern, Func<T, TResult> result)
         {
             return new PatternMatchSingle<T, TResult>(value, pattern, result);
         }

@@ -27,18 +27,18 @@ namespace FunctionalSharp.LinqExtensions
         public static T Single<T>(this IEnumerable<T> collection, Func<T, bool> predicate, Exception noResultsException, Exception moreThanOneResultException)
         {
             // take 2 elements to prevent iterating the entire collection.
-            IEnumerable<T> firstItems = collection.Take(2);
-            if (firstItems.Count() == 0)
+            var firstTwoItems = collection.Take(2);
+            if (firstTwoItems.Count() == 0)
             {
                 throw noResultsException;
             }
-            else if (firstItems.Count() > 1)
+            else if (firstTwoItems.Count() > 1)
             {
                 throw moreThanOneResultException;
             }
             else
             {
-                return firstItems.First();
+                return firstTwoItems.First();
             }
         }
     }

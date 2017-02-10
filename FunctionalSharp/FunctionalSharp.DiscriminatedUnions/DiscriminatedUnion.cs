@@ -62,6 +62,22 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type2.
 		/// </summary>
 		protected readonly Type2 Item2;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -169,6 +185,30 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type3.
 		/// </summary>
 		protected readonly Type3 Item3;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -296,6 +336,38 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type4.
 		/// </summary>
 		protected readonly Type4 Item4;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -443,6 +515,46 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type5.
 		/// </summary>
 		protected readonly Type5 Item5;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -610,6 +722,54 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type6.
 		/// </summary>
 		protected readonly Type6 Item6;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
+        /// <summary>
+        /// Conversion from Type6 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(Type6 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -797,6 +957,62 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type7.
 		/// </summary>
 		protected readonly Type7 Item7;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type6 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type6 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
+        /// <summary>
+        /// Conversion from Type7 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(Type7 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1004,6 +1220,70 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type8.
 		/// </summary>
 		protected readonly Type8 Item8;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type6 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type6 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type7 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type7 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
+        /// <summary>
+        /// Conversion from Type8 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(Type8 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1231,6 +1511,78 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type9.
 		/// </summary>
 		protected readonly Type9 Item9;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type6 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type6 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type7 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type7 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type8 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type8 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
+        /// <summary>
+        /// Conversion from Type9 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(Type9 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.
@@ -1478,6 +1830,86 @@ namespace FunctionalSharp.DiscriminatedUnions
 		/// The storage for type10.
 		/// </summary>
 		protected readonly Type10 Item10;
+        /// <summary>
+        /// Conversion from Type1 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type1 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type2 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type2 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type3 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type3 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type4 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type4 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type5 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type5 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type6 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type6 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type7 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type7 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type8 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type8 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type9 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type9 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
+        /// <summary>
+        /// Conversion from Type10 to the Discriminated union
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(Type10 value) 
+        {
+            return new DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>(value);
+        }
 
 		/// <summary>
 		/// Transforms the union into a new type using the given functions for the transformation.

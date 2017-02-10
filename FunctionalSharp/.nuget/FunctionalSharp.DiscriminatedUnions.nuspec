@@ -12,7 +12,7 @@
     <description>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</description>
     <summary>This package provides Discriminated Unions for C#. This is the old backage. The new package is FunctionalSharp.DiscriminatedUnions.</summary>
     <releaseNotes>
-      - Fixed bug in constructor of discriminated union that takes and object parameter.
+      - Added implicit conversions.
     </releaseNotes>
     <copyright>Patrick van Lohuizen</copyright>
     <language>en-US</language>
