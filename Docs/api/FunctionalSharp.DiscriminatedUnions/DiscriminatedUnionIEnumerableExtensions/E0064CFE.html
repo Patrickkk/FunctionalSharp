@@ -1,0 +1,429 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>FunctionalSharp - API - DiscriminatedUnionIEnumerableExtensions.Match&lt;TUnion, Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, ReturnType&gt;(IEnumerable&lt;TUnion&gt;, Func&lt;Type1, ReturnType&gt;, Func&lt;Type2, ReturnType&gt;, Func&lt;Type3, ReturnType&gt;, Func&lt;Type4, ReturnType&gt;, Func&lt;Type5, ReturnType&gt;, Func&lt;Type6, ReturnType&gt;, Func&lt;Type7, ReturnType&gt;, Func&lt;Type8, ReturnType&gt;) Method</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Docs</a></li>
+        <li class="active"><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#TypeParameters">Type Parameters</a></p>
+<p><a href="#Parameters">Parameters</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Namespace</li>
+		<li><a href="/api/FunctionalSharp.DiscriminatedUnions">FunctionalSharp<wbr>.DiscriminatedUnions</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions">Discriminated<wbr>Union<wbr>I<wbr>Enumerable<wbr>Extensions</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/BAE69B34">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/0140D3DC">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/4E1D06DD">Match<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/453DC919">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/DAB2C612">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/08AED5D5">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/C95741AC">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/47378906">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/1019D450">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/0E1BB09A">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/CE452AE1">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/02A4242C">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/74C3D6D0">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/6851C643">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/388C3554">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/6C835D58">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/8B73F7C9">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/2173BFFD">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/C25B28C5">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/27BB6A56">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/4FD58EA7">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/81AAE012">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/A9BFEA15">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/E28ED7EE">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/6F454C9F">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li class="selected"><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/E0064CFE">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/CB991228">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/598105AF">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/6C3530CB">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>, <wbr>Action<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/8A96CFCB">Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type9, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/6AEE9B21">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>, <wbr>Action<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/F52454E4">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type9, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/4109CD0F">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/B847E3E0">Merge<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/EBC884BA">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/D897D406">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/282BFAD4">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/EE13E17B">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/BDBA4676">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/E1945724">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/516BB02C">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/8643B079">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/2BF5616F">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/78497675">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/61125BD6">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/27B205C9">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/B94662C1">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type10&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/FA17CB52">Merge<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(IEnumerable<wbr>&lt;Type1&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/AA1D83AC">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/E0E3CCC8">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/5CDCA465">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/1BCB5C40">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/F8FE97D1">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type7)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/60FA0362">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type8)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/083B619A">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type9)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions/91A00C2B">MergeItem<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(IEnumerable<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type10)<wbr></a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions">Discriminated<wbr>Union<wbr>I<wbr>Enumerable<wbr>Extensions</a>.</h3>
+	<h1>Match<wbr>&lt;TUnion, <wbr>Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>ReturnType&gt;<wbr><wbr>(IEnumerable<wbr>&lt;TUnion&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>)<wbr> <small>Method</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Matches the specific types and uses the given functions to tranform into s ingle returntype.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/FunctionalSharp.DiscriminatedUnions">FunctionalSharp<wbr>.DiscriminatedUnions</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions">Discriminated<wbr>Union<wbr>I<wbr>Enumerable<wbr>Extensions</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static IEnumerable&lt;ReturnType&gt; Match&lt;TUnion, Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, ReturnType&gt;(this IEnumerable&lt;TUnion&gt; values, Func&lt;Type1, ReturnType&gt; Function1, Func&lt;Type2, ReturnType&gt; Function2, Func&lt;Type3, ReturnType&gt; Function3, Func&lt;Type4, ReturnType&gt; Function4, Func&lt;Type5, ReturnType&gt; Function5, Func&lt;Type6, ReturnType&gt; Function6, Func&lt;Type7, ReturnType&gt; Function7, Func&lt;Type8, ReturnType&gt; Function8) 
+    where TUnion : DiscriminatedUnion&lt;Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8&gt;</code></pre>
+
+
+
+
+	<h1 id="TypeParameters">Type Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr id="typeparam-TUnion">
+						<td>TUnion</td>
+						<td>TUnion</td>
+					</tr>
+					<tr id="typeparam-Type1">
+						<td>Type1</td>
+						<td>Type1</td>
+					</tr>
+					<tr id="typeparam-Type2">
+						<td>Type2</td>
+						<td>Type2</td>
+					</tr>
+					<tr id="typeparam-Type3">
+						<td>Type3</td>
+						<td>Type3</td>
+					</tr>
+					<tr id="typeparam-Type4">
+						<td>Type4</td>
+						<td>Type4</td>
+					</tr>
+					<tr id="typeparam-Type5">
+						<td>Type5</td>
+						<td>Type5</td>
+					</tr>
+					<tr id="typeparam-Type6">
+						<td>Type6</td>
+						<td>Type6</td>
+					</tr>
+					<tr id="typeparam-Type7">
+						<td>Type7</td>
+						<td>Type7</td>
+					</tr>
+					<tr id="typeparam-Type8">
+						<td>Type8</td>
+						<td>Type8</td>
+					</tr>
+					<tr id="typeparam-ReturnType">
+						<td>ReturnType</td>
+						<td>the returntype for all functions</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="Parameters">Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover three-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>values</td>
+						<td>IEnumerable<wbr>&lt;TUnion&gt;<wbr></td>
+						<td>existing Discriminated unions</td>
+					</tr>
+					<tr>
+						<td>Function1</td>
+						<td>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type1</td>
+					</tr>
+					<tr>
+						<td>Function2</td>
+						<td>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type2</td>
+					</tr>
+					<tr>
+						<td>Function3</td>
+						<td>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type3</td>
+					</tr>
+					<tr>
+						<td>Function4</td>
+						<td>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type4</td>
+					</tr>
+					<tr>
+						<td>Function5</td>
+						<td>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type5</td>
+					</tr>
+					<tr>
+						<td>Function6</td>
+						<td>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type6</td>
+					</tr>
+					<tr>
+						<td>Function7</td>
+						<td>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type7</td>
+					</tr>
+					<tr>
+						<td>Function8</td>
+						<td>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr></td>
+						<td>Function to run for Type8</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>IEnumerable<wbr>&lt;ReturnType&gt;<wbr></td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

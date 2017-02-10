@@ -1,0 +1,8 @@
+#recipe Docs
+
+Settings[Keys.LinksUseHttps] = true;
+Settings[DocsKeys.Title] = "FunctionalSharp";
+Settings[DocsKeys.Logo] = "/assets/img/logo.png";
+Settings[DocsKeys.SourceFiles] = "../../FunctionalSharp/**/{!bin,!obj,!packages,!*.Test,}/**/*.cs";
+Settings[DocsKeys.BaseEditUrl] = "https://github.com/Patrickkk/FunctionalSharp/tree/master/Docs/Input";
+Settings[DocsKeys.NetlifyRedirects] = true;

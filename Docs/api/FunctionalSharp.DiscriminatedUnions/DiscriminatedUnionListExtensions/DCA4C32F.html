@@ -1,0 +1,451 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>FunctionalSharp - API - DiscriminatedUnionListExtensions.Add&lt;Type1, Type2, Type3, Type4, Type5, Type6, Type7&gt;(List&lt;DiscriminatedUnion&lt;Type1, Type2, Type3, Type4, Type5, Type6, Type7&gt;&gt;, Type4) Method</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Docs</a></li>
+        <li class="active"><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#TypeParameters">Type Parameters</a></p>
+<p><a href="#Parameters">Parameters</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Namespace</li>
+		<li><a href="/api/FunctionalSharp.DiscriminatedUnions">FunctionalSharp<wbr>.DiscriminatedUnions</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions">Discriminated<wbr>Union<wbr>List<wbr>Extensions</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/8A9001C6">Add<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/CBA11ADF">Add<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/299859A4">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/68A942BD">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/ABFA6F96">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/3E9D23F9">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/7FAC38E0">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/BCFF15CB">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/FDCE0ED2">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/565424EC">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/17653FF5">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D43612DE">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/950709C7">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/52914888">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/54406F9E">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/15717487">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D62259AC">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/971342B5">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/508503FA">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/11B418E3">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/1FF7EE04">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5EC6F51D">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/9D95D836">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li class="selected"><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/DCA4C32F">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/1B328260">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5A039979">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/9950B452">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type7)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/579FA1D0">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/16AEBAC9">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D5FD97E2">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/94CC8CFB">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/535ACDB4">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/126BD6AD">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D138FB86">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type7)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/9009E09F">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>Type8)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/9500D594">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D431CE8D">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/1762E3A6">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5653F8BF">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/91C5B9F0">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D0F4A2E9">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/13A78FC2">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type7)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/529694DB">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type8)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/9D8A0C5C">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>Type9)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/533E19DA">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type1)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/120F02C3">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type2)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D15C2FE8">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type3)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/906D34F1">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/57FB75BE">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type5)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/16CA6EA7">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type6)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D599438C">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type7)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/94A85895">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type8)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5BB4C012">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type9)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/1A85DB0B">Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>Type10)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/6094F2ED">AddRange<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/57FE30EC">AddRange<wbr>&lt;Type1, <wbr>Type2&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/51EEF431">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/66843630">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/3F3A7032">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/DFBA126A">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/E8D0D06B">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/B16E9669">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/86045468">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/066BEDD9">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/31012FD8">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/68BF69DA">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5FD5ABDB">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/DAC3E4DE">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/02068841">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/356C4A40">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/6CD20C42">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5BB8CE43">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/DEAE8146">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/E9C44347">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D8C56E8E">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/EFAFAC8F">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/B611EA8D">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/817B288C">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/046D6789">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/3307A588">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/6AB9E38A">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/A2E71DE1">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/958DDFE0">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/CC3399E2">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/FB595BE3">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/7E4F14E6">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/4925D6E7">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/109B90E5">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/27F152E4">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/92F30E66">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/A599CC67">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/FC278A65">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/CB4D4864">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/4E5B0761">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/7931C560">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/208F8362">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/17E54163">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/2AA21D68">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/7E0B6EE9">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type1&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/4961ACE8">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/10DFEAEA">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/27B528EB">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/A2A367EE">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/95C9A5EF">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/CC77E3ED">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/FB1D21EC">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/C65A7DE7">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/F130BFE6">AddRange<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10&gt;<wbr>&gt;<wbr>, <wbr>IEnumerable<wbr>&lt;Type10&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/2FB563AC">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D661A600">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D7EC5EAD">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/6B3CBB0E">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/2000D4A3">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/83C986BB">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/5519CD00">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/C789A7D8">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/4BD97BEE">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/D305B76F">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/955E46FD">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/90381959">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/F348CB51">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/C7E9D055">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/62758FDA">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>, <wbr>Action<wbr>&lt;Type9&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/3C82E55D">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type9, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/417107D2">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10, <wbr>BaseType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Action<wbr>&lt;Type1&gt;<wbr>, <wbr>Action<wbr>&lt;Type2&gt;<wbr>, <wbr>Action<wbr>&lt;Type3&gt;<wbr>, <wbr>Action<wbr>&lt;Type4&gt;<wbr>, <wbr>Action<wbr>&lt;Type5&gt;<wbr>, <wbr>Action<wbr>&lt;Type6&gt;<wbr>, <wbr>Action<wbr>&lt;Type7&gt;<wbr>, <wbr>Action<wbr>&lt;Type8&gt;<wbr>, <wbr>Action<wbr>&lt;Type9&gt;<wbr>, <wbr>Action<wbr>&lt;Type10&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions/94C140F9">Match<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10, <wbr>BaseType, <wbr>ReturnType&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>With<wbr>Base<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7, <wbr>Type8, <wbr>Type9, <wbr>Type10, <wbr>BaseType&gt;<wbr>&gt;<wbr>, <wbr>Func<wbr>&lt;Type1, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type2, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type3, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type4, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type5, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type6, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type7, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type8, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type9, <wbr>ReturnType&gt;<wbr>, <wbr>Func<wbr>&lt;Type10, <wbr>ReturnType&gt;<wbr>)<wbr></a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions">Discriminated<wbr>Union<wbr>List<wbr>Extensions</a>.</h3>
+	<h1>Add<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr><wbr>(List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr>, <wbr>Type4)<wbr> <small>Method</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Adds the object to the end of the DiscriminatedUnionList
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/FunctionalSharp.DiscriminatedUnions">FunctionalSharp<wbr>.DiscriminatedUnions</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions">Discriminated<wbr>Union<wbr>List<wbr>Extensions</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static void Add&lt;Type1, Type2, Type3, Type4, Type5, Type6, Type7&gt;(this List&lt;DiscriminatedUnion&lt;Type1, Type2, Type3, Type4, Type5, Type6, Type7&gt;&gt; values, Type4 item)</code></pre>
+
+
+
+
+	<h1 id="TypeParameters">Type Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr id="typeparam-Type1">
+						<td>Type1</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type2">
+						<td>Type2</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type3">
+						<td>Type3</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type4">
+						<td>Type4</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type5">
+						<td>Type5</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type6">
+						<td>Type6</td>
+						<td></td>
+					</tr>
+					<tr id="typeparam-Type7">
+						<td>Type7</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="Parameters">Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover three-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>values</td>
+						<td>List<wbr>&lt;<wbr>Discriminated<wbr>Union<wbr>&lt;Type1, <wbr>Type2, <wbr>Type3, <wbr>Type4, <wbr>Type5, <wbr>Type6, <wbr>Type7&gt;<wbr>&gt;<wbr></td>
+						<td>the List to add the items to.</td>
+					</tr>
+					<tr>
+						<td>item</td>
+						<td>Type4</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>void</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
