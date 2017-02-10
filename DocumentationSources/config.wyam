@@ -1,5 +1,5 @@
 #recipe Docs
-
+Settings[Keys.Host] = "pvanlohuizen.nl/FunctionalSharp";
 Settings[Keys.LinksUseHttps] = true;
 Settings[DocsKeys.Title] = "FunctionalSharp";
 Settings[DocsKeys.Logo] = "/assets/img/logo.png";
