@@ -103,6 +103,7 @@
             Assert.AreEqual("correct", result);
         }
 
+        [TestMethod]
         [ExpectedException(typeof(InvalidEnumArgumentException))]
         public void TestObjectConstructorShouldThrowForInvlidType()
         {
