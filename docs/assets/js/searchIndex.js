@@ -34,38 +34,22 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"DiscriminatedUnionWithBaseList",
-        content:"DiscriminatedUnionWithBaseList",
+        title:"DiscriminatedUnion",
+        content:"DiscriminatedUnion",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"PatternMatchSingleContext",
-        content:"PatternMatchSingleContext",
+        title:"OptionExtensions",
+        content:"OptionExtensions",
         description:'',
         tags:''
     });
 
     a({
         id:2,
-        title:"DiscriminatedPatternMatchExtensions",
-        content:"DiscriminatedPatternMatchExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
-        title:"DiscriminatedUnionListExtensions",
-        content:"DiscriminatedUnionListExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:4,
         title:"DiscriminatedUnionList",
         content:"DiscriminatedUnionList",
         description:'',
@@ -73,23 +57,31 @@ var searchModule = function() {
     });
 
     a({
+        id:3,
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:4,
+        title:"EmptySequenceException",
+        content:"EmptySequenceException",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:5,
-        title:"OptionTypeLinqExtensions",
-        content:"OptionTypeLinqExtensions",
+        title:"DiscriminatedPatternMatch",
+        content:"DiscriminatedPatternMatch",
         description:'',
         tags:''
     });
 
     a({
         id:6,
-        title:"MultipleResultsException",
-        content:"MultipleResultsException",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:7,
         title:"DiscriminatedUnionWithBaseList",
         content:"DiscriminatedUnionWithBaseList",
         description:'',
@@ -97,17 +89,25 @@ var searchModule = function() {
     });
 
     a({
+        id:7,
+        title:"DiscriminatedUnionWithBase",
+        content:"DiscriminatedUnionWithBase",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:8,
-        title:"PatternMatch",
-        content:"PatternMatch",
+        title:"DiscriminatedUnionWithBase",
+        content:"DiscriminatedUnionWithBase",
         description:'',
         tags:''
     });
 
     a({
         id:9,
-        title:"DiscriminatedPatternMatch",
-        content:"DiscriminatedPatternMatch",
+        title:"DiscriminatedUnionWithBaseList",
+        content:"DiscriminatedUnionWithBaseList",
         description:'',
         tags:''
     });
@@ -122,6 +122,14 @@ var searchModule = function() {
 
     a({
         id:11,
+        title:"DiscriminatedPatternMatchContext",
+        content:"DiscriminatedPatternMatchContext",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:12,
         title:"DiscriminatedUnionWithBase",
         content:"DiscriminatedUnionWithBase",
         description:'',
@@ -129,17 +137,9 @@ var searchModule = function() {
     });
 
     a({
-        id:12,
+        id:13,
         title:"DiscriminatedPatternMatch",
         content:"DiscriminatedPatternMatch",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:13,
-        title:"DiscriminatedUnionIEnumerableExtensions",
-        content:"DiscriminatedUnionIEnumerableExtensions",
         description:'',
         tags:''
     });
@@ -154,16 +154,16 @@ var searchModule = function() {
 
     a({
         id:15,
-        title:"DiscriminatedUnion",
-        content:"DiscriminatedUnion",
+        title:"OptionTypeLinqExtensions",
+        content:"OptionTypeLinqExtensions",
         description:'',
         tags:''
     });
 
     a({
         id:16,
-        title:"DiscriminatedUnion",
-        content:"DiscriminatedUnion",
+        title:"DiscriminatedUnionWithBase",
+        content:"DiscriminatedUnionWithBase",
         description:'',
         tags:''
     });
@@ -178,22 +178,62 @@ var searchModule = function() {
 
     a({
         id:18,
-        title:"DiscriminatedPatternMatchContext",
-        content:"DiscriminatedPatternMatchContext",
+        title:"DiscriminatedUnionWithBaseList",
+        content:"DiscriminatedUnionWithBaseList",
         description:'',
         tags:''
     });
 
     a({
         id:19,
-        title:"PatternMatchCase",
-        content:"PatternMatchCase",
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
         description:'',
         tags:''
     });
 
     a({
         id:20,
+        title:"None",
+        content:"None",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:21,
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:22,
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:23,
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:24,
+        title:"DiscriminatedUnionWithBaseList",
+        content:"DiscriminatedUnionWithBaseList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:25,
         title:"DiscriminatedUnion",
         content:"DiscriminatedUnion",
         description:'',
@@ -201,55 +241,47 @@ var searchModule = function() {
     });
 
     a({
-        id:21,
-        title:"DiscriminatedUnionWithBase",
-        content:"DiscriminatedUnionWithBase",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:22,
-        title:"EmptySequenceException",
-        content:"EmptySequenceException",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:23,
+        id:26,
         title:"DiscriminatedUnionWithBaseList",
         content:"DiscriminatedUnionWithBaseList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:24,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:25,
-        title:"DiscriminatedPatternMatch",
-        content:"DiscriminatedPatternMatch",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:26,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
         description:'',
         tags:''
     });
 
     a({
         id:27,
+        title:"PatternMatchAction",
+        content:"PatternMatchAction",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:28,
+        title:"PatternMatchContext",
+        content:"PatternMatchContext",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:29,
+        title:"PatternMatchSingle",
+        content:"PatternMatchSingle",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:30,
+        title:"DiscriminatedPatternMatch",
+        content:"DiscriminatedPatternMatch",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:31,
         title:"DiscriminatedUnionList",
         content:"DiscriminatedUnionList",
         description:'',
@@ -257,31 +289,7 @@ var searchModule = function() {
     });
 
     a({
-        id:28,
-        title:"Some",
-        content:"Some",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:29,
-        title:"OptionExtensions",
-        content:"OptionExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:30,
-        title:"DiscriminatedUnionWithBaseList",
-        content:"DiscriminatedUnionWithBaseList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:31,
+        id:32,
         title:"DiscriminatedUnionWithBase",
         content:"DiscriminatedUnionWithBase",
         description:'',
@@ -289,17 +297,9 @@ var searchModule = function() {
     });
 
     a({
-        id:32,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
-        description:'',
-        tags:''
-    });
-
-    a({
         id:33,
-        title:"DiscriminatedPatternMatch",
-        content:"DiscriminatedPatternMatch",
+        title:"DiscriminatedUnionWithBase",
+        content:"DiscriminatedUnionWithBase",
         description:'',
         tags:''
     });
@@ -314,30 +314,6 @@ var searchModule = function() {
 
     a({
         id:35,
-        title:"DiscriminatedUnionWithBase",
-        content:"DiscriminatedUnionWithBase",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:36,
-        title:"DiscriminatedUnionWithBase",
-        content:"DiscriminatedUnionWithBase",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:37,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:38,
         title:"DiscriminatedPatternMatch",
         content:"DiscriminatedPatternMatch",
         description:'',
@@ -345,23 +321,7 @@ var searchModule = function() {
     });
 
     a({
-        id:39,
-        title:"PatternMatchAction",
-        content:"PatternMatchAction",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:40,
-        title:"PatternMatchSingle",
-        content:"PatternMatchSingle",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:41,
+        id:36,
         title:"DiscriminatedUnion",
         content:"DiscriminatedUnion",
         description:'',
@@ -369,31 +329,7 @@ var searchModule = function() {
     });
 
     a({
-        id:42,
-        title:"PatternMatchContext",
-        content:"PatternMatchContext",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:43,
-        title:"DiscriminatedPatternMatch",
-        content:"DiscriminatedPatternMatch",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:44,
-        title:"LinqExtensions",
-        content:"LinqExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:45,
+        id:37,
         title:"DiscriminatedUnionWithBase",
         content:"DiscriminatedUnionWithBase",
         description:'',
@@ -401,7 +337,7 @@ var searchModule = function() {
     });
 
     a({
-        id:46,
+        id:38,
         title:"DiscriminatedUnionList",
         content:"DiscriminatedUnionList",
         description:'',
@@ -409,9 +345,73 @@ var searchModule = function() {
     });
 
     a({
-        id:47,
+        id:39,
+        title:"DiscriminatedUnionList",
+        content:"DiscriminatedUnionList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:40,
         title:"DiscriminatedUnionWithBase",
         content:"DiscriminatedUnionWithBase",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:41,
+        title:"DiscriminatedUnionListExtensions",
+        content:"DiscriminatedUnionListExtensions",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:42,
+        title:"DiscriminatedUnion",
+        content:"DiscriminatedUnion",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:43,
+        title:"IOption",
+        content:"IOption",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:44,
+        title:"DiscriminatedUnionWithBaseList",
+        content:"DiscriminatedUnionWithBaseList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:45,
+        title:"DiscriminatedPatternMatch",
+        content:"DiscriminatedPatternMatch",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:46,
+        title:"DiscriminatedPatternMatch",
+        content:"DiscriminatedPatternMatch",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:47,
+        title:"PatternMatchCase",
+        content:"PatternMatchCase",
         description:'',
         tags:''
     });
@@ -426,30 +426,22 @@ var searchModule = function() {
 
     a({
         id:49,
-        title:"PatternMatchSingleAction",
-        content:"PatternMatchSingleAction",
+        title:"PatternMatchSingleContext",
+        content:"PatternMatchSingleContext",
         description:'',
         tags:''
     });
 
     a({
         id:50,
-        title:"DiscriminatedUnionWithBaseList",
-        content:"DiscriminatedUnionWithBaseList",
+        title:"DiscriminatedUnion",
+        content:"DiscriminatedUnion",
         description:'',
         tags:''
     });
 
     a({
         id:51,
-        title:"DiscriminatedUnionWithBaseList",
-        content:"DiscriminatedUnionWithBaseList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:52,
         title:"DiscriminatedPatternMatch",
         content:"DiscriminatedPatternMatch",
         description:'',
@@ -457,15 +449,7 @@ var searchModule = function() {
     });
 
     a({
-        id:53,
-        title:"DiscriminatedUnion",
-        content:"DiscriminatedUnion",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:54,
+        id:52,
         title:"DiscriminatedUnionWithBaseList",
         content:"DiscriminatedUnionWithBaseList",
         description:'',
@@ -473,33 +457,49 @@ var searchModule = function() {
     });
 
     a({
+        id:53,
+        title:"LinqExtensions",
+        content:"LinqExtensions",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:54,
+        title:"DiscriminatedPatternMatchExtensions",
+        content:"DiscriminatedPatternMatchExtensions",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:55,
-        title:"IOption",
-        content:"IOption",
+        title:"DiscriminatedUnionWithBaseList",
+        content:"DiscriminatedUnionWithBaseList",
         description:'',
         tags:''
     });
 
     a({
         id:56,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
+        title:"PatternMatch",
+        content:"PatternMatch",
         description:'',
         tags:''
     });
 
     a({
         id:57,
-        title:"DiscriminatedUnion",
-        content:"DiscriminatedUnion",
+        title:"DiscriminatedUnionIEnumerableExtensions",
+        content:"DiscriminatedUnionIEnumerableExtensions",
         description:'',
         tags:''
     });
 
     a({
         id:58,
-        title:"DiscriminatedUnion",
-        content:"DiscriminatedUnion",
+        title:"Some",
+        content:"Some",
         description:'',
         tags:''
     });
@@ -514,30 +514,22 @@ var searchModule = function() {
 
     a({
         id:60,
-        title:"None",
-        content:"None",
+        title:"MultipleResultsException",
+        content:"MultipleResultsException",
         description:'',
         tags:''
     });
 
     a({
         id:61,
-        title:"DiscriminatedUnionList",
-        content:"DiscriminatedUnionList",
+        title:"PatternMatchSingleAction",
+        content:"PatternMatchSingleAction",
         description:'',
         tags:''
     });
 
     a({
         id:62,
-        title:"DiscriminatedUnionWithBaseList",
-        content:"DiscriminatedUnionWithBaseList",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:63,
         title:"PatternMatchExtensions",
         content:"PatternMatchExtensions",
         description:'',
@@ -545,34 +537,36 @@ var searchModule = function() {
     });
 
     a({
+        id:63,
+        title:"DiscriminatedUnion",
+        content:"DiscriminatedUnion",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:64,
-        title:"DiscriminatedUnionWithBase",
-        content:"DiscriminatedUnionWithBase",
+        title:"DiscriminatedUnion",
+        content:"DiscriminatedUnion",
         description:'',
         tags:''
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_6',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_5',
+        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingleContext_1',
-        title:"PatternMatchSingleContext<T>",
+        url:'/api/FunctionalSharp.OptionTypes/OptionExtensions',
+        title:"OptionExtensions",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatchExtensions',
-        title:"DiscriminatedPatternMatchExtensions",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions',
-        title:"DiscriminatedUnionListExtensions",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_4',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4>",
         description:""
     });
 
@@ -583,32 +577,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.OptionTypes/OptionTypeLinqExtensions',
-        title:"OptionTypeLinqExtensions",
+        url:'/api/FunctionalSharp.DiscriminatedUnions.Exceptions/EmptySequenceException',
+        title:"EmptySequenceException",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions.Exceptions/MultipleResultsException',
-        title:"MultipleResultsException",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_7',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatch_2',
-        title:"PatternMatch<T, TResult>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_9',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_2',
+        title:"DiscriminatedPatternMatch<T, TResult1>",
         description:""
     });
 
@@ -625,68 +601,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_5',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions',
-        title:"DiscriminatedUnionIEnumerableExtensions",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_3',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_2',
-        title:"DiscriminatedUnion<Type1, Type2>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_8',
-        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_11',
-        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatchContext_1',
-        title:"DiscriminatedPatternMatchContext<T>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchCase_2',
-        title:"PatternMatchCase<T, TResult>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_3',
-        title:"DiscriminatedUnion<Type1, Type2, Type3>",
-        description:""
-    });
-
-    y({
         url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_9',
         title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, BaseType>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions.Exceptions/EmptySequenceException',
-        title:"EmptySequenceException",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_3',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, BaseType>",
         description:""
     });
 
@@ -697,44 +619,38 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_10',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatchContext_1',
+        title:"DiscriminatedPatternMatchContext<T>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_10',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_11',
+        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_4',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_3',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_8',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_5',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.OptionTypes/Some_1',
-        title:"Some<T>",
+        url:'/api/FunctionalSharp.OptionTypes/OptionTypeLinqExtensions',
+        title:"OptionTypeLinqExtensions",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.OptionTypes/OptionExtensions',
-        title:"OptionExtensions",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_11',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_5',
+        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>",
         description:""
     });
 
@@ -745,20 +661,86 @@ var searchModule = function() {
     });
 
     y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_7',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, BaseType>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_2',
+        title:"DiscriminatedUnionList<Type1, Type2>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.OptionTypes/None_1',
+        title:"None<T>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_5',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_9',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>",
+        description:""
+    });
+
+    y({
         url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_3',
         title:"DiscriminatedUnionList<Type1, Type2, Type3>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_8',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_4',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, BaseType>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_4',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_9',
+        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_6',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, BaseType>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchAction_1',
+        title:"PatternMatchAction<T>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchContext_1',
+        title:"PatternMatchContext<T>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingle_2',
+        title:"PatternMatchSingle<T, TResult>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_6',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_6',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6>",
         description:""
     });
 
@@ -775,68 +757,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_9',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_9',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_7',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchAction_1',
-        title:"PatternMatchAction<T>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingle_2',
-        title:"PatternMatchSingle<T, TResult>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_4',
-        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchContext_1',
-        title:"PatternMatchContext<T>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_2',
-        title:"DiscriminatedPatternMatch<T, TResult1>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/LinqExtensions',
-        title:"LinqExtensions",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_6',
-        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_2',
-        title:"DiscriminatedUnionList<Type1, Type2>",
-        description:""
-    });
-
-    y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_3',
-        title:"DiscriminatedUnionWithBase<Type1, Type2, BaseType>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_8',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7>",
         description:""
     });
 
@@ -847,38 +775,38 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingleAction_1',
-        title:"PatternMatchSingleAction<T>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_6',
+        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, Type5, BaseType>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_3',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_8',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_8',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_10',
+        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_6',
-        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_3',
+        title:"DiscriminatedUnionWithBase<Type1, Type2, BaseType>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_9',
-        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionListExtensions',
+        title:"DiscriminatedUnionListExtensions",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_4',
-        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_3',
+        title:"DiscriminatedUnion<Type1, Type2, Type3>",
         description:""
     });
 
@@ -889,8 +817,26 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_5',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_8',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, BaseType>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_4',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_7',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchCase_2',
+        title:"PatternMatchCase<T, TResult>",
         description:""
     });
 
@@ -901,26 +847,38 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_10',
-        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>",
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingleContext_1',
+        title:"PatternMatchSingleContext<T>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_5',
-        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_2',
+        title:"DiscriminatedUnion<Type1, Type2>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.OptionTypes/None_1',
-        title:"None<T>",
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatch_10',
+        title:"DiscriminatedPatternMatch<T, TResult1, TResult2, TResult3, TResult4, TResult5, TResult6, TResult7, TResult8, TResult9>",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionList_6',
-        title:"DiscriminatedUnionList<Type1, Type2, Type3, Type4, Type5, Type6>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBaseList_11',
+        title:"DiscriminatedUnionWithBaseList<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10, BaseType>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/LinqExtensions',
+        title:"LinqExtensions",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/DiscriminatedPatternMatchExtensions',
+        title:"DiscriminatedPatternMatchExtensions",
         description:""
     });
 
@@ -931,14 +889,56 @@ var searchModule = function() {
     });
 
     y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatch_2',
+        title:"PatternMatch<T, TResult>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionIEnumerableExtensions',
+        title:"DiscriminatedUnionIEnumerableExtensions",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.OptionTypes/Some_1',
+        title:"Some<T>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_4',
+        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions.Exceptions/MultipleResultsException',
+        title:"MultipleResultsException",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.PatternMatching/PatternMatchSingleAction_1',
+        title:"PatternMatchSingleAction<T>",
+        description:""
+    });
+
+    y({
         url:'/api/FunctionalSharp.PatternMatching/PatternMatchExtensions',
         title:"PatternMatchExtensions",
         description:""
     });
 
     y({
-        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnionWithBase_5',
-        title:"DiscriminatedUnionWithBase<Type1, Type2, Type3, Type4, BaseType>",
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_10',
+        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8, Type9, Type10>",
+        description:""
+    });
+
+    y({
+        url:'/api/FunctionalSharp.DiscriminatedUnions/DiscriminatedUnion_8',
+        title:"DiscriminatedUnion<Type1, Type2, Type3, Type4, Type5, Type6, Type7, Type8>",
         description:""
     });
 
