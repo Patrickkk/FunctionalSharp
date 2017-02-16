@@ -1,12 +1,5 @@
-SharpDiscriminatedUnions
-========================
+Title: About Functionalsharp
+=======================
+Functionalsharp was created to bring some of the (nice) ideas from functional programming into C#. Also it was a personal training project examining the what is currently possible with C# and generics. If you have intrest in functional programming in the .NET world you can check out F#.
 
-Provides C# with functional style extensions
-
-currently contains:
-- Discriminated unions
-- Option types
-- Pattermatching
-- PatternMatching combined with discriminated unions
-
-See the Wiki for more information.
+Functionalsharp has no external dependencies but makes use of Fody.NullGuard to make sure it never returns a null value/allows a null value to be passed unless explicitly specified.
