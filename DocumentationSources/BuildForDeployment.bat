@@ -1,0 +1,1 @@
+wyam --output "..\Docs"
