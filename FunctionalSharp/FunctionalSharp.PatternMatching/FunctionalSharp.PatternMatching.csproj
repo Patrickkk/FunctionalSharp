@@ -5,13 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Scripty" Version="0.7.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Test.csx">
-      <Generator></Generator>
-    </None>
+    <PackageReference Include="FluentAssertions" Version="4.19.2" />
   </ItemGroup>
 
 </Project>

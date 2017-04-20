@@ -110,7 +110,9 @@ namespace FunctionalSharp.DiscriminatedUnions
 				default: throw new InvalidEnumArgumentException("Unrecognized tag value: " + tag);
 			}
 		}
-	}	/// <summary>
+	}
+    
+    /// <summary>
 	/// A Discriminated union for 3 types.
 	/// </summary>
         /// <typeparam name="Type1">Type1</typeparam>
