@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.DiscriminatedUnions", "FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj", "{531BAAD8-9AC1-4811-961C-9DF1FC7F49F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.PatternMatching", "FunctionalSharp.PatternMatching\FunctionalSharp.PatternMatching.csproj", "{4F529D3C-0459-40F8-9619-3A929A5A2B29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalSharp.PatternMatching.Tests", "FunctionalSharp.PatternMatching.Tests\FunctionalSharp.PatternMatching.Tests.csproj", "{6D73BC43-1DAA-4AEF-B09D-089304272430}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85EDC574-7234-418A-984F-9021B34328AD}"
+	ProjectSection(SolutionItems) = preProject
+		TODOs.txt = TODOs.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

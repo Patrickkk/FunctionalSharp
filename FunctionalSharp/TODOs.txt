@@ -1,0 +1,3 @@
+- Replace allownull with fody.nullguard
+- Create seperate assembly for Generation code.
+- Move all code into one project.

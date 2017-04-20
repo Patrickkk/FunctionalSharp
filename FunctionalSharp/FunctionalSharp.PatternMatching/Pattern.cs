@@ -64,6 +64,7 @@ namespace FunctionalSharp.PatternMatching
                 if (item.Condition())
                 {
                     item.Action();
+                    return;
                 }
             }
             action();

@@ -1,5 +1,6 @@
-﻿using NullGuard;
+﻿// using NullGuard;  //TODO
 using System.Collections.Generic;
+
 namespace FunctionalSharp.PatternMatching
 {
     public static class PatternMatchExtensions
