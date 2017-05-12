@@ -95,7 +95,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 				throw new ArgumentNullException("The argument action2 is null");
 			}
 
-
             switch (tag)
 			{
 				case 0: action1(Item1); break;
@@ -228,7 +227,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action3 is null");
 			}
-
 
             switch (tag)
 			{
@@ -394,7 +392,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action4 is null");
 			}
-
 
             switch (tag)
 			{
@@ -592,7 +589,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action5 is null");
 			}
-
 
             switch (tag)
 			{
@@ -822,7 +818,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action6 is null");
 			}
-
 
             switch (tag)
 			{
@@ -1084,7 +1079,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action7 is null");
 			}
-
 
             switch (tag)
 			{
@@ -1378,7 +1372,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action8 is null");
 			}
-
 
             switch (tag)
 			{
@@ -1704,7 +1697,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action9 is null");
 			}
-
 
             switch (tag)
 			{
@@ -2062,7 +2054,6 @@ namespace FunctionalSharp.DiscriminatedUnions
 			{
 				throw new ArgumentNullException("The argument action10 is null");
 			}
-
 
             switch (tag)
 			{
