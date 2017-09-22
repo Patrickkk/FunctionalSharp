@@ -1,181 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78DD888D-2681-4D5A-AE06-F2A07BC30737}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FunctionalSharp.DiscriminatedUnions</RootNamespace>
-    <AssemblyName>FunctionalSharp.DiscriminatedUnions</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>7608af95</NuGetPackageImportStamp>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <DocumentationFile>bin\Debug\FunctionalSharp.DiscriminatedUnions.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release45|AnyCPU'">
-    <OutputPath>bin\Release45\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'release40|AnyCPU'">
-    <OutputPath>bin\release40\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'release35|AnyCPU'">
-    <OutputPath>bin\release35\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'release451|AnyCPU'">
-    <OutputPath>bin\release451\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\release451\FunctionalSharp.DiscriminatedUnions.XML</DocumentationFile>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="NullGuard, Version=1.4.1.0, Culture=neutral, PublicKeyToken=1958ac8092168428, processorArchitecture=MSIL">
-      <HintPath>..\packages\NullGuard.Fody.1.4.1\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\NullGuard.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Fody" Version="2.1.2" />
+    <PackageReference Include="NullGuard.Fody" Version="1.6.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="DiscriminatedUnion.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnion.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DiscriminatedUnionIEnumerableExtensions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnionIEnumerableExtensions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DiscriminatedUnionList.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnionList.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DiscriminatedUnionListExtensions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnionListExtensions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DiscriminatedUnionWithBase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnionWithBase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DiscriminatedUnionWithBaseList.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DiscriminatedUnionWithBaseList.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Exceptions\EmptySequenceException.cs" />
-    <Compile Include="LinqExtensions.cs" />
-    <Compile Include="Exceptions\MultipleResultsException.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DiscriminatedUnion.tt">
+    <None Update="DiscriminatedUnion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnion.cs</LastGenOutput>
     </None>
-    <None Include="DiscriminatedUnionIEnumerableExtensions.tt">
+    <None Update="DiscriminatedUnionIEnumerableExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionIEnumerableExtensions.cs</LastGenOutput>
     </None>
-    <None Include="DiscriminatedUnionList.tt">
+    <None Update="DiscriminatedUnionList.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionList.cs</LastGenOutput>
     </None>
-    <None Include="DiscriminatedUnionListExtensions.tt">
+    <None Update="DiscriminatedUnionListExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionListExtensions.cs</LastGenOutput>
     </None>
-    <None Include="DiscriminatedUnionWithBase.tt">
+    <None Update="DiscriminatedUnionWithBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionWithBase.cs</LastGenOutput>
     </None>
-    <None Include="DiscriminatedUnionWithBaseList.tt">
+    <None Update="DiscriminatedUnionWithBaseList.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiscriminatedUnionWithBaseList.cs</LastGenOutput>
     </None>
-    <Content Include="FodyWeavers.xml" />
-    <Content Include="GenerationHelpers.txt" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
+
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\Fody.1.28.3\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.28.3\build\Fody.targets'))" />
-  </Target>
-  <Import Project="..\packages\Fody.1.28.3\build\Fody.targets" Condition="Exists('..\packages\Fody.1.28.3\build\Fody.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <ItemGroup>
+    <Compile Update="DiscriminatedUnion.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnion.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DiscriminatedUnionIEnumerableExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnionIEnumerableExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DiscriminatedUnionList.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnionList.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DiscriminatedUnionListExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnionListExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DiscriminatedUnionWithBase.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnionWithBase.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DiscriminatedUnionWithBaseList.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedUnionWithBaseList.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

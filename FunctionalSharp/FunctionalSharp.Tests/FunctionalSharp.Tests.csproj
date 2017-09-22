@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionalSharp.DiscriminatedUnions\FunctionalSharp.DiscriminatedUnions.csproj" />
+    <ProjectReference Include="..\FunctionalSharp.OptionTypes\FunctionalSharp.OptionTypes.csproj" />
+    <ProjectReference Include="..\FunctionalSharp.PatternMatching.DiscriminatedUnions\FunctionalSharp.PatternMatching.DiscriminatedUnions.csproj" />
+    <ProjectReference Include="..\FunctionalSharp.PatternMatching\FunctionalSharp.PatternMatching.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DiscriminatedUnions\GeneratedNamedUnion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GeneratedNamedUnion.cs</LastGenOutput>
+    </None>
+    <None Update="Patternmatching.DiscriminatedUnions\DiscriminatedPatternMatch.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiscriminatedPatternMatch.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DiscriminatedUnions\GeneratedNamedUnion.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GeneratedNamedUnion.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Patternmatching.DiscriminatedUnions\DiscriminatedPatternMatch.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiscriminatedPatternMatch.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
