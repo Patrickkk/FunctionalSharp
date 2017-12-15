@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>FunctionalSharp.OptionTypes</PackageId>
+    <PackageVersion>0.9.2</PackageVersion>
+    <Title>FunctionalSharp OptionTypes</Title>
+    <Authors>Patrick van Lohuizen</Authors>
+    <PackageLicenseUrl>https://github.com/Patrickkk/FunctionalSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Patrickkk/FunctionalSharp/</RepositoryUrl>
+    <Description>Provides a simple option type for C# allowing you to never return null and communicate to your consumers that something might or might not have a value.</Description>
+    <PackageReleaseNotes>- converted to .netstndard 2.0</PackageReleaseNotes>
+    <Copyright>Patrick van Lohuizen</Copyright>
+    <PackageTags>Option;Option type;functional;cSharp;Optiontype;Optiontypes</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
